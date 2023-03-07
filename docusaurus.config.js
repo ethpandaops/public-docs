@@ -43,7 +43,7 @@ const config = {
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl:
-            'https://github.com/ethpandaops/public-docs/tree/master/packages/create-docusaurus/templates/shared/',
+            'https://github.com/ethpandaops/public-docs/tree/master/',
         },
         blog: false,
       }),
@@ -63,6 +63,7 @@ const config = {
           src: 'img/logo.png',
         },
         items: [
+          // add items here
           {
             href: 'https://github.com/ethpandaops/public-docs',
             label: 'GitHub',
