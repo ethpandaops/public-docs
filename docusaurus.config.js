@@ -63,7 +63,12 @@ const config = {
           src: 'img/logo.png',
         },
         items: [
-          // add items here
+          {
+              type: 'doc',
+              docId: 'onboarding/intro',
+              position: 'left',
+              label: 'Onboarding',
+          },
           {
             href: 'https://github.com/ethpandaops/public-docs',
             label: 'GitHub',
