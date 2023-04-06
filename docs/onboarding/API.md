@@ -11,6 +11,15 @@ https://rpc.mainnet.ethpandaops.io
 https://beacon.mainnet.ethpandaops.io
   * Direct the API call to any CL clients (lighthouse, lodestar, nimbus, prysm or teku)
 
+## Region specific API call
+We currently operate in 2 regions, Europe (Berlin) and North America (Boulder).
+
+If you would like to target speicifc regions, you can do this by using the `na1` or `eu1` prefix.
+### Example:
+* https://rpc.mainnet.eu1.ethpandaops.io
+* https://beacon.mainnet.na1.ethpandaops.io
+
+>**_NOTE_** If you do not specify the region, it will be targetting the `eu1` servers. 
 
 ## Currently available endpoints for consumption:
 ### Mainnet
