@@ -58,7 +58,7 @@ https://geth-lighthouse.mainnet.ethpandaops.io
   * Directs an API call to geth-lighthouse node - execution layer API endpoint, aimed at geth endpoint
 
 https://lighthouse-geth.mainnet.ethpandaops.io
-  * Directs an API call to ligthouse-geth node - beacon API specific call aimed at lighthouse endpoint
+  * Directs an API call to lighthouse-geth node - beacon API specific call aimed at lighthouse endpoint
 
 ## Example API call for EL: 
 ```
