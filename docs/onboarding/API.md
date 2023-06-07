@@ -49,18 +49,18 @@ If you would like to target speicifc regions, you can do this by using the `na1`
 
 ### Further Examples 
 https://geth.mainnet.ethpandaops.io
-  * Directs the API call to any geth-CL node (note CL will be round robin selected)
-
-https://geth-lighthouse.mainnet.ethpandaops.io
-  * Directs an API call to geth-lighthouse node
-
-https://lighthouse-geth.mainnet.ethpandaops.io
-  * Direct an API call to ligthouse-geth node
+  * Directs the API call to any geth-CL node (note CL will be round robin selected) - execution layer API endpoint, aimed at geth endpoint
 
 https://lighthouse.mainnet.ethpandaops.io
-  * DIrect an API call to lighthouse-EL node (note EL will be round robin selected)
+  * Directs an API call to lighthouse-EL node (note EL will be round robin selected) - beacon API specific call aimed at lighthouse endpoint
 
-Example API call for EL: 
+https://geth-lighthouse.mainnet.ethpandaops.io
+  * Directs an API call to geth-lighthouse node - execution layer API endpoint, aimed at geth endpoint
+
+https://lighthouse-geth.mainnet.ethpandaops.io
+  * Directs an API call to lighthouse-geth node - beacon API specific call aimed at lighthouse endpoint
+
+## Example API call for EL: 
 ```
  curl \
   --data {"method":"web3_clientVersion","params":[],"id":1,"jsonrpc":"2.0"} \
@@ -69,7 +69,7 @@ Example API call for EL:
   -H "Content-Type: application/json" \
   -X POST https://geth-lighthouse.$network.ethpandaops.io
 ```
-Example API call for CL:
+## Example API call for CL:
 ```
 curl \
   -H "CF-Access-Client-Id: $client_id" \
