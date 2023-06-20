@@ -64,10 +64,16 @@ const config = {
         },
         items: [
           {
-              type: 'doc',
-              docId: 'onboarding/intro',
-              position: 'left',
-              label: 'Onboarding',
+            type: 'doc',
+            docId: 'onboarding/intro',
+            position: 'left',
+            label: 'Onboarding',
+          },
+          {
+            type: 'doc',
+            docId: 'xatu/intro',
+            position: 'left',
+            label: 'Xatu',
           },
           {
             href: 'https://github.com/ethpandaops/public-docs',
