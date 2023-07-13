@@ -21,12 +21,10 @@ WHERE
 
 ## Show attestations targeting a given beacon block root
 
-> Note: `beacon_api_eth_v1_events_attestation_minimal_mv` table can be swapped for `beacon_api_eth_v1_events_attestation` if full signature, committee index, and aggregation bitfield are needed. Be aware `beacon_api_eth_v1_events_attestation` has a short TTL of 3 days.
-
 ```sql
 SELECT
     *
-FROM beacon_api_eth_v1_events_attestation_minimal_mv
+FROM beacon_api_eth_v1_events_attestation
 WHERE 
     meta_network_name = 'mainnet'
     AND slot_start_date_time BETWEEN '2023-06-20 01:20:00' AND '2023-06-20 01:30:00' -- strongly recommend filtering by the partition key (slot_start_date_time) for query performance
