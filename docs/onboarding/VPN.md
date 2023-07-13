@@ -12,8 +12,8 @@ Before you reach out to EF DevOps to get access, please generate a `wireguard pu
 Once we have the `pubkey`, we will assign an IP to you and a `preshared` key. Please place those values in the config files
 and then follow the remainder of the steps defined in `Client Startup`.
 
-#### Client configuration
-**Client configuration for Boulder:**
+### Client configuration
+#### Client configuration for Boulder:#### 
 1. Create a wireguard.conf file following the wireguard-client-config below
 2. Provide the public key to Barnabas#1342/parithosh#0530 on discord or anyone from the [ethpandaops team](https://github.com/orgs/ethpandaops/people).
 
@@ -33,7 +33,7 @@ PersistentKeepalive = 15
 
 Note:  `X` address and `presharedKey` will be provided to you in order to authenticate your device. `youPrivateKey` is the key generated in earlier step 1. (Related to the shared `pubkey`).
 
-**Client configuration for Berlin:**
+#### Client configuration for Berlin:#### 
 1. Create a wireguard.conf file following the wireguard-client-config below
 2. Provide the public key to Barnabas#1342/parithosh#0530 on discord or anyone from the [ethpandaops team](https://github.com/orgs/ethpandaops/people).
 
@@ -52,8 +52,8 @@ PersistentKeepalive = 15
 
 Note:  `X` address and `presharedKey` will be provided to you in order to authenticate your device.
 
-#### Using the VPN
-**Client startup:**
+### Using the VPN
+#### Client startup:#### 
 
 Each client is a single device, if you would like to have multiple devices accessing the VPN network, please create another client for the other device and inform us of the same.
 
