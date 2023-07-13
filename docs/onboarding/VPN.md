@@ -46,7 +46,7 @@ Address = X.X.X.X/32
 PublicKey = Z4iicKvlim92Et+xxjYAD54rJ4DcYhdoeuZoxAfTCTA=
 PresharedKey = [presharedKey]
 AllowedIPs = 10.10.42.1/24,10.10.11.1/24, X.X.X.X/32
-Endpoint = berlin.vpn.ethpandaops.io:51820
+Endpoint = berlin.vpn.ethpandaops.io:51822
 PersistentKeepalive = 15
 ```
 
