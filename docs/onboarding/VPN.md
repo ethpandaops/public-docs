@@ -15,7 +15,7 @@ and then follow the remainder of the steps defined in `Client Startup`.
 ### Client configuration
 #### Client configuration for Boulder:
 1. Create a wireguard.conf file following the wireguard-client-config below
-2. Provide the public key to Barnabas#1342/parithosh#0530 on discord or anyone from the [ethpandaops team](https://github.com/orgs/ethpandaops/people).
+2. Provide the public key to barnabasbusa/parithosh on discord or anyone from the [ethpandaops team](https://github.com/orgs/ethpandaops/people).
 
 ```
 [Interface]
@@ -35,7 +35,7 @@ Note:  `X` address and `presharedKey` will be provided to you in order to authen
 
 #### Client configuration for Berlin:
 1. Create a wireguard.conf file following the wireguard-client-config below
-2. Provide the public key to Barnabas#1342/parithosh#0530 on discord or anyone from the [ethpandaops team](https://github.com/orgs/ethpandaops/people).
+2. Provide the public key to barnabasbusa/parithosh on discord or anyone from the [ethpandaops team](https://github.com/orgs/ethpandaops/people).
 
 ```
 [Interface]
