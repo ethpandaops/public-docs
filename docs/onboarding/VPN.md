@@ -4,7 +4,7 @@ We use [wireguard](https://www.wireguard.com/) as our VPN of choice. Our wiregua
 office as well as the EF Boulder office. If you need a third, private and secure VPN just for your teammates to access servers you host
 on our infra then please reach out to the DevOps team.
 
-The below guide assumes that you have `wireguard` installed (Run ` wg --help` to check).
+The below guide assumes that you have `wireguard` installed (Run ` wg --help` to check). If you are using a macOS machine, you can also install wireguard GUI from the app store.
 
 Before you reach out to EF DevOps to get access, please generate a `wireguard public key` and share it with us:
 1. Create a public-private key pair: `umask 077 && wg genkey | tee privatekey | wg pubkey > publickey`
