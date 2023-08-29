@@ -23,7 +23,7 @@ curl -G "https://clickhouse.analytics.production.platform.ethpandaops.io" -u "XX
         *
     FROM mempool_transaction
     WHERE
-        AND event_date_time > NOW() - INTERVAL '1 day'
+        event_date_time > NOW() - INTERVAL '1 day'
         AND meta_network_name = 'mainnet'
     LIMIT 5
     FORMAT JSON
