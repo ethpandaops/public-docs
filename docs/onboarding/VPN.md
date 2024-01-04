@@ -41,6 +41,7 @@ Note:  `X` address and `presharedKey` will be provided to you in order to authen
 [Interface]
 PrivateKey = [yourPrivateKey]
 Address = X.X.X.X/32
+DNS = 10.10.42.1
 
 [Peer]
 PublicKey = Z4iicKvlim92Et+xxjYAD54rJ4DcYhdoeuZoxAfTCTA=
