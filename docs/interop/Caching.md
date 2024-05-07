@@ -1,6 +1,10 @@
-# This quick start guide will help you get started with using our caching server with kurtosis.
+---
+sidebar_position: 1
+---
 
+# Caching
 
+This quick start guide will help you get started with using our caching server with kurtosis.
 
 ## Prerequisites
 Please make sure that you have all prerequisites installed before you come to the event.
