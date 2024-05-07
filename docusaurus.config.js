@@ -76,6 +76,12 @@ const config = {
             label: 'Xatu',
           },
           {
+            type: 'doc',
+            docId: 'interop/caching',
+            position: 'left',
+            label: 'Caching',
+          },
+          {
             href: 'https://github.com/ethpandaops/public-docs',
             label: 'GitHub',
             position: 'right',
