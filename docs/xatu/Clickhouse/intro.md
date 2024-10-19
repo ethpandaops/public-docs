@@ -10,15 +10,14 @@ ClickHouse is an open-source column-oriented database that stores data for the X
 
 Currently access is restricted. Please contact us if you need access.
 
-**endpoint**: [https://clickhouse.analytics.production.platform.ethpandaops.io](https://clickhouse.analytics.production.platform.ethpandaops.io)
+**endpoint**: [https://clickhouse.xatu.ethpandaops.io](https://clickhouse.xatu.ethpandaops.io)
 
 ### Curl
 
-*Replace `XXX_USERNAME_XXX` and `XXX_PASSWORD_XXX` with your credentials.*
+*Replace `CLICKHOUSE_USER` and `CLICKHOUSE_PASSWORD` with your credentials.*
 
 ```bash
-curl -G "https://clickhouse.analytics.production.platform.ethpandaops.io" -u "XXX_USERNAME_XXX:XXX_PASSWORD_XXX"  \
-  --data-urlencode "query=
+echo """
     SELECT
         *
     FROM mempool_transaction
@@ -27,8 +26,7 @@ curl -G "https://clickhouse.analytics.production.platform.ethpandaops.io" -u "XX
         AND meta_network_name = 'mainnet'
     LIMIT 5
     FORMAT JSON
-  " \
-  | jq
+""" | curl "https://clickhouse.xatu.ethpandaops.io" -u "$CLICKHOUSE_USER:$CLICKHOUSE_PASSWORD" --data-binary @- | jq
 ```
 
 ### Jupyter notebooks example
@@ -45,8 +43,8 @@ Create a new notebook;
 # Import jupysql Jupyter extension to create SQL cells
 %load_ext sql
 %config SqlMagic.autocommit=False
-# Replace XXX_USERNAME_XXX and XXX_PASSWORD_XXX with your credentials (use a secret manager in jupyter if possible)
-%sql clickhouse+http://XXX_USERNAME_XXX:XXX_PASSWORD_XXX@clickhouse.analytics.production.platform.ethpandaops.io:443/default?protocol=https
+# Replace CLICKHOUSE_USER and CLICKHOUSE_PASSWORD with your credentials (use a secret manager in jupyter if possible)
+%sql clickhouse+http://CLICKHOUSE_USER:CLICKHOUSE_PASSWORD@clickhouse.xatu.ethpandaops.io:443/default?protocol=https
 # select 10 rows from mempool transaction table
 %sql SELECT * FROM mempool_transaction WHERE event_date_time > NOW() - INTERVAL '1 HOUR' LIMIT 10;
 ```
