@@ -76,6 +76,12 @@ const config = {
             label: 'Xatu',
           },
           {
+            type: 'doc',
+            docId: 'tooling/intro',
+            position: 'left',
+            label: 'Tooling',
+          },
+          {
             href: 'https://github.com/ethpandaops/public-docs',
             label: 'GitHub',
             position: 'right',
