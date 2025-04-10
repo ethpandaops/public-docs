@@ -9,6 +9,19 @@ A monitoring tool for Ethereum networks that checks node health and reports issu
 ## Commands
 
 <details>
+<summary>Trigger build of client image</summary>
+
+- Run the `/build trigger {client} {optional:repository} {optional:ref} {optional:docker_tag}` command to trigger a build for a specific client.
+- If you do not provide a repository, it will default to the client's standard repository.
+- If you do not provide a ref, it will default to the client's standard branch.
+- You can specify a custom Docker tag if needed.
+
+**Note:**
+- Users with any client team role or admin role can trigger builds for any client.
+
+</details>
+
+<details>
 <summary>Register alerts for a new devnet</summary>
 
 - Setup a new discord channel, under the `bots` category in the `EthR&D` Guild.
