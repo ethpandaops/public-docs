@@ -21,6 +21,8 @@ A monitoring tool for Ethereum networks that checks node health and reports issu
 
 </details>
 
+---
+
 <details>
 <summary>Register alerts for a new devnet</summary>
 
