@@ -9,12 +9,29 @@ A monitoring tool for Ethereum networks that checks node health and reports issu
 ## Commands
 
 <details>
-<summary>Trigger build of client image</summary>
+<summary>Trigger build of client images or tools</summary>
 
-- Run the `/build trigger {client} {optional:repository} {optional:ref} {optional:docker_tag}` command to trigger a build for a specific client.
+The build command has is split into three subcommands:
+
+**For Consensus Layer clients:**
+- Run the `/build client-cl {client} {optional:repository} {optional:ref} {optional:docker_tag} {optional:build_args}` command to trigger a build for a consensus layer client.
 - If you do not provide a repository, it will default to the client's standard repository.
 - If you do not provide a ref, it will default to the client's standard branch.
 - You can specify a custom Docker tag if needed.
+- Some clients support build arguments (currently `lighthouse`), which can be provided via the build_args parameter.
+
+**For Execution Layer clients:**
+- Run the `/build client-el {client} {optional:repository} {optional:ref} {optional:docker_tag} {optional:build_args}` command to trigger a build for an execution layer client.
+- If you do not provide a repository, it will default to the client's standard repository.
+- If you do not provide a ref, it will default to the client's standard branch.
+- You can specify a custom Docker tag if needed.
+
+**For tools and utilities:**
+- Run the `/build tool {workflow} {optional:repository} {optional:ref} {optional:docker_tag} {optional:build_args}` command to trigger a build for a tool or utility.
+- If you do not provide a repository, it will default to the tool's standard repository.
+- If you do not provide a ref, it will default to the tool's standard branch.
+- You can specify a custom Docker tag if needed.
+- Some tools support build arguments (currently `mev-rs`, `reth-rbuilder`), which can be provided via the build_args parameter.
 
 **Note:**
 - Users with any client team role or admin role can trigger builds for any client.
