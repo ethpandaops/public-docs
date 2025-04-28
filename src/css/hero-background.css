@@ -1,0 +1,349 @@
+/* Hero Background Animation */
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.particles-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+/* Neural network nodes */
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 15px rgba(26, 115, 232, 0.8);
+  transform-origin: center center;
+  pointer-events: none;
+  z-index: 2;
+  /* Pulsing effect */
+  animation-name: pulse;
+  animation-duration: var(--pulse-speed, 3s);
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+/* Central bright point in each node */
+.particle::after {
+  content: '';
+  position: absolute;
+  width: 30%;
+  height: 30%;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 1);
+  top: 35%;
+  left: 35%;
+  filter: blur(1px);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.9);
+}
+
+/* Satellite/neuron outer glow */
+.particle::before {
+  content: '';
+  position: absolute;
+  width: 150%;
+  height: 150%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(26, 115, 232, 0.15) 0%, rgba(26, 115, 232, 0) 70%);
+  top: -25%;
+  left: -25%;
+  z-index: -1;
+}
+
+[data-theme='dark'] .particle {
+  box-shadow: 0 0 15px rgba(77, 141, 246, 0.8);
+}
+
+[data-theme='dark'] .particle::before {
+  background: radial-gradient(circle, rgba(77, 141, 246, 0.2) 0%, rgba(77, 141, 246, 0) 70%);
+}
+
+/* Node sizes - much smaller for neural network feel */
+.particle-1 {
+  width: 8px;
+  height: 8px;
+  left: 15%;
+  top: 20%;
+  --pulse-speed: 4s;
+  animation-delay: 0.2s;
+}
+
+.particle-2 {
+  width: 6px;
+  height: 6px;
+  left: 25%;
+  bottom: 30%;
+  --pulse-speed: 3.5s;
+  animation-delay: 1.1s;
+}
+
+.particle-3 {
+  width: 10px;
+  height: 10px;
+  right: 18%;
+  top: 25%;
+  --pulse-speed: 4.5s;
+  animation-delay: 0.7s;
+}
+
+.particle-4 {
+  width: 6px;
+  height: 6px;
+  right: 25%;
+  bottom: 25%;
+  --pulse-speed: 3s;
+  animation-delay: 1.5s;
+}
+
+.particle-5 {
+  width: 9px;
+  height: 9px;
+  left: 45%;
+  top: 65%;
+  --pulse-speed: 5s;
+  animation-delay: 0.9s;
+}
+
+.particle-6 {
+  width: 7px;
+  height: 7px;
+  right: 40%;
+  top: 18%;
+  --pulse-speed: 3.8s;
+  animation-delay: 1.8s;
+}
+
+.particle-7 {
+  width: 12px;
+  height: 12px;
+  left: 38%;
+  top: 35%;
+  --pulse-speed: 4.2s;
+  animation-delay: 0.5s;
+}
+
+.particle-8 {
+  width: 8px;
+  height: 8px;
+  right: 32%;
+  top: 60%;
+  --pulse-speed: 3.4s;
+  animation-delay: 1.3s;
+}
+
+/* Additional neural network nodes for density */
+.particle-9 {
+  width: 7px;
+  height: 7px;
+  left: 55%;
+  top: 28%;
+  --pulse-speed: 4.8s;
+  animation-delay: 0.3s;
+}
+
+.particle-10 {
+  width: 9px;
+  height: 9px;
+  right: 45%;
+  top: 45%;
+  --pulse-speed: 3.2s;
+  animation-delay: 2s;
+}
+
+.particle-11 {
+  width: 6px;
+  height: 6px;
+  left: 30%;
+  top: 55%;
+  --pulse-speed: 4.4s;
+  animation-delay: 1s;
+}
+
+.particle-12 {
+  width: 11px;
+  height: 11px;
+  right: 15%;
+  top: 40%;
+  --pulse-speed: 5.2s;
+  animation-delay: 0.1s;
+}
+
+/* Neural network connections */
+.node-connection {
+  position: absolute;
+  height: 1px;
+  transform-origin: left center;
+  z-index: 0;
+  opacity: 0.6;
+  background: linear-gradient(90deg, rgba(26, 115, 232, 0.9) 0%, rgba(26, 115, 232, 0.5) 50%, rgba(26, 115, 232, 0.1) 100%);
+  box-shadow: 0 0 4px rgba(26, 115, 232, 0.3);
+}
+
+/* Data pulse animation along connections */
+.node-connection::after {
+  content: '';
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  top: -1.5px;
+  filter: blur(1px);
+  box-shadow: 0 0 5px rgba(26, 115, 232, 0.9);
+  animation-duration: var(--speed, 8s);
+  animation-name: dataTransfer;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  animation-iteration-count: infinite;
+}
+
+[data-theme='dark'] .node-connection {
+  background: linear-gradient(90deg, rgba(77, 141, 246, 0.9) 0%, rgba(77, 141, 246, 0.5) 50%, rgba(77, 141, 246, 0.1) 100%);
+  box-shadow: 0 0 4px rgba(77, 141, 246, 0.3);
+}
+
+[data-theme='dark'] .node-connection::after {
+  box-shadow: 0 0 5px rgba(77, 141, 246, 0.9);
+}
+
+/* Neural network grid in background */
+.grid-pattern {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(26, 115, 232, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(26, 115, 232, 0.03) 1px, transparent 1px);
+  background-size: 25px 25px;
+  z-index: 0;
+  opacity: 0.8;
+  transform: perspective(1000px) rotateX(60deg) translateZ(-80px) scale(2);
+  transform-origin: center bottom;
+}
+
+[data-theme='dark'] .grid-pattern {
+  background-image: 
+    linear-gradient(rgba(77, 141, 246, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(77, 141, 246, 0.03) 1px, transparent 1px);
+  opacity: 0.7;
+}
+
+/* Node pulse animation */
+@keyframes pulse {
+  0%, 100% { 
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% { 
+    transform: scale(1.3);
+    opacity: 0.7;
+  }
+}
+
+/* Float animations are more subtle for neural networks */
+@keyframes float1 {
+  0%, 100% { transform: translate(0, 0); }
+  25% { transform: translate(-5px, 5px); }
+  50% { transform: translate(3px, 8px); }
+  75% { transform: translate(5px, -3px); }
+}
+
+@keyframes float2 {
+  0%, 100% { transform: translate(0, 0); }
+  25% { transform: translate(6px, -4px); }
+  50% { transform: translate(-3px, -7px); }
+  75% { transform: translate(-6px, 3px); }
+}
+
+@keyframes float3 {
+  0%, 100% { transform: translate(0, 0); }
+  25% { transform: translate(-4px, -6px); }
+  50% { transform: translate(5px, 4px); }
+  75% { transform: translate(2px, 7px); }
+}
+
+@keyframes float4 {
+  0%, 100% { transform: translate(0, 0); }
+  25% { transform: translate(4px, 5px); }
+  50% { transform: translate(-3px, -4px); }
+  75% { transform: translate(-5px, 1px); }
+}
+
+@keyframes float5 {
+  0%, 100% { transform: translate(0, 0); }
+  25% { transform: translate(-7px, 3px); }
+  50% { transform: translate(4px, -1px); }
+  75% { transform: translate(1px, -5px); }
+}
+
+@keyframes float6 {
+  0%, 100% { transform: translate(0, 0); }
+  25% { transform: translate(5px, 4px); }
+  50% { transform: translate(-1px, 7px); }
+  75% { transform: translate(-4px, -3px); }
+}
+
+@keyframes float7 {
+  0%, 100% { transform: translate(0, 0); }
+  25% { transform: translate(-3px, 5px); }
+  50% { transform: translate(4px, -2px); }
+  75% { transform: translate(2px, -4px); }
+}
+
+@keyframes float8 {
+  0%, 100% { transform: translate(0, 0); }
+  25% { transform: translate(4px, 3px); }
+  50% { transform: translate(-2px, 5px); }
+  75% { transform: translate(-4px, -2px); }
+}
+
+/* Data transfer along connection lines */
+@keyframes dataTransfer {
+  0% { 
+    left: 0%;
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% { 
+    left: 100%;
+    opacity: 0;
+  }
+}
+
+/* Hero content styling with the animated background */
+.homepage-header {
+  position: relative;
+}
+
+.homepage-header-content {
+  position: relative;
+  z-index: 10;
+}
+
+/* Add some depth with a subtle gradient overlay */
+.hero-gradient-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0) 0%, var(--ifm-background-color) 85%);
+  pointer-events: none;
+  z-index: 3;
+}
+
+[data-theme='dark'] .hero-gradient-overlay {
+  background: radial-gradient(circle at center, rgba(11, 12, 15, 0) 0%, var(--ifm-background-color) 85%);
+} 

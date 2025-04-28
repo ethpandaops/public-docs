@@ -4,11 +4,18 @@
  */
 
 .heroBanner {
+  position: relative;
   padding: 4rem 0;
   text-align: center;
-  position: relative;
   overflow: hidden;
-  background-color: var(--ifm-background-color);
+  background: transparent;
+  width: 100%;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
 }
 
 .logoContainer {
@@ -21,18 +28,48 @@
   width: 120px;
   height: auto;
   margin-bottom: 1.5rem;
+  animation: pulse 3s infinite alternate;
+  transition: transform 0.3s ease;
 }
 
+@keyframes pulse {
+  from {
+    transform: scale(1);
+    filter: drop-shadow(0 0 0px rgba(0, 105, 218, 0.2));
+  }
+  to {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 15px rgba(0, 105, 218, 0.5));
+  }
+}
+
+.logoImage:hover {
+  transform: scale(1.1);
+}
+
+/* Title styling with gradient */
 .title {
   font-weight: 800;
   font-size: 3rem;
   margin-bottom: 0.5rem;
+  background: linear-gradient(90deg, #0969da 0%, #9c44dc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .subtitle {
   font-size: 1.5rem;
   font-weight: 500;
   margin-bottom: 1.5rem;
+  color: var(--ifm-color-emphasis-700);
+}
+
+html[data-theme='dark'] .title {
+  background: linear-gradient(90deg, #58a6ff 0%, #bc8cff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .featuresTitle {
@@ -49,6 +86,7 @@
 @media screen and (max-width: 996px) {
   .heroBanner {
     padding: 2rem;
+    min-height: 350px;
   }
   
   .title {
@@ -163,4 +201,104 @@
 :global(.community-card p) {
   margin-bottom: 1.5rem;
   flex-grow: 1;
+}
+
+.particles-container {
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.homepage-header-content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding: 2rem;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+}
+
+html[data-theme='dark'] .homepage-header-content {
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Particle styles */
+:global(.particles-wrapper) {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+
+:global(.particles-canvas) {
+  position: absolute !important;
+  width: 100% !important;
+  height: 100% !important;
+  top: 0 !important;
+  left: 0 !important;
+  pointer-events: none;
+}
+
+:global(#tsparticles) {
+  position: absolute !important;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 0 !important;
+  pointer-events: none !important;
+}
+
+/* Main content that should hide particles */
+:global(main) {
+  position: relative;
+  background-color: var(--ifm-background-color);
+  z-index: 10;
+}
+
+/* Add styles for the button container */
+:global(.header-buttons) {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+:global(.header-buttons .button) {
+  transition: all 0.3s ease;
+  backdrop-filter: blur(4px);
+}
+
+:global(.header-buttons .button--primary) {
+  background: linear-gradient(135deg, #0969da 0%, #0285c7 100%);
+  border: none;
+}
+
+:global(.header-buttons .button--secondary) {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(209, 213, 219, 0.3);
+}
+
+html[data-theme='dark'] :global(.header-buttons .button--secondary) {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+:global(.header-buttons .button:hover) {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }

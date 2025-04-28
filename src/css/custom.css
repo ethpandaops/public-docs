@@ -4,6 +4,8 @@
  * work well for content-centric websites.
  */
 
+@import './hero-background.css';
+
 /* You can override the default Infima variables here. */
 :root {
   --ifm-color-primary: #1a73e8;
@@ -779,6 +781,16 @@
 
 [data-theme='dark'] .navbar__logo:hover img {
   transform: scale(1.1);
+}
+
+/* Make navbar title white in dark mode */
+[data-theme='dark'] .navbar__title {
+  color: #ffffff;
+}
+
+/* Make external links in navbar white in dark mode */
+[data-theme='dark'] .navbar__items .navbar__item.navbar__link[href^="http"] {
+  color: #ffffff;
 }
 
 /* Homepage link in navbar */

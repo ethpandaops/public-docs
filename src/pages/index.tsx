@@ -4,6 +4,7 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
+import ParticlesBackground from '../components/ParticlesBackground';
 
 import styles from './index.module.css';
 
@@ -11,7 +12,10 @@ function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
   return (
     <header className={clsx('hero', styles.heroBanner, 'homepage-header')}>
-      <div className="container homepage-header-content">
+      <div className="particles-wrapper">
+        <ParticlesBackground />
+      </div>
+      <div className={clsx("container", "homepage-header-content")}>
         <div className={styles.logoContainer}>
           <img src="https://ethpandaops.io/logo.png" alt="ethPandaOps Logo" className={clsx(styles.logoImage, 'logo-animate')} />
         </div>
