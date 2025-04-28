@@ -51,12 +51,12 @@ Xatu collects various types of data:
 
 Xatu is comprised of several components that work together:
 
-- [Xatu Server](/docs/xatu/server) - The central collection and processing server
-- [Xatu Sentry](/docs/xatu/sentry) - Collects data from consensus clients
-- [Xatu Discovery](/docs/xatu/discovery) - Discovers nodes on the network
-- [Xatu Mimicry](/docs/xatu/mimicry) - Collects data from the execution layer
-- [Xatu Cannon](/docs/xatu/cannon) - Collects canonical finalized data
-- [Clickhouse](/docs/xatu/clickhouse/intro) - Data storage and analytics platform
+- Xatu Server - The central collection and processing server
+- Xatu Sentry - Collects data from consensus clients
+- Xatu Discovery - Discovers nodes on the network
+- Xatu Mimicry - Collects data from the execution layer
+- Xatu Cannon - Collects canonical finalized data
+- [Clickhouse](/docs/tooling/xatu/clickhouse/intro) - Data storage and analytics platform
 
 ## Further Resources
 

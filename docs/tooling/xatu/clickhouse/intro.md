@@ -70,9 +70,9 @@ The Xatu ClickHouse instance provides several tables for different types of Ethe
 - `network_discovery` - Node discovery information
 - `p2p_message` - P2P network messages
 
-For a complete list of tables and their schemas, please see the [Schema Documentation](/docs/xatu/clickhouse/schema).
+For a complete list of tables and their schemas, please see the [Schema Documentation](/docs/tooling/xatu/clickhouse/schema).
 
 ## Next Steps
 
-- [Example Queries](/docs/xatu/clickhouse/example-queries) - Common queries for exploring Ethereum network data
-- [Schema Documentation](/docs/xatu/clickhouse/schema) - Detailed schema information for all tables 
+- [Example Queries](/docs/tooling/xatu/clickhouse/example-queries) - Common queries for exploring Ethereum network data
+- [Schema Documentation](/docs/tooling/xatu/clickhouse/schema) - Detailed schema information for all tables 

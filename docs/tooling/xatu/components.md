@@ -127,10 +127,4 @@ Xatu components can be deployed in various configurations depending on monitorin
 
 ## Further Information
 
-For more detailed information on each component, refer to their specific documentation:
-
-- [Xatu Server](/docs/xatu/server)
-- [Xatu Sentry](/docs/xatu/sentry)
-- [Xatu Discovery](/docs/xatu/discovery)
-- [Xatu Mimicry](/docs/xatu/mimicry)
-- [Xatu Cannon](/docs/xatu/cannon) 
+For more detailed information on each component, check the [Xatu GitHub repository](https://github.com/ethpandaops/xatu). 
