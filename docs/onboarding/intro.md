@@ -31,7 +31,7 @@ To get started with ethPandaOps tools and services, we recommend:
 
 After getting familiar with our ecosystem, you can:
 
-- **Access our APIs**: Set up [API Access](/docs/onboarding/api) to interact with our nodes
-- **Connect to our VPN**: Configure [VPN Access](/docs/onboarding/vpn) for secure infrastructure access
+- **Access our APIs**: Set up [API Access](/docs/onboarding/API) to interact with our nodes
+- **Connect to our VPN**: Configure [VPN Access](/docs/onboarding/VPN) for secure infrastructure access
 - **Access Node Logs**: Learn how to [access logs](/docs/onboarding/logs) from testnet nodes
 - **Contribute to our projects**: Visit our [GitHub repositories](https://github.com/ethpandaops) 

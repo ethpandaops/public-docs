@@ -27,12 +27,12 @@ const sidebars: SidebarsConfig = {
         'onboarding/intro',
         {
           type: 'doc',
-          id: 'onboarding/api',
+          id: 'onboarding/API',
           label: 'API Access',
         },
         {
           type: 'doc',
-          id: 'onboarding/vpn',
+          id: 'onboarding/VPN',
           label: 'VPN Access',
         },
         {
