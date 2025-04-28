@@ -1,0 +1,25 @@
+.footerLogoLink {
+  display: block;
+  transition: opacity var(--ifm-transition-fast) var(--ifm-transition-timing-default);
+}
+
+.footerLogoLink:hover {
+  opacity: 0.8;
+}
+
+.footerLogoContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.footerLogo {
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  transition: transform 0.3s ease;
+}
+
+.footerLogo:hover {
+  transform: scale(1.05);
+}
