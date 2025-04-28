@@ -1,0 +1,9 @@
+{
+    "name": "skylenet",
+    "image": "img/team/skylenet.jpeg",
+    "bio": "DevOps Engineer",
+    "social": [
+        { "github": "https://github.com/skylenet" },
+        { "twitter": "https://x.com/skylenet" }
+    ]
+} 

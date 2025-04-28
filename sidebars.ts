@@ -13,18 +13,21 @@ import type {SidebarsConfig} from '@docusaurus/plugin-content-docs';
  Create as many sidebars as you want.
  */
 const sidebars: SidebarsConfig = {
-  // Main sidebar with all documentation
   docs: [
-    'intro',
+    {
+      type: 'doc',
+      id: 'intro',
+      label: 'Introduction',
+    },
     {
       type: 'category',
       label: 'Onboarding',
       link: {
         type: 'doc',
-        id: 'onboarding/intro',
+        id: 'onboarding/guide',
       },
       items: [
-        'onboarding/intro',
+        'onboarding/guide',
         {
           type: 'doc',
           id: 'onboarding/api',
@@ -47,10 +50,10 @@ const sidebars: SidebarsConfig = {
       label: 'Tooling',
       link: {
         type: 'doc',
-        id: 'tooling/intro',
+        id: 'tooling/overview',
       },
       items: [
-        'tooling/intro',
+        'tooling/overview',
         {
           type: 'category',
           label: 'Network Observability',
@@ -60,7 +63,27 @@ const sidebars: SidebarsConfig = {
             'tooling/forky',
             'tooling/lab',
             'tooling/tracoor',
-            'tooling/xatu',
+            {
+              type: 'category',
+              label: 'Xatu',
+              link: {
+                type: 'doc',
+                id: 'tooling/xatu/intro',
+              },
+              items: [
+                'tooling/xatu/intro',
+                'tooling/xatu/components',
+                {
+                  type: 'category',
+                  label: 'Clickhouse',
+                  items: [
+                    'tooling/xatu/clickhouse/intro',
+                    'tooling/xatu/clickhouse/example-queries',
+                    'tooling/xatu/clickhouse/schema',
+                  ],
+                },
+              ],
+            },
           ],
         },
         {

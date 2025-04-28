@@ -1,8 +1,33 @@
 import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
+import fs from 'fs';
+import path from 'path';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
+
+// Try to load announcement data from file
+let announcementBarProps = {
+  id: 'announcement_bar',
+  content: 'Explore Ethereum infrastructure tools by ethPandaOps! 🐼',
+  backgroundColor: '#00a550',
+  textColor: '#fff',
+  isCloseable: true,
+};
+
+try {
+  // Check if the announcement data file exists
+  const announcementDataPath = path.join(__dirname, 'announcement-data.json');
+  if (fs.existsSync(announcementDataPath)) {
+    const announcementData = JSON.parse(fs.readFileSync(announcementDataPath, 'utf8'));
+    announcementBarProps = {
+      ...announcementBarProps,
+      ...announcementData,
+    };
+  }
+} catch (error) {
+  console.warn('Failed to load dynamic announcement data:', error);
+}
 
 const config: Config = {
   title: 'ethPandaOps',
@@ -69,13 +94,7 @@ const config: Config = {
   themeConfig: {
     // Replace with your project's social card
     image: 'img/panda-social-card.jpg',
-    announcementBar: {
-      id: 'announcement_bar',
-      content: 'Ethereum Mainnet Pectra fork coming on May 7, 2025. 🎉 Get prepared with ethPandaOps tools!',
-      backgroundColor: '#00a550',
-      textColor: '#fff',
-      isCloseable: true,
-    },
+    announcementBar: announcementBarProps,
     navbar: {
       title: 'ethPandaOps',
       logo: {
@@ -94,35 +113,34 @@ const config: Config = {
             },
             {
               label: 'Onboarding',
-              to: '/docs/onboarding/intro',
+              to: '/docs/onboarding/guide',
             },
             {
               label: 'Tooling',
-              to: '/docs/tooling/intro',
+              to: '/docs/tooling/overview',
             },
           ],
         },
         {
           label: 'Onboarding',
-          to: '/docs/onboarding/intro',
+          to: '/docs/onboarding/guide',
           position: 'left',
         },
         {
           label: 'Tooling',
-          to: '/docs/tooling/intro',
+          to: '/docs/tooling/overview',
+          position: 'left',
+        },
+        {
+          label: 'Team',
+          to: '/team',
           position: 'left',
         },
         {
           href: 'https://github.com/ethpandaops',
           label: 'GitHub',
           position: 'right',
-        },
-        {
-          href: 'https://ethpandaops.io/',
-          label: 'Homepage',
-          position: 'right',
-          className: 'navbar-homepage-link',
-        },
+        }
       ],
     },
     footer: {
@@ -137,11 +155,15 @@ const config: Config = {
             },
             {
               label: 'Onboarding',
-              to: '/docs/onboarding/intro',
+              to: '/docs/onboarding/guide',
             },
             {
               label: 'Tooling',
-              to: '/docs/tooling/intro',
+              to: '/docs/tooling/overview',
+            },
+            {
+              label: 'Team',
+              to: '/team',
             },
           ],
         },

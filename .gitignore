@@ -7,6 +7,7 @@
 # Generated files
 .docusaurus
 .cache-loader
+announcement-data.json
 
 # Misc
 .DS_Store

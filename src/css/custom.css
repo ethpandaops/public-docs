@@ -842,3 +842,56 @@
 [data-theme='dark'] .more-tools-text {
   color: #e0e0e0;
 }
+
+/* Menu highlighting fix - prevent parent highlighting when child is selected */
+.menu__link--active:not(.menu__link--sublist) {
+  background-color: var(--ifm-menu-color-background-active);
+  color: var(--ifm-menu-color-active);
+}
+
+.menu__link--sublist.menu__link--active {
+  background-color: transparent;
+}
+
+/* Only highlight current page in dropdown, not parent categories */
+.dropdown__link--active {
+  color: var(--ifm-dropdown-link-color-active);
+}
+
+.dropdown__link--active-trail {
+  color: inherit;
+}
+
+/* Fix for navbar dropdown menu highlighting */
+.dropdown__menu .dropdown__link {
+  position: relative;
+}
+
+.dropdown__menu .dropdown__link--active {
+  position: relative;
+}
+
+/* Fix the sidebar highlighting */
+nav.menu .menu__list-item .menu__list-item-collapsible .menu__link--active + .menu__list .menu__link--active {
+  background-color: var(--ifm-menu-color-background-active);
+}
+
+nav.menu .menu__list-item .menu__list-item-collapsible .menu__link--active {
+  background-color: transparent;
+}
+
+/* Fix dropdown link active state */
+.dropdown__link--active, 
+.dropdown__link--active:hover {
+  background-color: var(--ifm-dropdown-link-background-color-active);
+  color: var(--ifm-dropdown-link-color-active);
+}
+
+.dropdown__link {
+  color: var(--ifm-dropdown-link-color);
+}
+
+/* Prevent hover effect on active links */
+.navbar__item.navbar__link.navbar__link--active:hover {
+  color: var(--ifm-navbar-link-color-active);
+}

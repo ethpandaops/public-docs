@@ -26,12 +26,12 @@ function HomepageHeader() {
         <div className="header-buttons">
           <Link
             className="button button--primary button--lg"
-            to="/docs/onboarding/intro">
+            to="/docs/onboarding/guide">
             Get Started
           </Link>
           <Link
             className="button button--secondary button--lg"
-            to="/docs/tooling/intro">
+            to="/docs/tooling/overview">
             Explore Our Tools
           </Link>
         </div>
@@ -144,7 +144,7 @@ function FeatureSection() {
               <p className="more-tools-text">These are just a few highlights from our toolkit. Discover our full range of Ethereum infrastructure tools and services.</p>
               <Link
                 className="button button--primary button--lg"
-                to="/docs/tooling/intro">
+                to="/docs/tooling/overview">
                 Explore All Our Tools
               </Link>
             </div>

@@ -23,7 +23,7 @@ This onboarding guide is designed for:
 
 To get started with ethPandaOps tools and services, we recommend:
 
-1. **Explore our tools**: Take a look at our [Tooling](/docs/tooling/intro) section to learn about the various tools available
+1. **Explore our tools**: Take a look at our [Tooling](/docs/tooling/overview) section to learn about the various tools available
 2. **Set up Contributoor**: [Contributoor](/docs/tooling/contributoor) is a great first tool to deploy if you're running an Ethereum node
 3. **Join our community**: Connect with us on [Discord](https://discord.gg/ethereum) to ask questions and get help
 
