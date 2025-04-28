@@ -162,7 +162,7 @@ function CommunitySection() {
         <div className="row">
           <div className="col col--12 text--center">
             <Heading as="h2">Join the ethPandaOps Community</Heading>
-            <p>ethPandaOps is a community of developers, operators, and enthusiasts working to improve Ethereum infrastructure.</p>
+            <p>We're a team of dedicated pandas with a passion for decentralization and a knack for bamboo-chomping.<br />Our mission? To contribute to the evolution of Ethereum, one byte at a time!</p>
           </div>
         </div>
         

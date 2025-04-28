@@ -103,6 +103,16 @@ const config: Config = {
       },
       items: [
         {
+          label: 'Tooling',
+          to: '/docs/tooling/overview',
+          position: 'left',
+        },
+        {
+          label: 'Team',
+          to: '/team',
+          position: 'left',
+        },
+        {
           type: 'dropdown',
           label: 'Documentation',
           position: 'left',
@@ -115,26 +125,7 @@ const config: Config = {
               label: 'Onboarding',
               to: '/docs/onboarding/guide',
             },
-            {
-              label: 'Tooling',
-              to: '/docs/tooling/overview',
-            },
           ],
-        },
-        {
-          label: 'Onboarding',
-          to: '/docs/onboarding/guide',
-          position: 'left',
-        },
-        {
-          label: 'Tooling',
-          to: '/docs/tooling/overview',
-          position: 'left',
-        },
-        {
-          label: 'Team',
-          to: '/team',
-          position: 'left',
         },
         {
           href: 'https://github.com/ethpandaops',
