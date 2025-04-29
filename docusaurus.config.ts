@@ -122,8 +122,20 @@ const config: Config = {
               to: '/docs',
             },
             {
-              label: 'Onboarding',
-              to: '/docs/onboarding/guide',
+              label: 'Guides',
+              to: '/docs/guides',
+            },
+            {
+              label: 'Node Operators',
+              to: '/docs/guides/node-operators',
+            },
+            {
+              label: 'Client Developers',
+              to: '/docs/guides/client-developers',
+            },
+            {
+              label: 'Data Analysts',
+              to: '/docs/guides/data-analysts',
             },
           ],
         },
@@ -145,8 +157,8 @@ const config: Config = {
               to: '/docs',
             },
             {
-              label: 'Onboarding',
-              to: '/docs/onboarding/guide',
+              label: 'Guides',
+              to: '/docs/guides',
             },
             {
               label: 'Tooling',
@@ -180,23 +192,27 @@ const config: Config = {
           ],
         },
         {
-          title: ' ',
-          className: 'footer__logo-hidden',
+          title: 'Guides',
           items: [
             {
-              label: ' ',
-              to: 'https://ethpandaops.io',
-              className: 'footer__logo-hidden',
+              label: 'Node Operator Guides',
+              to: '/docs/guides/node-operators',
+            },
+            {
+              label: 'Client Developer Guides',
+              to: '/docs/guides/client-developers',
+            },
+            {
+              label: 'Data Analyst Guides',
+              to: '/docs/guides/data-analysts',
+            },
+            {
+              label: 'Contributoor Setup',
+              to: '/docs/guides/node-operators/contributoor',
             },
           ],
-        },
+        }
       ],
-      logo: {
-        alt: 'ethPandaOps Logo',
-        src: 'https://ethpandaops.io/logo.png',
-        href: 'https://ethpandaops.io',
-        width: 100,
-      },
       copyright: `ethPandaOps © ${new Date().getFullYear()} | Built with ❤️ for the Ethereum community`,
     },
     prism: {

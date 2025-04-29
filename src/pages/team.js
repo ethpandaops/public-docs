@@ -3,11 +3,15 @@ import Layout from '@theme/Layout';
 import TeamProfile from '@site/src/components/TeamProfile';
 import clsx from 'clsx';
 import Heading from '@theme/Heading';
+import ParticlesBackground from '../components/ParticlesBackground';
 import styles from './team.module.css';
 
 function TeamHeader() {
   return (
-    <header className={clsx('hero', styles.teamHero)}>
+    <header className={clsx('hero', styles.teamHero, 'homepage-header')}>
+      <div className="particles-wrapper">
+        <ParticlesBackground />
+      </div>
       <div className={clsx("container", styles.teamHeaderContent)}>
         <Heading as="h1" className={clsx(styles.title)}>
           Team

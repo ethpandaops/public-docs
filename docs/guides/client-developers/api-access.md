@@ -1,9 +1,9 @@
 ---
-sidebar_position: 3
-id: api
+sidebar_position: 2
+id: api-access
 ---
 
-# API
+# API Access
 
 This documentation covers the ethPandaOps Team operated mainnet and testnet nodes API access.
 

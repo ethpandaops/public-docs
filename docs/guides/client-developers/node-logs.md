@@ -1,5 +1,6 @@
 ---
 sidebar_position: 4
+id: node-logs
 ---
 
 # Accessing Node Logs

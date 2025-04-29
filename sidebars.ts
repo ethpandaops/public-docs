@@ -21,27 +21,69 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: 'Onboarding',
-      link: {
-        type: 'doc',
-        id: 'onboarding/guide',
-      },
+      label: 'Guides',
       items: [
-        'onboarding/guide',
+        'guides/index',
         {
-          type: 'doc',
-          id: 'onboarding/api',
-          label: 'API Access',
+          type: 'category',
+          label: 'Node Operators',
+          link: {
+            type: 'generated-index',
+            title: 'Node Operator Guides',
+            slug: '/guides/node-operators',
+          },
+          items: [
+            'guides/node-operators/contributoor',
+          ],
         },
         {
-          type: 'doc',
-          id: 'onboarding/vpn',
-          label: 'VPN Access',
+          type: 'category',
+          label: 'Client Developers',
+          link: {
+            type: 'generated-index',
+            title: 'Client Developer Guides',
+            slug: '/guides/client-developers',
+          },
+          items: [
+            {
+              type: 'doc',
+              id: 'guides/client-developers/api-access',
+              label: 'API Access',
+            },
+            {
+              type: 'doc',
+              id: 'guides/client-developers/vpn-access',
+              label: 'VPN Access',
+            },
+            {
+              type: 'doc',
+              id: 'guides/client-developers/node-logs',
+              label: 'Accessing Node Logs',
+            },
+          ],
         },
         {
-          type: 'doc',
-          id: 'onboarding/logs',
-          label: 'Accessing Node Logs',
+          type: 'category',
+          label: 'Data Analysts',
+          link: {
+            type: 'generated-index',
+            title: 'Data Analyst Guides',
+            slug: '/guides/data-analysts',
+          },
+          items: [
+            {
+              type: 'category',
+              label: 'Xatu Stack',
+              link: {
+                type: 'generated-index',
+                title: 'Xatu Stack Guides',
+                slug: '/guides/data-analysts/xatu-stack',
+              },
+              items: [
+                'guides/data-analysts/xatu-stack/index',
+              ],
+            },
+          ],
         },
       ],
     },

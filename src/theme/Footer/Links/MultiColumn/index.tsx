@@ -2,6 +2,7 @@ import React, {type ReactNode} from 'react';
 import clsx from 'clsx';
 import LinkItem from '@theme/Footer/LinkItem';
 import type {Props} from '@theme/Footer/Links/MultiColumn';
+import styles from '../../styles.module.css';
 
 type ColumnType = Props['columns'][number];
 type ColumnItemType = ColumnType['items'][number];
@@ -24,7 +25,7 @@ function ColumnLinkItem({item}: {item: ColumnItemType}) {
 function Column({column}: {column: ColumnType}) {
   return (
     <div className={clsx('col footer__col', column.className)}>
-      <div className="footer__title">{column.title}</div>
+      <div className={clsx('footer__title', styles.footerTitle)}>{column.title}</div>
       <ul className="footer__items clean-list">
         {column.items.map((item, i) => (
           <ColumnLinkItem key={i} item={item} />

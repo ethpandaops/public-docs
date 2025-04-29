@@ -1,9 +1,9 @@
 ---
-sidebar_position: 4
-id: vpn
+sidebar_position: 3
+id: vpn-access
 ---
 
-# VPN
+# VPN Access
 
 ## Connecting
 

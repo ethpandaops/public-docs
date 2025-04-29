@@ -11,9 +11,14 @@ export default function ParticlesBackground() {
   const { colorMode } = useColorMode();
   const isDarkTheme = colorMode === 'dark';
 
-  // Primary and accent colors based on theme - much softer now
-  const primaryColor = isDarkTheme ? 'rgba(255, 255, 255, 0.08)' : 'rgba(59, 59, 59, 0.05)';
-  const accentColor = isDarkTheme ? 'rgba(88, 166, 255, 0.15)' : 'rgba(9, 105, 218, 0.1)';
+  // Network node colors
+  const nodeColor = isDarkTheme ? '#4a5568' : '#e2e8f0';
+  const activeNodeColor = isDarkTheme ? '#63b3ed' : '#3182ce';
+  const ethNodeColor = isDarkTheme ? '#48bb78' : '#38a169';
+  
+  // Connection colors
+  const linkColor = isDarkTheme ? 'rgba(255, 255, 255, 0.15)' : 'rgba(0, 0, 0, 0.09)';
+  const activeLinkColor = isDarkTheme ? 'rgba(66, 153, 225, 0.3)' : 'rgba(49, 130, 206, 0.2)';
 
   return (
     <Particles
@@ -30,28 +35,47 @@ export default function ParticlesBackground() {
             value: "transparent",
           },
         },
-        fpsLimit: 60,
+        fpsLimit: 30,
         interactivity: {
           events: {
             onClick: {
               enable: false,
             },
             onHover: {
-              enable: false,
+              enable: true,
+              mode: "connect",
+              parallax: {
+                enable: false,
+                force: 60,
+                smooth: 10
+              }
             },
             resize: true,
           },
+          modes: {
+            connect: {
+              distance: 180,
+              links: {
+                opacity: 0.3
+              },
+              radius: 120
+            }
+          }
         },
         particles: {
           color: {
-            value: [primaryColor, accentColor],
+            value: [nodeColor, activeNodeColor, ethNodeColor],
+          },
+          collisions: {
+            enable: false,
           },
           links: {
-            color: primaryColor,
+            color: linkColor,
             distance: 150,
             enable: true,
-            opacity: 0.15,
-            width: 0.8,
+            opacity: 0.18,
+            width: 1,
+            warp: true,
             triangles: {
               enable: false,
             },
@@ -62,30 +86,46 @@ export default function ParticlesBackground() {
             outModes: {
               default: "bounce",
             },
-            random: true,
-            speed: 1.2,
+            random: false,
+            speed: 0.5,
             straight: false,
-            attract: {
+            path: {
               enable: true,
-              rotateX: 600,
-              rotateY: 1200,
+              delay: {
+                value: 0.1
+              },
+              options: {
+                size: 5,
+                draw: false,
+                increment: 0.001
+              }
+            },
+            trail: {
+              enable: true,
+              length: 3,
+              fillColor: {
+                value: "transparent"
+              }
             },
           },
           number: {
             density: {
               enable: true,
-              area: 500,
+              area: 800,
             },
-            value: 100,
-            limit: 200,
+            value: 55,
+            limit: 70,
           },
           opacity: {
-            value: 0.1,
-            random: true,
-            anim: {
+            value: 0.7,
+            random: {
               enable: true,
-              speed: 0.3,
-              opacity_min: 0.5,
+              minimumValue: 0.3
+            },
+            animation: {
+              enable: true,
+              speed: 0.4,
+              minimumValue: 0.1,
               sync: false,
             },
           },
@@ -93,15 +133,29 @@ export default function ParticlesBackground() {
             type: ["circle"],
           },
           size: {
-            value: { min: 1, max: 3 },
+            value: { min: 1.5, max: 3.5 },
             random: true,
-            anim: {
+            animation: {
               enable: true,
               speed: 1,
-              size_min: 0.3,
+              minimumValue: 1,
               sync: false,
             },
           },
+          twinkle: {
+            particles: {
+              enable: false,
+              color: activeLinkColor,
+              frequency: 0.05,
+              opacity: 1
+            },
+            lines: {
+              enable: false,
+              color: activeLinkColor,
+              frequency: 0.005,
+              opacity: 0.4
+            }
+          }
         },
         detectRetina: true,
       }}

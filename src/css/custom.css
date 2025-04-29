@@ -9,6 +9,7 @@
 /* You can override the default Infima variables here. */
 :root {
   --ifm-color-primary: #1a73e8;
+  --ifm-color-primary-rgb: 26, 115, 232;
   --ifm-color-primary-dark: #1765d0;
   --ifm-color-primary-darker: #155fc5;
   --ifm-color-primary-darkest: #114ea2;
@@ -30,6 +31,7 @@
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
   --ifm-color-primary: #4d8df6;
+  --ifm-color-primary-rgb: 77, 141, 246;
   --ifm-color-primary-dark: #2f7bf5;
   --ifm-color-primary-darker: #1f72f4;
   --ifm-color-primary-darkest: #0b57d0;
@@ -57,6 +59,25 @@
   position: relative;
   overflow: hidden;
   background-color: var(--ifm-background-color);
+}
+
+/* Section divider styling */
+.divider-container {
+  padding: 0;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-divider {
+  height: 1px;
+  margin: 0.5rem auto 2rem;
+  background: linear-gradient(to right, transparent, rgba(148, 163, 184, 0.5) 30%, rgba(148, 163, 184, 0.5) 70%, transparent);
+  border: none;
+}
+
+[data-theme='dark'] .section-divider {
+  background: linear-gradient(to right, transparent, rgba(148, 163, 184, 0.3) 30%, rgba(148, 163, 184, 0.3) 70%, transparent);
 }
 
 /* Wave separator animation */
@@ -93,7 +114,7 @@
 }
 
 .feature-section {
-  padding: 4rem 0;
+  padding: 3rem 0;
   position: relative;
   z-index: 10;
 }
@@ -439,6 +460,20 @@
   }
 }
 
+/* Enhanced mobile footer styling */
+@media (max-width: 576px) {
+  /* Remove footer columns on mobile, keep only copyright */
+  :global(.footer__links) {
+    display: none;
+  }
+  
+  .footer__copyright {
+    margin-top: 0;
+    border-top: none;
+    padding-top: 0;
+  }
+}
+
 /* Announcement bar animation */
 .announcementBar_mb4j {
   animation: gradientAnimation 10s ease infinite;
@@ -482,158 +517,7 @@
   border-bottom-color: var(--ifm-color-primary);
 }
 
-/* Live Demo Components */
-.live-demo-container {
-  background-color: var(--ifm-card-background-color);
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  margin: 2rem 0;
-  overflow: hidden;
-  max-width: 500px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.live-demo-container:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-}
-
-.live-demo-header {
-  background-color: var(--ifm-color-primary);
-  color: white;
-  padding: 1rem;
-  text-align: center;
-}
-
-.live-demo-header h3 {
-  margin: 0;
-  font-weight: 600;
-}
-
-.live-demo-content {
-  padding: 2rem;
-}
-
-.auth-buttons {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  margin: 1rem 0;
-}
-
-.auth-button {
-  display: flex;
-  align-items: center;
-  padding: 0.75rem 1rem;
-  border-radius: 4px;
-  border: 1px solid var(--ifm-color-emphasis-300);
-  background-color: var(--ifm-card-background-color);
-  cursor: pointer;
-  font-weight: 500;
-  transition: all 0.2s ease;
-}
-
-.auth-button:hover {
-  transform: translateY(-2px);
-}
-
-.auth-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 24px;
-  height: 24px;
-  margin-right: 1rem;
-  border-radius: 50%;
-  background-color: var(--ifm-color-emphasis-200);
-}
-
-.auth-button.google:hover {
-  background-color: #4285F4;
-  color: white;
-  border-color: #4285F4;
-}
-
-.auth-button.github:hover {
-  background-color: #333;
-  color: white;
-  border-color: #333;
-}
-
-.auth-button.email:hover {
-  background-color: var(--ifm-color-primary);
-  color: white;
-  border-color: var(--ifm-color-primary);
-}
-
-.auth-separator {
-  display: flex;
-  align-items: center;
-  text-align: center;
-  margin: 1.5rem 0;
-  color: var(--ifm-color-emphasis-500);
-}
-
-.auth-separator::before,
-.auth-separator::after {
-  content: '';
-  flex: 1;
-  border-bottom: 1px solid var(--ifm-color-emphasis-300);
-}
-
-.auth-separator span {
-  padding: 0 1rem;
-}
-
-.email-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.email-input {
-  padding: 0.75rem 1rem;
-  border-radius: 4px;
-  border: 1px solid var(--ifm-color-emphasis-300);
-  background-color: var(--ifm-background-color);
-  transition: border-color 0.2s ease;
-}
-
-.email-input:focus {
-  border-color: var(--ifm-color-primary);
-  outline: none;
-}
-
-.email-submit {
-  background-color: var(--ifm-color-primary);
-  color: white;
-  border-color: var(--ifm-color-primary);
-  padding: 0.75rem;
-  font-weight: 600;
-  position: relative;
-  overflow: hidden;
-  cursor: pointer;
-}
-
-.email-submit:hover {
-  background-color: var(--ifm-color-primary-dark);
-}
-
-/* Mobile responsiveness for live demo */
-@media (max-width: 576px) {
-  .live-demo-content {
-    padding: 1.5rem;
-  }
-  
-  .auth-button {
-    padding: 0.6rem 0.8rem;
-  }
-  
-  .email-input,
-  .email-submit {
-    padding: 0.6rem 0.8rem;
-  }
-}
+/* Remove all unused Live Demo Components CSS */
 
 .logoImage {
   width: 150px;
@@ -718,8 +602,10 @@
 }
 
 [data-theme='dark'] .button--secondary:hover {
-  background-color: #444444;
-  border-color: #555555;
+  background-color: rgba(77, 141, 246, 0.2);
+  border-color: #4d8df6;
+  color: #ffffff;
+  transform: translateY(-2px);
 }
 
 /* Improve contrast for boxes in dark mode */
@@ -894,4 +780,106 @@ nav.menu .menu__list-item .menu__list-item-collapsible .menu__link--active {
 /* Prevent hover effect on active links */
 .navbar__item.navbar__link.navbar__link--active:hover {
   color: var(--ifm-navbar-link-color-active);
+}
+
+/* Fix tooling card buttons */
+[data-theme='dark'] .toolButton {
+  background-color: #4d8df6;
+  border-color: #4d8df6;
+  color: #ffffff !important;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  font-weight: 600;
+}
+
+[data-theme='dark'] .toolButton:hover {
+  background-color: #6b9ff7;
+  border-color: #6b9ff7;
+  color: #ffffff !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme='dark'] .toolButton::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 0;
+  border-radius: 100%;
+  transform: scale(1, 1) translate(-50%);
+  transform-origin: 50% 50%;
+  z-index: -1;
+}
+
+[data-theme='dark'] .toolButton:hover::after {
+  animation: ripple 1s ease-out;
+}
+
+[data-theme='dark'] .toolButtonSecondary {
+  background-color: transparent;
+  border-color: #4d8df6;
+  color: #ffffff !important;
+}
+
+[data-theme='dark'] .toolButtonSecondary:hover {
+  background-color: rgba(var(--ifm-color-primary-rgb), 0.15);
+  color: #ffffff !important;
+  transform: translateY(-1px);
+  text-decoration: none;
+}
+
+/* Add ripple effect to tooling buttons in light mode */
+.toolButton {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--ifm-color-primary);
+  color: white !important;
+  border-color: var(--ifm-color-primary);
+  z-index: 1;
+}
+
+.toolButton:hover {
+  background-color: var(--ifm-color-primary-darker);
+  color: white !important;
+  text-decoration: none;
+}
+
+.toolButton::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 0;
+  border-radius: 100%;
+  transform: scale(1, 1) translate(-50%);
+  transform-origin: 50% 50%;
+  z-index: -1;
+}
+
+.toolButton:hover::after {
+  animation: ripple 1s ease-out;
+}
+
+/* Ensure secondary buttons have proper styling */
+.toolButtonSecondary {
+  background-color: transparent;
+  color: var(--ifm-color-primary) !important;
+  border: 1px solid var(--ifm-color-primary);
+  transition: all 0.2s ease;
+}
+
+.toolButtonSecondary:hover {
+  background-color: rgba(var(--ifm-color-primary-rgb), 0.1);
+  color: var(--ifm-color-primary) !important;
+  transform: translateY(-1px);
+  text-decoration: none;
 }

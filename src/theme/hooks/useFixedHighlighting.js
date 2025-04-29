@@ -14,8 +14,8 @@ function useFixedHighlighting() {
       const currentPath = window.location.pathname;
       
       dropdownLinks.forEach(link => {
-        // If current path includes 'onboarding' or 'tooling' and this is the Introduction link
-        if ((currentPath.includes('/docs/onboarding/') || currentPath.includes('/docs/tooling/')) && 
+        // If current path includes 'guides' or 'tooling' and this is the Introduction link
+        if ((currentPath.includes('/docs/guides/') || currentPath.includes('/docs/tooling/')) && 
             link.textContent.trim() === 'Introduction') {
           link.classList.remove('dropdown__link--active');
         }

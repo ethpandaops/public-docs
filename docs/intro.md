@@ -22,7 +22,7 @@ Our goal is to make Ethereum more transparent, accessible, and resilient through
 
 This documentation is organized into two sections:
 
-- **[Onboarding](/docs/onboarding/guide)**: Getting started with ethPandaOps tools and services
+- **[Guides](/docs/guides)**: Getting started with ethPandaOps tools and services
 - **[Tooling](/docs/tooling/overview)**: Information about various tools provided by ethPandaOps
 
 ## Contributing
@@ -40,7 +40,7 @@ We welcome contributions of all kinds, from code improvements to documentation u
 
 Ready to dive in? Here are some resources to get you started:
 
-- [Onboarding Guide](/docs/onboarding/guide): Learn how to get started with ethPandaOps
+- [Guides](/docs/guides): Learn how to get started with ethPandaOps
 - [Tooling Overview](/docs/tooling/overview): Explore the tools available
 - [Xatu Documentation](/docs/tooling/xatu): Learn about our data pipeline
 
