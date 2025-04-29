@@ -1,0 +1,105 @@
+.sqlContainer {
+  margin: 2rem 0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  background-color: var(--ifm-pre-background);
+}
+
+.sqlTitle {
+  padding: 0.75rem 1rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  background-color: var(--ifm-color-primary);
+  color: white;
+  display: flex;
+  align-items: center;
+}
+
+.sqlTitle::before {
+  content: '📊';
+  margin-right: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.sqlTableWrapper {
+  padding: 0;
+  overflow-x: auto;
+  max-width: 100%;
+}
+
+.sqlTable {
+  width: 100%;
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.85rem;
+  border-collapse: collapse;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.sqlTable th {
+  background-color: rgba(0, 0, 0, 0.05);
+  font-weight: 600;
+  text-align: left;
+  padding: 0.75rem 1rem;
+}
+
+.sqlTable td {
+  padding: 0.6rem 1rem;
+  vertical-align: top;
+}
+
+.sqlTable tr:nth-child(even) {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+.sqlTable tr:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Bordered variant */
+.bordered th,
+.bordered td {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Compact variant */
+.compact th,
+.compact td {
+  padding: 0.4rem 0.75rem;
+  font-size: 0.8rem;
+}
+
+/* Style for numeric values */
+.sqlTable td:nth-child(n+2):not(:has(code)):not(:has(a)) {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Dark mode styles */
+[data-theme='dark'] .sqlContainer {
+  border-color: var(--ifm-color-emphasis-300);
+  background-color: #1e1e24;
+}
+
+[data-theme='dark'] .sqlTitle {
+  background-color: var(--ifm-color-primary-darker);
+}
+
+[data-theme='dark'] .sqlTable th {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme='dark'] .sqlTable tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+[data-theme='dark'] .sqlTable tr:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+[data-theme='dark'] .bordered th,
+[data-theme='dark'] .bordered td {
+  border-color: rgba(255, 255, 255, 0.1);
+} 

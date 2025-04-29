@@ -1,0 +1,89 @@
+.alert {
+  display: flex;
+  padding: 1rem;
+  margin: 1.5rem 0;
+  border-radius: 8px;
+  border-left: 4px solid;
+  background-color: var(--ifm-color-emphasis-100);
+}
+
+.alertIcon {
+  display: flex;
+  align-items: center;
+  padding-right: 1rem;
+  flex-shrink: 0;
+}
+
+.alertIcon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.alertContent {
+  flex: 1;
+}
+
+.alertContent > *:last-child {
+  margin-bottom: 0;
+}
+
+/* Info variant */
+.alert--info {
+  border-left-color: var(--ifm-color-primary);
+  background-color: rgba(var(--ifm-color-primary-rgb), 0.1);
+}
+
+.alert--info .alertIcon {
+  color: var(--ifm-color-primary);
+}
+
+/* Warning variant */
+.alert--warning {
+  border-left-color: #eab308;
+  background-color: rgba(234, 179, 8, 0.1);
+}
+
+.alert--warning .alertIcon {
+  color: #eab308;
+}
+
+/* Danger variant */
+.alert--danger {
+  border-left-color: #ef4444;
+  background-color: rgba(239, 68, 68, 0.1);
+}
+
+.alert--danger .alertIcon {
+  color: #ef4444;
+}
+
+/* Success variant */
+.alert--success {
+  border-left-color: #10b981;
+  background-color: rgba(16, 185, 129, 0.1);
+}
+
+.alert--success .alertIcon {
+  color: #10b981;
+}
+
+/* Dark mode adjustments */
+[data-theme='dark'] .alert {
+  background-color: var(--ifm-color-emphasis-200);
+}
+
+[data-theme='dark'] .alert--info {
+  background-color: rgba(var(--ifm-color-primary-rgb), 0.15);
+}
+
+[data-theme='dark'] .alert--warning {
+  background-color: rgba(234, 179, 8, 0.15);
+}
+
+[data-theme='dark'] .alert--danger {
+  background-color: rgba(239, 68, 68, 0.15);
+}
+
+[data-theme='dark'] .alert--success {
+  background-color: rgba(16, 185, 129, 0.15);
+} 

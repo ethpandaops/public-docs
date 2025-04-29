@@ -39,6 +39,7 @@ const config: Config = {
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
+  onBrokenAnchors: 'ignore',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -56,7 +57,13 @@ const config: Config = {
     locales: ['en'],
   },
 
+  markdown: {
+    mermaid: true,
+  },
+
   plugins: [],
+
+  themes: ['@docusaurus/theme-mermaid'],
 
   presets: [
     [
@@ -69,23 +76,28 @@ const config: Config = {
           editUrl:
             'https://github.com/ethpandaops/public-docs/tree/main/',
         },
-        // blog: {
-        //   showReadingTime: true,
-        //   feedOptions: {
-        //     type: ['rss', 'atom'],
-        //     xslt: true,
-        //   },
-        //   // Please change this to your repo.
-        //   // Remove this to remove the "edit this page" links.
-        //   editUrl:
-        //     'https://github.com/ethpandaops/public-docs/tree/main/',
-        //   // Useful options to enforce blogging best practices
-        //   onInlineTags: 'warn',
-        //   onInlineAuthors: 'warn',
-        //   onUntruncatedBlogPosts: 'warn',
-        // },
+        blog: {
+          onUntruncatedBlogPosts: 'ignore',
+          showReadingTime: true,
+          feedOptions: {
+            type: ['rss', 'atom'],
+            xslt: true,
+          },
+          // Please change this to your repo.
+          // Remove this to remove the "edit this page" links.
+          editUrl:
+            'https://github.com/ethpandaops/public-docs/tree/main/',
+          // Useful options to enforce blogging best practices
+          onInlineTags: 'warn',
+          onInlineAuthors: 'warn',
+          // Use 'posts' as the URL path instead of 'blog'
+          routeBasePath: 'posts',
+        },
         theme: {
-          customCss: './src/css/custom.css',
+          customCss: [
+            './src/css/custom.css',
+            './src/css/blog.css',
+          ],
         },
       } satisfies Preset.Options,
     ],
@@ -105,6 +117,11 @@ const config: Config = {
         {
           label: 'Tooling',
           to: '/docs/tooling/overview',
+          position: 'left',
+        },
+        {
+          label: 'Blog',
+          to: '/posts',
           position: 'left',
         },
         {
@@ -145,6 +162,9 @@ const config: Config = {
           position: 'right',
         }
       ],
+    },
+    mermaid: {
+      theme: { light: 'neutral', dark: 'forest' },
     },
     footer: {
       style: 'dark',
@@ -220,6 +240,9 @@ const config: Config = {
       darkTheme: prismThemes.dracula,
     },
   } satisfies Preset.ThemeConfig,
+  
+  // Update custom fields - remove defaultBlogImage
+  customFields: {},
 };
 
 export default config;

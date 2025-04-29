@@ -1,0 +1,7 @@
+/* Add component-specific styles here if needed */
+.blogPostItemContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+/* You can add more component-specific styles as needed */ 

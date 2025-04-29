@@ -1,0 +1,110 @@
+.repoCard {
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 6px;
+  padding: 1rem;
+  background-color: var(--ifm-background-color);
+  transition: all 0.2s ease;
+  margin-bottom: 1.5rem;
+}
+
+.repoCard:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+  border-color: var(--ifm-color-primary-lightest);
+}
+
+.repoHeader {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.repoIcon {
+  margin-right: 0.5rem;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.repoName {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--ifm-color-primary);
+  text-decoration: none;
+}
+
+.repoName:hover {
+  text-decoration: underline;
+}
+
+.repoDescription {
+  margin-bottom: 1rem;
+  color: var(--ifm-color-emphasis-800);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.repoFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.repoLanguage {
+  display: flex;
+  align-items: center;
+}
+
+.languageColor {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 0.4rem;
+}
+
+.repoStats {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.repoStat {
+  display: flex;
+  align-items: center;
+  color: var(--ifm-color-emphasis-700);
+  text-decoration: none;
+}
+
+.repoStat:hover {
+  color: var(--ifm-color-primary);
+}
+
+.icon {
+  margin-right: 0.3rem;
+}
+
+.loading {
+  padding: 1rem;
+  color: var(--ifm-color-emphasis-600);
+  border: 1px dashed var(--ifm-color-emphasis-300);
+  border-radius: 6px;
+  text-align: center;
+  font-style: italic;
+}
+
+.error {
+  padding: 1rem;
+  color: #ef4444;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-radius: 6px;
+  background-color: rgba(239, 68, 68, 0.05);
+}
+
+/* Dark mode adjustments */
+[data-theme='dark'] .repoCard {
+  border-color: var(--ifm-color-emphasis-200);
+}
+
+[data-theme='dark'] .repoCard:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+} 

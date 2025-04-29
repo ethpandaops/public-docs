@@ -1,9 +1,0 @@
-{
-    "name": "savid",
-    "image": "img/team/savid.jpeg",
-    "bio": "DevOps Engineer",
-    "social": [
-        { "github": "https://github.com/savid" },
-        { "twitter": "https://x.com/savid" }
-    ]
-} 

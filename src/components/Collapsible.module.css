@@ -1,0 +1,86 @@
+.collapsible,
+.details {
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 6px;
+  margin: 1rem 0;
+  overflow: hidden;
+}
+
+.collapsibleHeader,
+.summary {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  background-color: var(--ifm-color-emphasis-100);
+  user-select: none;
+  transition: background-color 0.2s ease;
+}
+
+.collapsibleHeader:hover,
+.summary:hover {
+  background-color: var(--ifm-color-emphasis-200);
+}
+
+.collapsibleHeader.open,
+.summary.open {
+  border-bottom: 1px solid var(--ifm-color-emphasis-300);
+}
+
+.collapsibleIcon,
+.summaryIcon {
+  font-size: 0.8rem;
+  margin-right: 0.5rem;
+  color: var(--ifm-color-emphasis-600);
+  transition: transform 0.2s ease;
+}
+
+.collapsibleTitle,
+.summaryTitle {
+  font-weight: 500;
+  color: var(--ifm-color-emphasis-800);
+}
+
+.collapsibleContent,
+.detailsContent {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  padding: 0 1rem;
+}
+
+.collapsibleContent.open,
+.detailsContent.open {
+  max-height: 100vh; /* Arbitrary large height */
+  padding: 1rem;
+  overflow: auto;
+}
+
+/* Dark mode adjustments */
+[data-theme='dark'] .collapsibleHeader,
+[data-theme='dark'] .summary {
+  background-color: var(--ifm-color-emphasis-200);
+}
+
+[data-theme='dark'] .collapsibleHeader:hover,
+[data-theme='dark'] .summary:hover {
+  background-color: var(--ifm-color-emphasis-300);
+}
+
+[data-theme='dark'] .collapsibleTitle,
+[data-theme='dark'] .summaryTitle {
+  color: var(--ifm-color-emphasis-100);
+}
+
+/* Ensure code blocks inside are displayed correctly */
+.collapsibleContent.open pre,
+.detailsContent.open pre {
+  margin: 1rem 0;
+}
+
+/* Ensure tables inside are displayed correctly */
+.collapsibleContent.open table,
+.detailsContent.open table {
+  display: table;
+  width: 100%;
+} 

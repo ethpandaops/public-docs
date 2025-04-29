@@ -5,6 +5,7 @@
  */
 
 @import './hero-background.css';
+@import './blog.css';
 
 /* You can override the default Infima variables here. */
 :root {
@@ -882,4 +883,317 @@ nav.menu .menu__list-item .menu__list-item-collapsible .menu__link--active {
   color: var(--ifm-color-primary) !important;
   transform: translateY(-1px);
   text-decoration: none;
+}
+
+/* Blog Post Card styles */
+.blog-post-card {
+  margin-bottom: 2rem;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  background-color: var(--ifm-card-background-color);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.blog-post-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.blog-post-card.featured {
+  border: 1px solid var(--ifm-color-primary-lightest);
+}
+
+.blog-post-card--container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  color: inherit;
+  text-decoration: none;
+}
+
+.blog-post-card--image-container {
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+}
+
+.blog-post-card--image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.blog-post-card:hover .blog-post-card--image {
+  transform: scale(1.05);
+}
+
+.blog-post-card--content {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.blog-post-card--header {
+  margin-bottom: 0.75rem;
+}
+
+.blog-post-card--title {
+  font-size: 1.25rem;
+  line-height: 1.4;
+  margin: 0;
+  color: var(--ifm-heading-color);
+}
+
+.blog-post-card--description {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  color: var(--ifm-color-emphasis-700);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.blog-post-card--metadata {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8125rem;
+}
+
+.blog-post-card--date {
+  color: var(--ifm-color-emphasis-600);
+}
+
+.blog-post-card--reading-time {
+  font-style: italic;
+}
+
+.blog-post-card--tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.375rem;
+}
+
+.blog-post-card--tag {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  background-color: var(--ifm-color-primary-lightest);
+  color: var(--ifm-color-primary-darkest);
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.blog-post-card--tag-more {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  background-color: var(--ifm-color-emphasis-200);
+  color: var(--ifm-color-emphasis-800);
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+/* Responsive styles */
+@media (min-width: 768px) {
+  .blog-post-card--container {
+    flex-direction: row;
+  }
+  
+  .blog-post-card--image-container {
+    width: 200px;
+    height: auto;
+    flex-shrink: 0;
+  }
+  
+  .blog-post-card--content {
+    flex: 1;
+  }
+}
+
+/* Improved code block styling - remove mentions of codeBlockContainer/Content/Lines */
+/* Code blocks should correctly handle overflow and have good styling */
+pre {
+  overflow: auto !important;
+  white-space: pre !important;
+  word-break: normal !important;
+  overflow-wrap: normal !important;
+  padding-bottom: 20px !important;
+  margin: 1.5rem 0 !important;
+  border-radius: 8px !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+  background-color: #f6f8fa !important;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+  font-size: 13px !important;
+  line-height: 1.5 !important;
+  position: relative !important;
+  z-index: 5 !important;
+}
+
+[data-theme='dark'] pre {
+  background-color: #282a36 !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* All code should have consistent font and size */
+code {
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace !important;
+  font-size: 13px !important;
+  line-height: 1.5 !important;
+  white-space: pre !important;
+  word-break: normal !important;
+  overflow-wrap: normal !important;
+}
+
+/* Add nice styling to inline code */
+:not(pre) > code {
+  border-radius: 3px;
+  background-color: var(--ifm-color-emphasis-100);
+  padding: 0.2em 0.4em;
+  font-size: 85%;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  white-space: normal !important;
+}
+
+/* Copy button styling */
+button[aria-label="Copy code to clipboard"] {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  padding: 6px 10px;
+  opacity: 0.7;
+  transition: all 0.2s ease;
+}
+
+button[aria-label="Copy code to clipboard"]:hover {
+  opacity: 1;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+[data-theme='dark'] button[aria-label="Copy code to clipboard"] {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme='dark'] button[aria-label="Copy code to clipboard"]:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* SVG icons in copy button should be properly sized */
+button[aria-label="Copy code to clipboard"] svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Fix for elements overlaying code blocks */
+[id^="example-"],
+img,
+.example-overlay,
+[id*="example-"] {
+  pointer-events: none !important;
+  z-index: 0 !important;
+}
+
+/* Scrollbar styling */
+pre::-webkit-scrollbar {
+  height: 14px !important;
+  width: 14px !important;
+  background-color: rgba(0, 0, 0, 0.05) !important;
+}
+
+pre::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.3) !important;
+  border-radius: 8px !important;
+  border: 4px solid transparent !important;
+  background-clip: content-box !important;
+}
+
+[data-theme='dark'] pre::-webkit-scrollbar {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+[data-theme='dark'] pre::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+/* Specific SQL styling */
+code.language-sql {
+  white-space: pre !important;
+  word-break: normal !important;
+  overflow-wrap: normal !important;
+}
+
+/* SQL results table styling */
+pre table, pre .token.table {
+  border-collapse: collapse !important;
+  margin: 1rem 0 !important;
+  width: auto !important;
+  display: table !important;
+}
+
+pre table td, pre table th,
+pre .token.table td, pre .token.table th {
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+  padding: 6px 13px !important;
+  white-space: nowrap !important;
+}
+
+[data-theme='dark'] pre table td, 
+[data-theme='dark'] pre table th, 
+[data-theme='dark'] pre .token.table td, 
+[data-theme='dark'] pre .token.table th {
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Style ASCII art in SQL results */
+pre .token-line,
+pre div:has(.token-line) {
+  font-family: monospace !important;
+  white-space: pre !important;
+}
+
+/* ASCII table characters */
+pre .token-line:has(.plain:is(
+  :contains(┌), :contains(─), :contains(┐), 
+  :contains(│), :contains(└), :contains(┘),
+  :contains(├), :contains(┤), :contains(┬),
+  :contains(┴), :contains(┼)
+)) {
+  font-family: monospace !important;
+  white-space: pre !important;
+  color: #666 !important;
+}
+
+[data-theme='dark'] pre .token-line:has(.plain:is(
+  :contains(┌), :contains(─), :contains(┐), 
+  :contains(│), :contains(└), :contains(┘),
+  :contains(├), :contains(┤), :contains(┬),
+  :contains(┴), :contains(┼)
+)) {
+  color: #aaa !important;
+}
+
+/* Ensure canonical_execution class styling */
+.canonical_execution_block,
+code[class*="canonical_execution_"] {
+  display: inline-block !important;
+  background-color: rgba(26, 115, 232, 0.1) !important;
+  color: #1a73e8 !important;
+  font-weight: 600 !important;
+  padding: 0.2em 0.4em !important;
+  border-radius: 3px !important;
+  border: 1px solid rgba(26, 115, 232, 0.3) !important;
+  font-size: 90% !important;
+  font-family: var(--ifm-font-family-monospace) !important;
+}
+
+[data-theme='dark'] .canonical_execution_block,
+[data-theme='dark'] code[class*="canonical_execution_"] {
+  color: #4d8df6 !important;
+  background-color: rgba(77, 141, 246, 0.2) !important;
+  border-color: rgba(77, 141, 246, 0.4) !important;
 }

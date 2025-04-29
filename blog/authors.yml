@@ -1,0 +1,69 @@
+matty:
+  name: matty
+  title: DevOps Engineer
+  bio: DevOps Engineer
+  url: https://github.com/mattevans
+  image_url: /img/team/matty.jpeg
+  github: https://github.com/mattevans
+  twitter: https://x.com/mattevansnz
+
+skylenet:
+  name: skylenet
+  title: Software Engineer
+  bio: DevOps Engineer
+  url: https://github.com/skylenet
+  image_url: /img/team/skylenet.jpeg
+  github: https://github.com/skylenet
+  twitter: https://x.com/skylenet
+
+samcm:
+  name: samcm
+  title: Software Engineer
+  bio: DevOps Engineer
+  url: https://github.com/samcm
+  image_url: /img/team/samcm.jpeg
+  github: https://github.com/samcm
+  twitter: https://x.com/samcmAU
+
+pk910:
+  name: pk910
+  title: Software Engineer
+  bio: DevOps Engineer
+  url: https://github.com/pk910
+  image_url: /img/team/pk910.jpeg
+  github: https://github.com/pk910
+  twitter: https://x.com/_pk910_
+
+barnabasbusa:
+  name: barnabasbusa
+  title: DevOps Engineer
+  bio: DevOps Engineer
+  url: https://github.com/barnabasbusa
+  image_url: /img/team/barnabasbusa.jpeg
+  github: https://github.com/barnabasbusa
+  twitter: https://x.com/BarnabasBusa
+
+savid:
+  name: savid
+  title: DevOps Engineer
+  bio: DevOps Engineer
+  url: https://github.com/savid
+  image_url: /img/team/savid.jpeg
+  github: https://github.com/savid
+  twitter: https://x.com/savid
+
+parithosh:
+  name: parithosh
+  title: DevOps Engineer
+  bio: DevOps Engineer
+  url: https://github.com/parithosh
+  image_url: /img/team/parithosh.jpeg
+  github: https://github.com/parithosh
+  twitter: https://x.com/parithosh_j
+  website: https://parithosh.com/
+
+team:
+  name: ethPandaOps Team
+  title: ethPandaOps Team
+  url: https://github.com/ethpandaops
+  image_url: https://github.com/ethpandaops.png 

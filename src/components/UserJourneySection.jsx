@@ -57,7 +57,7 @@ export default function UserJourneySection() {
                   <path d="M4 13L8 11V15L12 13L16 15V11L20 13V15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </div>
-              <Heading as="h3" className={styles.journeyTitle}>Developers</Heading>
+              <Heading as="h3" className={styles.journeyTitle}>Client Developers</Heading>
               <p className={styles.journeyDescription}>
                 Build and test on Ethereum with our development environments and packages
               </p>

@@ -1,9 +1,0 @@
-{
-    "name": "samcm",
-    "image": "img/team/samcm.jpeg",
-    "bio": "DevOps Engineer",
-    "social": [
-        { "github": "https://github.com/samcm" },
-        { "twitter": "https://x.com/samcmAU" }
-    ]
-} 

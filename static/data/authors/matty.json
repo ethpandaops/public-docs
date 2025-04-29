@@ -1,9 +1,0 @@
-{
-    "name": "matty",
-    "image": "img/team/matty.jpeg",
-    "bio": "DevOps Engineer",
-    "social": [
-        { "github": "https://github.com/mattevans" },
-        { "twitter": "https://x.com/mattevansnz" }
-    ]
-} 
