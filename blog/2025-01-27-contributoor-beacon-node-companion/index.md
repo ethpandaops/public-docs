@@ -5,9 +5,17 @@ description: "We're excited to announce Contributoor; a new monitoring and data-
 authors: [matty, samcm, savid]
 tags: [xatu, consensus layer]
 image: img/blog/contributoor-beacon-node-companion.png
+githubRepos:
+  - name: contributoor
+    url: https://github.com/ethpandaops/contributoor
+  - name: contributoor-installer
+    url: https://github.com/ethpandaops/contributoor-installer
+relatedLinks:
+  - name: Xatu Lab Dashboard
+    url: https://lab.ethpandaops.io/xatu
+  - name: Xatu Telegram Group
+    url: https://t.me/+JanoQFu_nO8yNzQ1
 ---
-
-import GitHubRepo from '@site/src/components/GitHubRepo';
 
 We're excited to announce **[Contributoor](https://github.com/ethpandaops/contributoor)**, a new monitoring and data-gathering tool that helps improve Ethereum's network visibility while running seamlessly alongside your beacon node. Think of it as a streamlined version of [Xatu Sentry](https://ethpandaops.io/posts/contribute-to-xatu-data/) with a smaller footprint, fewer dependencies, and a much simpler setup process. For more info on Xatu Sentry, check out our [post on contributing to the Xatu dataset](https://ethpandaops.io/posts/contribute-to-xatu-data/).
 
@@ -101,10 +109,6 @@ We're gradually scaling up our data collection network, starting with home stake
 - **Who Can Join**: For now, individual home stakers running their own beacon nodes
 - **Getting Started**: We need some basic details to get you started - [Apply here](https://forms.gle/S7g5g8nB8aGG8aTX6)
 - **What's Next**: We're expanding access as we scale, with home stakers being our primary focus
-
-<GitHubRepo repo="ethpandaops/contributoor" />
-
-<GitHubRepo repo="ethpandaops/contributoor-installer" />
 
 ### Get in Touch
 

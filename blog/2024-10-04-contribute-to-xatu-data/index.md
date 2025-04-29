@@ -5,6 +5,18 @@ description: "We're excited to announce that we are opening up the Xatu data col
 authors: [samcm, savid]
 tags: [xatu, consensus layer]
 image: img/blog/contribute-to-xatu-data.jpg
+githubRepos:
+  - name: xatu
+    url: https://github.com/ethpandaops/xatu
+relatedLinks:
+  - name: Contributoor Blog Post
+    url: /posts/contributoor-beacon-node-companion
+  - name: Xatu Lab Dashboard
+    url: https://lab.ethpandaops.io/xatu
+  - name: Working with Xatu Data
+    url: /data/xatu/#working-with-the-data
+  - name: Xatu Telegram Group
+    url: https://t.me/+JanoQFu_nO8yNzQ1
 ---
 
 import Alert from '@site/src/components/Alert';

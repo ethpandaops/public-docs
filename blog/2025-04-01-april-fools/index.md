@@ -5,6 +5,11 @@ authors: [team]
 description: 'After careful consideration and extensive technical analysis, EthPandaOps is proud to announce our full support for GitChain.'
 tags: [ethereum, upgrade, gitchain]
 image: img/blog/april-fools.png
+relatedLinks:
+  - name: GitChain EIP
+    url: https://github.com/ethereum/EIPs/pull/9579
+  - name: Ethereum Magicians Forum
+    url: https://ethereum-magicians.org/t/eip-gitchain/23336
 ---
 
 After careful consideration and extensive technical analysis, EthPandaOps is proud to announce our full support for [GitChain](https://github.com/ethereum/EIPs/pull/9579), a groundbreaking proposal that will revolutionize Ethereum's execution layer by leveraging Git as the primary execution engine.

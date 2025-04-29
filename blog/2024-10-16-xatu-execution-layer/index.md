@@ -4,11 +4,19 @@ title: Xatu Execution Layer data now available
 authors: [savid, samcm]
 tags: [xatu, execution layer, cryo]
 image: img/blog/xatu-execution-layer.png
+githubRepos:
+  - name: xatu-data
+    url: https://github.com/ethpandaops/xatu-data
+  - name: paradigmxyz/cryo
+    url: https://github.com/paradigmxyz/cryo
+relatedLinks:
+  - name: Apache Parquet
+    url: https://parquet.apache.org
+  - name: Xatu Telegram Group
+    url: https://t.me/+JanoQFu_nO8yNzQ1
 ---
 
 We're excited to announce that Execution layer data, extracted via [cryo](https://github.com/paradigmxyz/cryo), is now available in the Xatu dataset.
-
-GitHub repo: [paradigmxyz/cryo](https://github.com/paradigmxyz/cryo)
 
 Summary:
 

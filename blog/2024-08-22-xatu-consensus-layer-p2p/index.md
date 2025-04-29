@@ -4,6 +4,16 @@ title: Xatu Consensus Layer P2P tables now available
 authors: [savid, samcm]
 tags: [xatu, consensus layer, p2p]
 image: img/blog/xatu-consensus-layer-p2p.png
+githubRepos:
+  - name: xatu-data
+    url: https://github.com/ethpandaops/xatu-data
+  - name: probe-lab/hermes
+    url: https://github.com/probe-lab/hermes
+relatedLinks:
+  - name: Apache Parquet
+    url: https://parquet.apache.org
+  - name: Xatu Telegram Group
+    url: https://t.me/+JanoQFu_nO8yNzQ1
 ---
 
 import Alert from '@site/src/components/Alert';

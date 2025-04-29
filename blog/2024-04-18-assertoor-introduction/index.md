@@ -5,6 +5,14 @@ description: "Assertoor is a versatile tool designed to facilitate testing on Et
 authors: [pk910, parithosh]
 tags: [testnet, tool, sepolia, holesky, kurtosis]
 image: img/blog/assertor-introduction.png
+githubRepos:
+  - name: assertoor
+    url: https://github.com/ethpandaops/assertoor
+relatedLinks:
+  - name: Assertoor Test Playbooks
+    url: https://github.com/ethpandaops/assertoor-test/tree/master/assertoor-tests
+  - name: Assertoor Wiki
+    url: https://github.com/ethpandaops/assertoor/wiki#supported-tasks-in-assertoor
 ---
 
 # Assertoor: Ethereum Testnet Testing Tool

@@ -5,6 +5,16 @@ authors: [parithosh, barnabasbusa]
 description: "Learn how to utilise the ethereum-package for the foundation of sophisticated tooling and L2 devnets."
 tags: [kurtosis, ethereum-package, optimism-package, L1, L2, testnet, devnet]
 image: img/blog/kurtosis-l2.png
+githubRepos:
+  - name: ethereum-package
+    url: https://github.com/ethpandaops/ethereum-package
+  - name: optimism-package
+    url: https://github.com/ethpandaops/optimism-package
+relatedLinks:
+  - name: Kurtosis Deep Dive
+    url: https://ethpandaops.io/posts/kurtosis-deep-dive/
+  - name: Starlark
+    url: https://github.com/bazelbuild/starlark
 ---
 
 ## Introduction

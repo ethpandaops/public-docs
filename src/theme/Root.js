@@ -16,6 +16,21 @@ export default function Root({ children }) {
           overlay.style.zIndex = '0';
         });
       
+      // Fix heading anchor pseudo-elements
+      const fixHeadingPseudoElements = () => {
+        const style = document.createElement('style');
+        style.textContent = `
+          h1::before, h2::before, h3::before, h4::before, h5::before, h6::before {
+            pointer-events: none !important;
+            position: absolute !important;
+            z-index: -1 !important;
+          }
+        `;
+        document.head.appendChild(style);
+      };
+      
+      fixHeadingPseudoElements();
+      
       // Make pre elements scrollable
       document.querySelectorAll('pre')
         .forEach(pre => {

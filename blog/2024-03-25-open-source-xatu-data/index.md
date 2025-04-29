@@ -5,10 +5,17 @@ description: "We're thrilled to share that the EthPandaOps Xatu dataset is now o
 authors: [savid, samcm]
 tags: [xatu, data, mainnet, sepolia, holesky]
 image: img/blog/open-source-xatu-data.png
+githubRepos:
+  - name: xatu-data
+    url: https://github.com/ethpandaops/xatu-data
+relatedLinks:
+  - name: Apache Parquet
+    url: https://parquet.apache.org
+  - name: Clickhouse
+    url: https://clickhouse.com/
 ---
 
 import Alert from '@site/src/components/Alert';
-import GitHubRepo from '@site/src/components/GitHubRepo';
 import { Details, Summary } from '@site/src/components/Collapsible';
 
 <Alert>
@@ -20,8 +27,6 @@ The Ethereum Foundation is running a Data Challenge for EIP4844! [Click here](ht
 We're thrilled to share that the EthPandaOps Xatu dataset is now open source!
 
 The dataset contains a wealth of information about the Ethereum network, including detailed data on beacon chain events, mempool activity, and canonical chain events.
-
-<GitHubRepo repo="ethpandaops/xatu-data" />
 
 Summary:
 

@@ -5,6 +5,16 @@ description: 'Chaos testing is a disciplined approach to testing a system by pro
 authors: [pk910, barnabasbusa, parithosh]
 tags: [mainnet, deneb, dencun, cancun, chaos]
 image: img/blog/attacknet-introduction.png
+githubRepos:
+  - name: ethereum-package
+    url: https://github.com/ethpandaops/ethereum-package
+  - name: crytic/attacknet
+    url: https://github.com/crytic/attacknet
+relatedLinks:
+  - name: Trail of Bits
+    url: https://www.trailofbits.com/
+  - name: Chaos Mesh
+    url: https://chaos-mesh.org/
 ---
 
 ## Introduction

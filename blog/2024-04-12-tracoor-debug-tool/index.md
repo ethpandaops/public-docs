@@ -5,10 +5,19 @@ description: "Tracoor is a tool that captures, stores and makes available critic
 authors: [savid, samcm]
 tags: [debug, tracoor, mainnet, sepolia, holeksy]
 image: img/blog/tracoor-debug-tool.png
+githubRepos:
+  - name: tracoor
+    url: https://github.com/ethpandaops/tracoor
+relatedLinks:
+  - name: Tracoor Mainnet
+    url: https://tracoor.mainnet.ethpandaops.io
+  - name: Tracoor Sepolia
+    url: https://tracoor.mainnet.ethpandaops.io
+  - name: Tracoor Hoodi
+    url: https://tracoor.hoodi.ethpandaops.io
 ---
 
 import Alert from '@site/src/components/Alert';
-import GitHubRepo from '@site/src/components/GitHubRepo';
 
 [**Tracoor**](https://tracoor.mainnet.ethpandaops.io) is a tool that **captures**, **stores** and **makes available** critical data about the Ethereum network, including:
 
@@ -19,8 +28,6 @@ import GitHubRepo from '@site/src/components/GitHubRepo';
 - Invalid gossiped verified **Blocks** and **Blobs**
 
 This data can be invaluable when issues arise, allowing developers, researchers and hobbyists to quickly identify and address network problems.
-
-<GitHubRepo repo="ethpandaops/tracoor" />
 
 <img alt="Tracoor homepage" class="rounded" src="/img/blog/homepage.png" />
 

@@ -5,6 +5,12 @@ description: "Kurtosis is tool to run ephemeral packages that are defined in Sta
 authors: [barnabasbusa, parithosh]
 tags: [kurtosis, ethereum-package, devnet, testnet, shadowfork]
 image: img/blog/kurtosis-deep-dive.png
+githubRepos:
+  - name: ethereum-package
+    url: https://github.com/ethpandaops/ethereum-package
+relatedLinks:
+  - name: Kurtosis
+    url: https://www.kurtosis.com
 ---
 
 ## Introduction to Kurtosis

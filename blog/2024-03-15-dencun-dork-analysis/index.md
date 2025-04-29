@@ -5,10 +5,12 @@ description: "Dencun has finally shipped to mainnet! This post will give some in
 authors: [parithosh, samcm, savid]
 tags: [mainnet, deneb, dencun, cancun, xatu]
 image: img/blog/dencun-fork-analysis.png
+githubRepos:
+  - name: xatu
+    url: https://github.com/ethpandaops/xatu
 ---
 
 import Alert from '@site/src/components/Alert';
-import GitHubRepo from '@site/src/components/GitHubRepo';
 
 <Alert>
 The Ethereum Foundation is running a Data Challenge for EIP4844! If you'd like access to the data used in this analysis send an email to ethpandaops(at)ethereum.org
@@ -30,8 +32,6 @@ This analysis will cover roughly ~1d before the Dencun fork and ~1d after the fo
 Data was collected from 2 different sets of nodes. Each analysis section will note which data source used.
 
 ### Xatu
-
-<GitHubRepo repo="ethpandaops/xatu" />
 
 Data was collected with the use of our distributed monitoring tool called [Xatu](https://notes.ethereum.org/@ethpandaops/xatu-overview). Xatu has a low resource use component called a Sentry that can collect data from the consensus client event stream and forward it to the Xatu server for collection. 
 

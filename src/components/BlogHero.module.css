@@ -83,33 +83,42 @@
 }
 
 .tagLink {
-  display: inline-block;
-  padding: 0.3rem 0.8rem;
-  background-color: var(--ifm-color-emphasis-200);
-  color: var(--ifm-color-emphasis-800);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.35rem 0.8rem;
   border-radius: 20px;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: lowercase;
+  background-color: rgba(77, 141, 246, 0.1);
+  color: var(--ifm-color-primary-dark);
   transition: all 0.2s ease;
-  text-decoration: none;
+  line-height: 1;
+  white-space: nowrap;
+  border: 1px solid transparent;
 }
 
 .tagLink:hover {
   background-color: var(--ifm-color-primary-lighter);
   color: white;
   transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
   text-decoration: none;
+  border-color: var(--ifm-color-primary-light);
 }
 
 [data-theme='dark'] .tagLink {
   background-color: rgba(77, 141, 246, 0.15);
-  color: var(--ifm-color-emphasis-300);
+  color: white;
+  border: 1px solid rgba(77, 141, 246, 0.3);
 }
 
 [data-theme='dark'] .tagLink:hover {
-  background-color: rgba(77, 141, 246, 0.3);
+  background-color: rgba(77, 141, 246, 0.25);
   color: white;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.4);
+  border-color: var(--ifm-color-primary-light);
 }
 
 html[data-theme='dark'] .title {

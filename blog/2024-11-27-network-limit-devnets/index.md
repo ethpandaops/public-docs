@@ -5,6 +5,11 @@ authors: [parithosh, barnabasbusa, skylenet, pk910]
 description: 'The Dencun upgrade on Ethereum introduced the concept of blob. These blobs represent data that every node is required to store for a defined period of time. With the discussion about a blob increase in Pectra, lets review results from a network run with various edge cases.'
 tags: [ansible, ethereum, devnets, L1, testnet]
 image: img/blog/network-limit-devnets.png
+relatedLinks:
+  - name: Pectra EIP-7600
+    url: https://eips.ethereum.org/EIPS/eip-7600
+  - name: ProbeLab Analysis
+    url: https://probelab.io/ethereum/discv5/2024-46/#cloud-hosting-rate
 ---
 
 # Network limit devnets

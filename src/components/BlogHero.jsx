@@ -53,7 +53,7 @@ export default function BlogHero({ title, authors, date, readingTime, tags }) {
           <div className={styles.blogTags}>
             {tags.map((tag) => (
               <a key={tag.permalink} href={tag.permalink} className={styles.tagLink}>
-                {tag.label}
+                #{tag.label}
               </a>
             ))}
           </div>
