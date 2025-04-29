@@ -2,6 +2,7 @@
 slug: kurtosis-l2
 title: Reusing the Kurtosis Ethereum-package as a base for your L2 devnet
 authors: [parithosh, barnabasbusa]
+description: "Learn how to utilise the ethereum-package for the foundation of sophisticated tooling and L2 devnets."
 tags: [kurtosis, ethereum-package, optimism-package, L1, L2, testnet, devnet]
 image: img/blog/kurtosis-l2.png
 ---

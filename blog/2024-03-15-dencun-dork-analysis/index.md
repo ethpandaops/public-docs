@@ -1,6 +1,7 @@
 ---
 slug: dencun-fork-analysis
 title: Dencun Fork Analysis
+description: "Dencun has finally shipped to mainnet! This post will give some initial insights on how the fork event unfolded, and how it's performing."
 authors: [parithosh, samcm, savid]
 tags: [mainnet, deneb, dencun, cancun, xatu]
 image: img/blog/dencun-fork-analysis.png

@@ -1,6 +1,7 @@
 ---
 slug: assertor-introduction
 title: 'Assertoor: Ethereum Testnet Testing Tool'
+description: "Assertoor is a versatile tool designed to facilitate testing on Ethereum networks by evaluating specific conditions to determine their success."
 authors: [pk910, parithosh]
 tags: [testnet, tool, sepolia, holesky, kurtosis]
 image: img/blog/assertor-introduction.png

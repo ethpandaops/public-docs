@@ -92,6 +92,10 @@ const config: Config = {
           onInlineAuthors: 'warn',
           // Use 'posts' as the URL path instead of 'blog'
           routeBasePath: 'posts',
+          // Configure pagination
+          postsPerPage: 10,
+          blogSidebarCount: 'ALL',
+          blogSidebarTitle: 'All Blog Posts',
         },
         theme: {
           customCss: [

@@ -1,0 +1,48 @@
+.paginationNav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  margin: 0;
+}
+
+.paginationItem {
+  padding: 0.3rem 0.8rem;
+  border-radius: 6px;
+  background-color: var(--ifm-card-background-color);
+  border: 1px solid var(--ifm-color-emphasis-300);
+  transition: all 0.2s ease;
+  color: var(--ifm-color-content);
+  font-weight: 500;
+  margin: 0 0.15rem;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.paginationItemActive {
+  background-color: var(--ifm-color-primary);
+  color: white;
+  border-color: var(--ifm-color-primary);
+}
+
+.paginationItem:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  border-color: var(--ifm-color-primary-light);
+  color: var(--ifm-color-primary);
+}
+
+.paginationItemActive:hover {
+  color: white;
+}
+
+.paginationItemNext::after {
+  content: "→";
+  padding-left: 0.5rem;
+}
+
+.paginationItemPrev::before {
+  content: "←";
+  padding-right: 0.5rem;
+} 

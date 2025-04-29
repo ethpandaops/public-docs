@@ -1,6 +1,7 @@
 ---
 slug: contributoor-beacon-node-companion
 title: 'Contributoor: A Lightweight Beacon Node Companion'
+description: "We're excited to announce Contributoor; a new monitoring and data-gathering tool that helps improve Ethereum's network visibility while running seamlessly alongside your beacon node."
 authors: [matty, samcm, savid]
 tags: [xatu, consensus layer]
 image: img/blog/contributoor-beacon-node-companion.png

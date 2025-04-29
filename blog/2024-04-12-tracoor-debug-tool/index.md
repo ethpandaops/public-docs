@@ -1,6 +1,7 @@
 ---
 slug: tracoor-debug-tool
 title: 'Tracoor: Ethereum beacon data and execution trace explorer'
+description: "Tracoor is a tool that captures, stores and makes available critical data about the Ethereum network. This data can be invaluable when issues arise."
 authors: [savid, samcm]
 tags: [debug, tracoor, mainnet, sepolia, holeksy]
 image: img/blog/tracoor-debug-tool.png

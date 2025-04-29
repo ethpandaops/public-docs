@@ -1,7 +1,8 @@
 ---
 slug: kurtosis-deep-dive
 title: 'Kurtosis: A Deep Dive to Local Devnets'
-authors: [savid, samcm]
+description: "Kurtosis is tool to run ephemeral packages that are defined in Starlark which opens up a world of possibilities for developers to test their applications, quickly iterate and retest."
+authors: [barnabasbusa, parithosh]
 tags: [kurtosis, ethereum-package, devnet, testnet, shadowfork]
 image: img/blog/kurtosis-deep-dive.png
 ---

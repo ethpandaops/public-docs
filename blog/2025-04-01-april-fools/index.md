@@ -2,6 +2,7 @@
 slug: april-fools
 title: 'EthPandaOps Pivots to GitChain'
 authors: [team]
+description: 'After careful consideration and extensive technical analysis, EthPandaOps is proud to announce our full support for GitChain.'
 tags: [ethereum, upgrade, gitchain]
 image: img/blog/april-fools.png
 ---

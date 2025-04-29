@@ -1,6 +1,7 @@
 ---
 slug: contribute-to-xatu-data
 title: 'Contribute to Xatu: Join the Community Data Collection Effort'
+description: "We're excited to announce that we are opening up the Xatu data collection pipeline to the Ethereum community! This initiative enables community members to contribute valuable data to the Xatu dataset."
 authors: [samcm, savid]
 tags: [xatu, consensus layer]
 image: img/blog/contribute-to-xatu-data.jpg

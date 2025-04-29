@@ -2,6 +2,7 @@
 slug: network-limit-devnets
 title: Understanding the Ethereum network limits using devnets
 authors: [parithosh, barnabasbusa, skylenet, pk910]
+description: 'The Dencun upgrade on Ethereum introduced the concept of blob. These blobs represent data that every node is required to store for a defined period of time. With the discussion about a blob increase in Pectra, lets review results from a network run with various edge cases.'
 tags: [ansible, ethereum, devnets, L1, testnet]
 image: img/blog/network-limit-devnets.png
 ---

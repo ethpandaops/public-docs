@@ -14,10 +14,6 @@ function BlogPostPageContent({children}) {
   const {title, authors, date, formattedDate, readingTime, tags, frontMatter, source} = metadata;
   const hasTOC = toc.length > 0;
   
-  // For debugging
-  console.log("Blog post metadata:", metadata);
-  console.log("Blog post frontMatter:", frontMatter);
-  
   // Extract the full blog directory path from the source
   // Source path looks like: @site/blog/2024-10-16-xatu-execution-layer/index.md
   let blogPath = null;

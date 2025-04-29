@@ -1,6 +1,7 @@
 ---
 slug: attacknet-introduction
 title: 'Attacknet: Chaos engineering on Ethereum'
+description: 'Chaos testing is a disciplined approach to testing a system by proactively simulating and identifying failures. Ethereum networks in the wild are subject to a lot of real life variances that have historically been difficult to capture in local tests.'
 authors: [pk910, barnabasbusa, parithosh]
 tags: [mainnet, deneb, dencun, cancun, chaos]
 image: img/blog/attacknet-introduction.png

@@ -1,6 +1,7 @@
 ---
 slug: open-source-xatu-data
 title: Open Sourcing Xatu Data 
+description: "We're thrilled to share that the EthPandaOps Xatu dataset is now open source! The dataset contains a wealth of information about the Ethereum network, including detailed data on beacon chain events, mempool activity, and canonical chain events."
 authors: [savid, samcm]
 tags: [xatu, data, mainnet, sepolia, holesky]
 image: img/blog/open-source-xatu-data.png
