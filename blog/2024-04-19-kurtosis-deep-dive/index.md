@@ -13,6 +13,8 @@ relatedLinks:
     url: https://www.kurtosis.com
 ---
 
+import { Details, Summary } from '@site/src/components/Collapsible';
+
 ## Introduction to Kurtosis
 [Kurtosis](https://www.kurtosis.com) is tool to run ephemeral packages that are defined in [Starlark](https://github.com/bazelbuild/starlark) which opens up a world of possibilities for developers to test their applications, quickly iterate and retest. It is built from the ground up to be a developer-friendly platform that allows developers to test their applications in a controlled environment without the need for complex setup or configuration.
 
@@ -245,24 +247,32 @@ A massive thanks goes out to the whole Kurtosis team for building such an amazin
 ## References
 ### Ethereum-package clients and tooling
 There is a wide range of ethereum clients that are supported out of the box by the ethereum-package. These clients are:
-#### Execution layer clients:
-- [Geth](https://geth.ethereum.org)
-- [Nethermind](https://www.nethermind.io)
-- [Besu](https://besu.hyperledger.org)
-- [Erigon](https://github.com/ledgerwatch/erigon)
-- [Reth](https://github.com/paradigmxyz/reth?tab=readme-ov-file)
-- [Nimbus-eth1](https://github.com/status-im/nimbus-eth1)
 
-#### Consensus layer clients:
-- [Lighthouse](https://lighthouse-book.sigmaprime.io)
-- [Teku](https://consensys.io/teku)
-- [Nimbus-eth2](https://nimbus.guide)
-- [Prysm](https://prysmaticlabs.com)
-- [Lodestar](https://lodestar.chainsafe.io)
-- [Grandine](https://github.com/grandinetech/grandine)
+<Details>
+<Summary><strong>Execution Layer Clients</strong></Summary>
 
-#### Tooling
-Tooling that is supported out of the box by the ethereum-package:
+- [Geth](https://geth.ethereum.org) - Go implementation of the Ethereum protocol
+- [Nethermind](https://www.nethermind.io) - High-performance .NET Core implementation
+- [Besu](https://besu.hyperledger.org) - Java implementation by Hyperledger
+- [Erigon](https://github.com/ledgerwatch/erigon) - Implementation focused on efficiency
+- [Reth](https://github.com/paradigmxyz/reth) - Rust implementation by Paradigm
+- [Nimbus-eth1](https://github.com/status-im/nimbus-eth1) - Nim implementation
+</Details>
+
+<Details>
+<Summary><strong>Consensus Layer Clients</strong></Summary>
+
+- [Lighthouse](https://lighthouse-book.sigmaprime.io) - Rust implementation by Sigma Prime
+- [Teku](https://consensys.io/teku) - Java implementation by ConsenSys
+- [Nimbus-eth2](https://nimbus.guide) - Nim implementation for resource-restricted devices
+- [Prysm](https://prysmaticlabs.com) - Go implementation by Prysmatic Labs
+- [Lodestar](https://lodestar.chainsafe.io) - TypeScript implementation by ChainSafe
+- [Grandine](https://github.com/grandinetech/grandine) - Rust implementation by Grandine
+</Details>
+
+<Details>
+<Summary><strong>Tooling</strong></Summary>
+
 - [assertoor](https://github.com/ethpandaops/assertoor) - (more details about assertoor can be found in the [assertoor blog post](https://ethpandaops.io/posts/assertoor-introduction/))
 - [tx_spammer](https://github.com/MariusVanDerWijden/tx-fuzz) - Basic transaction spamming tool which can help you generate random transactions to test transaction inclusion in the blocks
 - [blob_spammer](https://github.com/MariusVanDerWijden/tx-fuzz) - Basic blob spamming tool which can help you generate random blobs to test the network's ability to handle large amounts of data
@@ -281,4 +291,5 @@ Tooling that is supported out of the box by the ethereum-package:
 - [ethereum-metrics-exporter](https://github.com/ethpandaops/ethereum-metrics-exporter) - A tool that helps you export the metrics from the ethereum clients to prometheus - requires `prometheus_grafana` to be running
 - [xatu](https://github.com/ethpandaops/xatu) - A centralized Ethereum network monitoirng tool for data pipelining - more details about xatu can be found in the [xatu blog post](https://ethpandaops.io/posts/open-source-xatu-data/#what-is-xatu)
 - mev - MEV workflow tooling is fully supported using `mev_params`.
+</Details>
 
