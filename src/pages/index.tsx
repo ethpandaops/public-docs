@@ -1,4 +1,5 @@
 import type {ReactNode} from 'react';
+import React, { useEffect, useState } from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
@@ -9,6 +10,124 @@ import HeroStats from '../components/HeroStats';
 import UserJourneySection from '../components/UserJourneySection';
 
 import styles from './index.module.css';
+
+// Define all available tools
+const ALL_TOOLS = [
+  {
+    id: 'ethereum-package',
+    title: 'Ethereum Package',
+    description: 'A Kurtosis package for deploying and testing Ethereum networks locally in a containerized environment.',
+    image: 'https://ethpandaops.io/posts/kurtosis-deep-dive/featured_hu10858589907513282560.png',
+    learnMoreUrl: '/docs/tooling/kurtosis',
+    actionUrl: 'https://github.com/ethpandaops/ethereum-package',
+    actionText: 'GitHub',
+    actionIcon: 'external',
+  },
+  {
+    id: 'lab',
+    title: 'The Lab',
+    description: 'A research and development environment for Ethereum network testing and analysis.',
+    image: '/img/blog/lab.png',
+    learnMoreUrl: '/docs/tooling/lab',
+    actionUrl: 'https://lab.ethpandaops.io/',
+    actionText: 'Visit',
+    actionIcon: 'external',
+  },
+  {
+    id: 'contributoor',
+    title: 'Contributoor',
+    description: 'A monitoring and data-gathering tool that helps improve Ethereum\'s network visibility.',
+    image: '/img/blog/contributoor-beacon-node-companion.png',
+    learnMoreUrl: '/docs/tooling/contributoor',
+    actionUrl: 'https://github.com/ethpandaops/contributoor-installer',
+    actionText: 'GitHub',
+    actionIcon: 'external',
+  },
+  {
+    id: 'assertoor',
+    title: 'Assertoor',
+    description: 'A comprehensive testing tool for Ethereum networks with orchestrated test sequences and real-time monitoring.',
+    image: '/img/blog/assertor-introduction.png',
+    learnMoreUrl: '/docs/tooling/assertoor',
+    actionUrl: 'https://github.com/ethpandaops/assertoor',
+    actionText: 'GitHub',
+    actionIcon: 'external',
+  },
+  {
+    id: 'xatu',
+    title: 'Xatu',
+    description: 'An open-source data pipeline for Ethereum, collecting and transforming data from execution and consensus clients.',
+    image: '/img/blog/xatu-consensus-layer-p2p.png',
+    learnMoreUrl: '/docs/tooling/xatu',
+    actionUrl: 'https://github.com/ethpandaops/xatu',
+    actionText: 'GitHub',
+    actionIcon: 'external',
+  },
+  {
+    id: 'dora',
+    title: 'Dora',
+    description: 'A block explorer for Ethereum testnet and research networks with enhanced debugging features.',
+    image: '/img/blog/dora.png',
+    learnMoreUrl: '/docs/tooling/dora',
+    actionUrl: 'https://github.com/ethpandaops/dora',
+    actionText: 'GitHub',
+    actionIcon: 'external',
+  },
+  {
+    id: 'snapshotter',
+    title: 'Snapshotter',
+    description: 'A specialized tool for capturing and managing Ethereum node data snapshots, enabling fast node bootstrapping and data recovery.',
+    image: '/img/blog/snapshotter.png',
+    learnMoreUrl: '/docs/tooling/snapshotter',
+    actionUrl: 'https://github.com/ethpandaops/snapshotter',
+    actionText: 'GitHub',
+    actionIcon: 'external',
+  },
+  {
+    id: 'forky',
+    title: 'Forky',
+    description: 'An Ethereum beacon chain fork choice visualizer that helps operators and developers understand the state of the beacon chain in real-time.',
+    image: '/img/blog/forky.png',
+    learnMoreUrl: '/docs/tooling/forky',
+    actionUrl: 'https://github.com/ethpandaops/forky',
+    actionText: 'GitHub',
+    actionIcon: 'external',
+  }
+];
+
+// Tool card component
+function ToolCard({ tool }) {
+  return (
+    <div className={styles.toolCard}>
+      <div className={styles.toolImageContainer}>
+        <img src={tool.image} alt={tool.title} className={styles.toolImage} />
+        <div className={styles.toolOverlay}></div>
+      </div>
+      <div className={styles.toolContent}>
+        <Heading as="h3" className={styles.toolTitle}>{tool.title}</Heading>
+        <p className={styles.toolDescription}>{tool.description}</p>
+        <div className={styles.toolActions}>
+          <Link
+            className={styles.toolButton}
+            to={tool.learnMoreUrl}>
+            Learn More
+          </Link>
+          <Link
+            className={styles.toolButtonSecondary}
+            href={tool.actionUrl}
+            target="_blank">
+            {tool.actionText}
+            <svg className={styles.toolButtonIcon} width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M18 13V19C18 19.5304 17.7893 20.0391 17.4142 20.4142C17.0391 20.7893 16.5304 21 16 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V8C3 7.46957 3.21071 6.96086 3.58579 6.58579C3.96086 6.21071 4.46957 6 5 6H11" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M15 3H21V9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M10 14L21 3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
@@ -47,6 +166,24 @@ function HomepageHeader() {
 }
 
 function FeatureSection() {
+  const [displayedTools, setDisplayedTools] = useState([]);
+
+  // Function to shuffle array (Fisher-Yates algorithm)
+  const shuffleArray = (array) => {
+    const shuffled = [...array];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled;
+  };
+
+  // Select 4 random tools when component mounts
+  useEffect(() => {
+    const randomTools = shuffleArray(ALL_TOOLS).slice(0, 4);
+    setDisplayedTools(randomTools);
+  }, []);
+
   return (
     <section className="feature-section">
       <div className="container">
@@ -62,129 +199,11 @@ function FeatureSection() {
         </div>
         
         <div className="row margin-top--lg">
-          <div className="col col--3">
-            <div className={styles.toolCard}>
-              <div className={styles.toolImageContainer}>
-                <img src="https://ethpandaops.io/posts/kurtosis-deep-dive/featured_hu10858589907513282560.png" alt="Ethereum Package" className={styles.toolImage} />
-                <div className={styles.toolOverlay}></div>
-              </div>
-              <div className={styles.toolContent}>
-                <Heading as="h3" className={styles.toolTitle}>Ethereum Package</Heading>
-                <p className={styles.toolDescription}>A Kurtosis package for deploying and testing Ethereum networks locally in a containerized environment.</p>
-                <div className={styles.toolActions}>
-                  <Link
-                    className={styles.toolButton}
-                    to="/docs/tooling/kurtosis">
-                    Learn More
-                  </Link>
-                  <Link
-                    className={styles.toolButtonSecondary}
-                    href="https://github.com/ethpandaops/ethereum-package"
-                    target="_blank">
-                    GitHub
-                    <svg className={styles.toolButtonIcon} width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M18 13V19C18 19.5304 17.7893 20.0391 17.4142 20.4142C17.0391 20.7893 16.5304 21 16 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V8C3 7.46957 3.21071 6.96086 3.58579 6.58579C3.96086 6.21071 4.46957 6 5 6H11" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                      <path d="M15 3H21V9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                      <path d="M10 14L21 3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                  </Link>
-                </div>
-              </div>
+          {displayedTools.map((tool) => (
+            <div className="col col--3" key={tool.id}>
+              <ToolCard tool={tool} />
             </div>
-          </div>
-          
-          <div className="col col--3">
-            <div className={styles.toolCard}>
-              <div className={styles.toolImageContainer}>
-                <img src="https://lab.ethpandaops.io/header.png" alt="The Lab" className={styles.toolImage} />
-                <div className={styles.toolOverlay}></div>
-              </div>
-              <div className={styles.toolContent}>
-                <Heading as="h3" className={styles.toolTitle}>The Lab</Heading>
-                <p className={styles.toolDescription}>A research and development environment for Ethereum network testing and analysis.</p>
-                <div className={styles.toolActions}>
-                  <Link
-                    className={styles.toolButton}
-                    to="/docs/tooling/lab">
-                    Learn More
-                  </Link>
-                  <Link
-                    className={styles.toolButtonSecondary}
-                    href="https://lab.ethpandaops.io/"
-                    target="_blank">
-                    Visit
-                    <svg className={styles.toolButtonIcon} width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M18 13V19C18 19.5304 17.7893 20.0391 17.4142 20.4142C17.0391 20.7893 16.5304 21 16 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V8C3 7.46957 3.21071 6.96086 3.58579 6.58579C3.96086 6.21071 4.46957 6 5 6H11" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                      <path d="M15 3H21V9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                      <path d="M10 14L21 3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div className="col col--3">
-            <div className={styles.toolCard}>
-              <div className={styles.toolImageContainer}>
-                <img src="https://ethpandaops.io/posts/contributoor-beacon-node-companion/featured_hu7374463724229542517.png" alt="Contributoor" className={styles.toolImage} />
-                <div className={styles.toolOverlay}></div>
-              </div>
-              <div className={styles.toolContent}>
-                <Heading as="h3" className={styles.toolTitle}>Contributoor</Heading>
-                <p className={styles.toolDescription}>A monitoring and data-gathering tool that helps improve Ethereum's network visibility.</p>
-                <div className={styles.toolActions}>
-                  <Link
-                    className={styles.toolButton}
-                    to="/docs/tooling/contributoor">
-                    Learn More
-                  </Link>
-                  <Link
-                    className={styles.toolButtonSecondary}
-                    href="https://github.com/ethpandaops/contributoor-installer"
-                    target="_blank">
-                    GitHub
-                    <svg className={styles.toolButtonIcon} width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M18 13V19C18 19.5304 17.7893 20.0391 17.4142 20.4142C17.0391 20.7893 16.5304 21 16 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V8C3 7.46957 3.21071 6.96086 3.58579 6.58579C3.96086 6.21071 4.46957 6 5 6H11" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                      <path d="M15 3H21V9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                      <path d="M10 14L21 3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div className="col col--3">
-            <div className={styles.toolCard}>
-              <div className={styles.toolImageContainer}>
-                <img src="https://ethpandaops.io/posts/assertoor-introduction/featured_hu10906002355583469052.png" alt="Assertoor" className={styles.toolImage} />
-                <div className={styles.toolOverlay}></div>
-              </div>
-              <div className={styles.toolContent}>
-                <Heading as="h3" className={styles.toolTitle}>Assertoor</Heading>
-                <p className={styles.toolDescription}>A comprehensive testing tool for Ethereum networks with orchestrated test sequences and real-time monitoring.</p>
-                <div className={styles.toolActions}>
-                  <Link
-                    className={styles.toolButton}
-                    to="/docs/tooling/assertoor">
-                    Learn More
-                  </Link>
-                  <Link
-                    className={styles.toolButtonSecondary}
-                    href="https://github.com/ethpandaops/assertoor"
-                    target="_blank">
-                    GitHub
-                    <svg className={styles.toolButtonIcon} width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M18 13V19C18 19.5304 17.7893 20.0391 17.4142 20.4142C17.0391 20.7893 16.5304 21 16 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V8C3 7.46957 3.21071 6.96086 3.58579 6.58579C3.96086 6.21071 4.46957 6 5 6H11" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                      <path d="M15 3H21V9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                      <path d="M10 14L21 3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
         
         <div className="row">

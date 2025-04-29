@@ -412,6 +412,18 @@ html[data-theme='dark'] .toolButton:hover {
     margin-bottom: 2rem;
   }
   
+  .toolActions {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  
+  .toolButton, 
+  .toolButtonSecondary {
+    width: 100%;
+    justify-content: center;
+    padding: 0.5rem 0.75rem;
+  }
+  
   .exploreMoreContainer {
     padding: 1.5rem;
   }
@@ -731,4 +743,41 @@ html[data-theme='dark'] :global(.header-buttons .button--secondary) {
 :global(.header-buttons .button:hover) {
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive adjustments for mid-small screens */
+@media screen and (max-width: 1100px) and (min-width: 997px) {
+  .toolActions {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  
+  .toolButton, 
+  .toolButtonSecondary {
+    width: 100%;
+    justify-content: center;
+    padding: 0.5rem 0.75rem;
+  }
+  
+  .toolContent {
+    padding: 1.25rem;
+  }
+  
+  .toolDescription {
+    font-size: 0.9rem;
+    margin-bottom: 1.25rem;
+  }
+}
+
+/* Responsive adjustments for larger screens with 1200-1400px width */
+@media screen and (max-width: 1400px) and (min-width: 1101px) {
+  .toolContent {
+    padding: 1.25rem;
+  }
+  
+  .toolButton, 
+  .toolButtonSecondary {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.8rem;
+  }
 }
