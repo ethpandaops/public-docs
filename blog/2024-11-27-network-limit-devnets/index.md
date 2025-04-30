@@ -14,16 +14,16 @@ relatedLinks:
 
 # Network limit devnets
 
-## Intent:
+## Intent
 The [Dencun](https://ethereum.org/en/roadmap/dencun/) upgrade on Ethereum introduced the concept of blobs into Ethereum. These blobs represent data that every node is required to store for a defined period of time. With the discussion about a blob increase in [Pectra](https://eips.ethereum.org/EIPS/eip-7600), we wanted to run a network in various edge cases to find out potential problems we may face. Two scenarios that were deemed important to test is long range syncing after a non-finality period as well as a network with resource constrained nodes.
 
-## General setup:
+## General setup
 - 1M validators, 516 hosts (geodistributed across 10 regions)
 - 8c/32GB RAM to ensure enough resources for the client
 - Mainnet client distribution
 - Healthy blob and transaction gossip (average blob/slot of 3)
 
-## Experiments:
+## Experiments
 1. 5% Gigabit nodes, 95% nodes with 20mbps/10mbps download/upload connections.
 2. 80% Gigabit nodes, 20% nodes with 100mbps/20mbps download/upload connections. Non-finality for ~1d and then nodes are started back up to sync.
 3. A flat network with every node containing 100mbps/50mbps download/upload connections. Non-finality for ~12h and then nodes are started back up to sync.
@@ -31,7 +31,7 @@ The [Dencun](https://ethereum.org/en/roadmap/dencun/) upgrade on Ethereum introd
 5. A flat network with every node containing 30mbps/15mbps download/upload connections. Some nodes were turned off for 2h to test syncing times.
 6. A flat network with every node containing 20mbps/10mbps download/upload connections.
 
-## Aggregated learning:
+## Aggregated learning
 - Our mental model of the Ethereum p2p layer probably needs some reworking, our mental model of a flat network with equal low bandwidth nodes probably isn't true for our current DA setup. The analysis by [ProbeLabs](https://probelab.io/ethereum/discv5/2024-46/#cloud-hosting-rate) also indicate a hybrid network of faster and slower nodes. A flat network style test is probably still helpful to understand how to design upgrades for the worst case scenario.
 - Long range sync times after a period of non-finality seem to be reasonable and the found problems potentially lie in peering bugs or range request optimisations.
 - The bottleneck for the client at 20mbps/10mbps seems to be fetching data to validate DA within the slot time limits (perhaps due to peer rate limits or other limitations). At gigabit links however, the DA data fetching bottlenecks seems to be solved. But the node still takes ~20mins to sync to head (the theoretical line speed to download the data would take 20s). The bottleneck for long range sync doesn’t seem to be raw bandwidth related(Most nodes were peaking at 100mbps traffic, so they had a 10x bandwidth headroom), but instead seems to be batch verification/peering/rate limiting/peer download limit related and we might need to narrow this down in future tests.
@@ -41,7 +41,7 @@ The [Dencun](https://ethereum.org/en/roadmap/dencun/) upgrade on Ethereum introd
 - There seem to be optimisations required in batch fetching, rate limits as well as potential bugs in peering that are triggered in these stressful scenarios.
 - The devnet presents a "clean" EL state with no real EL load or limitation. A potential future experiment can try a mainnet shadowfork to find EL related bottlenecks. Estimations on mainnet indicate that average this would add about 20 seconds per batch, or an acceptable overhead of 300ms per block.
 
-## Conclusion:
+## Conclusion
 - The network indicates that clients are not purely bottlenecked by bandwidth, instead they can still apply some optimisations to help improve syncing and peering performance. These optimisations might come with other tradeoffs and we need to study potential paths forward.
 - These optimisations could already help mainnet today and would be needed irrespective of our decision to increase the blob count from the current 3/6 limits.
 - Long range syncing after a period of non-finality is able to be completed in a reasonable amount of time and would benefit from some optimisations/peering bug fixes.

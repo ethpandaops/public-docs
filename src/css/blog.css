@@ -293,9 +293,46 @@
 
 /* Blog post featured image */
 .blog-post-featured-image-container {
-  margin-bottom: 1.5rem;
+  float: right;
+  max-width: 40%;
+  margin: 0 0 1.5rem 1.5rem;
   overflow: hidden;
   border-radius: 8px;
+}
+
+/* Ensure the first paragraph wraps around the image */
+.markdown > p:first-of-type {
+  margin-top: 0;
+}
+
+/* Remove top margin from first heading to align with top of floating image */
+.markdown > h1:first-child,
+.markdown > h2:first-child,
+.markdown > h3:first-child,
+.markdown > h4:first-child {
+  margin-top: 0 !important;
+}
+
+/* Add a clearing style to ensure proper text flow after the first paragraphs */
+.markdown > *:nth-child(5) {
+  clear: right;
+}
+
+.blog-post-content div:first-child {
+  margin-top: 0;
+}
+
+/* Adjust for mobile screens */
+@media (max-width: 768px) {
+  .blog-post-featured-image-container {
+    float: none;
+    max-width: 100%;
+    margin: 0 0 1.5rem 0;
+  }
+  
+  .blog-post-content .markdown > *:nth-child(5) {
+    clear: none;
+  }
 }
 
 /* Blog post page headline */
@@ -383,7 +420,7 @@
 .markdown h4, 
 .markdown h5, 
 .markdown h6 {
-  margin-top: 2rem;
+  /* margin-top: 2rem; */
   margin-bottom: 1rem;
   color: var(--ifm-heading-color);
   font-weight: 600;
@@ -400,6 +437,10 @@
   font-style: italic;
   background-color: var(--ifm-color-emphasis-100);
   border-radius: 0 8px 8px 0;
+}
+
+.markdown blockquote p {
+  margin-bottom: 0;
 }
 
 .markdown pre {
@@ -891,15 +932,15 @@
   margin-bottom: 1.5rem;
 }
 
-.blog-post-content h2 {
+/* .blog-post-content h2 {
   margin-top: 2.5rem;
   margin-bottom: 1rem;
-}
+} */
 
-.blog-post-content h3 {
+/* .blog-post-content h3 {
   margin-top: 2rem;
   margin-bottom: 0.75rem;
-}
+} */
 
 .blog-post-content ul, .blog-post-content ol {
   margin-bottom: 1.5rem;

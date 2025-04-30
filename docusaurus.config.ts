@@ -12,7 +12,7 @@ let announcementBarProps = {
   content: 'Explore Ethereum infrastructure tools by ethPandaOps! 🐼',
   backgroundColor: '#00a550',
   textColor: '#fff',
-  isCloseable: true,
+  isCloseable: false,
 };
 
 try {
