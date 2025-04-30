@@ -259,8 +259,8 @@ export default function SnapshotDataTable({ network }) {
         </div>
       )}
       
-      <div className="snapshot-table-container">
-        <table className="snapshot-table">
+      <div className="table-container">
+        <table className="table-content">
           <thead>
             <tr>
               <th>Client</th>
@@ -294,7 +294,7 @@ export default function SnapshotDataTable({ network }) {
                   </td>
                   <td>
                     {client.timestamp} 
-                    <div style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)'}}>{client.timeAgoStr}</div>
+                    <div className="time-ago">{client.timeAgoStr}</div>
                   </td>
                   <td>{client.fileSize}</td>
                   <td>

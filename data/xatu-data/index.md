@@ -20,7 +20,7 @@ Check out the visual representation of the [extraction process](https://github.c
 
 ### Schema
 
-For a detailed description of the data schema, please refer to the Schema Documentation. 
+For a detailed description of the data schema, please refer to the [Schema Documentation](./xatu/schema). 
 
 ### Working with the data
 

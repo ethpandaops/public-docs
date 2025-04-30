@@ -24,99 +24,108 @@ header.blog-hero .blog-hero-title {
   margin-bottom: 1rem;
 }
 
-/* Blog/Data content width constraints */
+/* Blog content container size */
 .blog-content-wrapper .container {
-  max-width: 1140px;
+  max-width: 1140px !important;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 1rem;
+  width: 100%;
 }
 
-/* Data Post Cards */
+/* Data posts in list view */
 .data-post {
   margin-bottom: 2rem;
 }
 
 .data-post-title {
-  font-size: 2rem;
-  margin-bottom: 1rem;
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
 }
 
 .data-post-meta {
+  display: flex;
+  align-items: center;
   margin-bottom: 1rem;
-  color: var(--ifm-color-emphasis-700);
 }
 
 .data-post-date {
-  font-weight: 500;
+  color: var(--ifm-color-emphasis-700);
+  margin-right: 1rem;
 }
 
 .data-post-tags {
   display: flex;
   flex-wrap: wrap;
-  margin: 1rem 0;
+  margin: 0 -0.25rem;
 }
 
 .data-post-tag {
-  display: inline-block;
-  margin-right: 0.5rem;
-  margin-bottom: 0.5rem;
-  padding: 0.2rem 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  margin: 0.25rem;
   background-color: var(--ifm-color-emphasis-200);
-  border-radius: 4px;
-  color: var(--ifm-color-emphasis-800);
-  font-size: 0.85rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
   font-weight: 500;
-  text-decoration: none;
+  color: var(--ifm-color-emphasis-800);
+  transition: all 0.2s ease;
+  text-decoration: none !important;
 }
 
 .data-post-tag:hover {
-  background-color: var(--ifm-color-emphasis-300);
-  color: var(--ifm-color-emphasis-900);
+  background-color: var(--ifm-color-primary);
+  color: white;
   text-decoration: none;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Data Post Page */
+/* Data post page header */
 .data-post-page-header {
-  padding: 1rem 0;
-  border-bottom: none; /* Remove border since using hero now */
-  z-index: 10;
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
 }
 
 .data-post-page-back-link {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  color: var(--ifm-color-primary);
-  font-weight: 500;
-  background: rgba(255, 255, 255, 0.8);
   padding: 0.5rem 1rem;
+  margin-bottom: 1rem;
+  background-color: var(--ifm-color-emphasis-200);
   border-radius: 20px;
-  backdrop-filter: blur(5px);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--ifm-color-emphasis-800);
+  transition: all 0.2s ease;
+  text-decoration: none !important;
+  width: fit-content;
 }
 
 .data-post-page-back-link:hover {
+  background-color: var(--ifm-color-primary);
+  color: white;
   text-decoration: none;
-  color: var(--ifm-color-primary-dark);
-  background: white;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  transform: translateY(-1px);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
 }
 
 [data-theme='dark'] .data-post-page-back-link {
-  background: rgba(30, 30, 30, 0.8);
-  color: var(--ifm-color-primary-lighter);
+  background-color: var(--ifm-color-emphasis-300);
+  color: var(--ifm-color-emphasis-900);
 }
 
 [data-theme='dark'] .data-post-page-back-link:hover {
-  background: rgba(40, 40, 40, 0.95);
-  color: var(--ifm-color-primary-lightest);
+  background-color: var(--ifm-color-primary);
+  color: white;
 }
 
 .data-post-container {
-  max-width: 1140px;
-  margin: 0 auto;
-  padding: 0 20px;
+  background-color: var(--ifm-card-background-color);
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .data-post-page-container {
@@ -125,7 +134,6 @@ header.blog-hero .blog-hero-title {
   padding: 0 20px;
 }
 
-/* Styling for the blog-post-container in data pages */
 .data-post-page .blog-post-container {
   background-color: var(--ifm-card-background-color);
   border-radius: 12px;
@@ -140,7 +148,7 @@ header.blog-hero .blog-hero-title {
   z-index: 10;
 }
 
-/* Ensure data post content has the same styling as blog post content */
+/* Data post content */
 .data-post-content.markdown {
   line-height: 1.7;
   font-size: 1.1rem;
@@ -179,97 +187,120 @@ header.blog-hero .blog-hero-title {
   font-weight: 600;
 }
 
-/* Table of Contents styling for Data posts */
+/* Fix TOC on data post page */
 .data-post-page .row--has-toc {
-  position: relative;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .data-post-page .blog-sidebar {
   position: sticky;
-  top: var(--ifm-navbar-height);
-  max-height: calc(100vh - var(--ifm-navbar-height));
+  top: calc(var(--ifm-navbar-height) + 2rem);
+  height: fit-content;
+  margin-bottom: 2rem;
+  max-height: calc(100vh - var(--ifm-navbar-height) - 2rem);
   overflow-y: auto;
-  padding-top: 2rem;
-  padding-left: 1.5rem;
 }
 
 .data-post-page .theme-doc-toc-desktop {
-  max-height: calc(100vh - 200px);
+  max-height: calc(100vh - var(--ifm-navbar-height) - 2rem);
   overflow-y: auto;
   position: sticky;
-  top: 150px;
+  top: calc(var(--ifm-navbar-height) + 2rem);
 }
 
-/* Support dark mode for TOC */
 [data-theme='dark'] .data-post-page .theme-doc-toc-desktop .table-of-contents {
   border-left-color: var(--ifm-color-emphasis-300);
 }
 
-/* Data Tag Pages */
+/* Tag page styles */
 .tag-link {
-  font-size: 1.1rem;
-  font-weight: 500;
+  display: block;
+  margin-bottom: 2rem;
   color: var(--ifm-color-primary);
+  text-decoration: none;
 }
 
 .tag-link:hover {
-  text-decoration: none;
-  color: var(--ifm-color-primary-dark);
+  text-decoration: underline;
+  color: var(--ifm-color-primary-darker);
 }
 
 .data-tag-return-link {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  margin-right: 1rem;
-  color: var(--ifm-color-primary);
+  margin-bottom: 2rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--ifm-color-emphasis-200);
+  border-radius: 20px;
   font-weight: 500;
+  color: var(--ifm-color-emphasis-800);
 }
 
 .data-tag-return-link:hover {
+  background-color: var(--ifm-color-primary);
+  color: white;
   text-decoration: none;
-  color: var(--ifm-color-primary-dark);
 }
 
 .data-tag-post-card {
-  overflow: hidden;
+  margin-bottom: 2rem;
   transition: all 0.3s ease;
 }
 
 .data-tag-post-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
 }
 
 .data-tag-post-image {
-  height: 200px;
-  width: 100%;
-  object-fit: cover;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 1rem;
 }
 
 .tag-badge {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
   margin-right: 0.5rem;
   margin-bottom: 0.5rem;
-  padding: 0.2rem 0.5rem;
   background-color: var(--ifm-color-emphasis-200);
-  border-radius: 4px;
-  color: var(--ifm-color-emphasis-800);
-  font-size: 0.85rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
   font-weight: 500;
-  text-decoration: none;
+  color: var(--ifm-color-emphasis-800);
+  transition: all 0.2s ease;
+  text-decoration: none !important;
 }
 
 .tag-badge:hover {
-  background-color: var(--ifm-color-emphasis-300);
-  color: var(--ifm-color-emphasis-900);
+  background-color: var(--ifm-color-primary);
+  color: white;
   text-decoration: none;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Styles for MDImporter component */
-.md-importer-content {
+/* ======= SHARED TABLE STYLES ======= */
+/* Common styles for MDImporter and Snapshot tables */
+
+/* Base container styling for content */
+.md-importer-content,
+.snapshot-tab-content,
+.snapshot-module {
   width: 100%;
   max-width: 100%;
+  margin-bottom: 2rem;
+  overflow: hidden;
+}
+
+/* Module container with shadow */
+.snapshot-module {
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+  background-color: var(--ifm-background-color);
 }
 
 /* Loading spinner styles */
@@ -304,239 +335,251 @@ header.blog-hero .blog-hero-title {
   100% { transform: rotate(360deg); }
 }
 
-/* Make tables look like the snapshot tables */
-.md-importer-content .table-container {
+/* Table container styles */
+.table-container {
   overflow-x: auto;
-  width: 100%;
-  margin-bottom: 1.5rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
-  border: 1px solid var(--ifm-color-emphasis-300);
-  padding: 0;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+  max-width: 100% !important;
+  display: block !important;
 }
 
-.md-importer-content table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 0.9rem;
-  margin: 0;
-  table-layout: fixed;
-  border-bottom: 1px solid var(--ifm-color-emphasis-300);
-  box-shadow: none;
+/* Table styles */
+.table-container table,
+.table-content {
+  width: 100% !important;
+  margin: 0 !important;
+  border-collapse: collapse !important;
+  font-size: 0.9em !important;
+  border-radius: 8px !important;
+  overflow: hidden !important;
+  table-layout: fixed !important;
+  border-bottom: 1px solid var(--ifm-color-emphasis-300) !important;
+  box-shadow: none !important;
 }
 
-.md-importer-content table thead tr {
-  background-color: var(--ifm-color-primary);
-  color: white;
-  text-align: left;
-  font-weight: bold;
+/* Table header styling */
+.table-container thead tr,
+.table-content thead tr {
+  background-color: var(--ifm-color-primary) !important;
+  color: white !important;
+  text-align: left !important;
+  font-weight: bold !important;
 }
 
-/* Prevent header background color change on hover */
-.md-importer-content table thead tr:hover {
-  background-color: var(--ifm-color-primary);
+/* Table header hover effect */
+.table-container thead tr:hover,
+.table-content thead tr:hover {
+  background-color: var(--ifm-color-primary-dark) !important;
 }
 
-/* Dark mode table header hover */
-[data-theme='dark'] .md-importer-content table thead tr:hover {
-  background-color: var(--ifm-color-primary-darker);
+/* Header cells */
+.table-container th,
+.table-content th {
+  width: auto !important;
+  font-weight: 600 !important;
+  padding: 14px 16px !important;
+  white-space: nowrap !important;
+  text-align: left !important;
+  border: none !important;
 }
 
-.md-importer-content table th,
-.md-importer-content table td {
-  text-align: left !important; /* Ensure all cells are left-aligned */
+/* Table rows */
+.table-container tbody tr,
+.table-content tbody tr {
+  border-bottom: 1px solid var(--ifm-color-emphasis-200) !important;
+  width: 100% !important;
 }
 
-.md-importer-content table th {
-  background-color: transparent;
-  color: white;
-  font-weight: 600;
-  padding: 14px 16px;
-  border: none;
-  white-space: nowrap;
+/* Zebra striping */
+.table-container tbody tr:nth-child(even),
+.table-content tbody tr:nth-of-type(even) {
+  background-color: var(--ifm-color-emphasis-100) !important;
 }
 
-.md-importer-content table td {
-  padding: 14px 16px;
-  border: none;
+/* Table row hover */
+.table-container tbody tr:hover,
+.table-content tbody tr:hover {
+  background-color: var(--ifm-color-emphasis-200) !important;
+}
+
+/* Last row in table */
+.table-container tbody tr:last-of-type,
+.table-content tbody tr:last-of-type {
+  border-bottom: none !important;
+}
+
+/* Table data cells */
+.table-container td,
+.table-content td {
+  padding: 14px 16px !important;
+  white-space: nowrap !important;
+  text-align: left !important;
+  border: none !important;
   vertical-align: middle;
   max-width: 300px;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-/* Allow description column to wrap text */
-.md-importer-content table td:nth-child(3) {
-  white-space: normal;
+/* Button styling in tables */
+.table-container td a.button,
+.table-content td a.button {
+  display: inline-block !important;
+  padding: 6px 14px !important;
+  background-color: var(--ifm-color-primary) !important;
+  color: white !important;
+  border-radius: 4px !important;
+  font-size: 0.85rem !important;
+  font-weight: 500 !important;
+  text-decoration: none !important;
+  transition: all 0.2s ease !important;
+  white-space: nowrap !important;
+  float: right !important;
 }
 
-/* Styles for truncated cells */
-.md-importer-content table td.truncated-cell {
-  position: relative;
+/* Button hover effect */
+.table-container td a.button:hover,
+.table-content td a.button:hover {
+  background-color: var(--ifm-color-primary-dark) !important;
+  color: white !important;
+  text-decoration: none !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1) !important;
 }
 
-.md-importer-content table td.truncated-cell .truncated-content {
-  white-space: normal;
-  overflow: hidden;
-  display: block;
-  line-height: 1.4;
+/* Time display */
+.table-container td .time-ago,
+.table-content td .time-ago {
+  font-size: 0.85em !important;
+  color: var(--ifm-color-emphasis-600) !important;
 }
 
-/* Specific column widths to match snapshot-table */
-.md-importer-content table th:nth-child(1), 
-.md-importer-content table td:nth-child(1) { 
-  width: 15%; 
-  font-weight: 500;
-  text-align: left; /* Explicitly ensure left alignment for Dataset Name column */
+/* Links in tables */
+.table-container td a,
+.table-content td a {
+  color: var(--ifm-color-primary) !important;
+  text-decoration: none !important;
 }
 
-.md-importer-content table th:nth-child(2), 
-.md-importer-content table td:nth-child(2) { 
-  width: 15%;
-  text-align: left;
+/* Link hover */
+.table-container td a:hover,
+.table-content td a:hover {
+  color: var(--ifm-color-primary-dark) !important;
+  text-decoration: underline !important;
 }
 
-.md-importer-content table th:nth-child(3), 
-.md-importer-content table td:nth-child(3) { 
-  width: 60%; 
-  white-space: normal; 
-  text-overflow: ellipsis;
-  overflow: hidden;
-  max-width: 60%;
-  text-align: left;
+/* Dark theme adjustments */
+[data-theme='dark'] .table-container thead tr,
+[data-theme='dark'] .table-content thead tr {
+  background-color: var(--ifm-color-primary-dark) !important;
 }
 
-/* Hide all but the first 3 columns on small screens */
+[data-theme='dark'] .table-container thead tr:hover,
+[data-theme='dark'] .table-content thead tr:hover {
+  background-color: var(--ifm-color-primary-darker) !important;
+}
+
+[data-theme='dark'] .table-container,
+[data-theme='dark'] .table-content {
+  background-color: transparent !important;
+  border-color: var(--ifm-color-emphasis-300) !important;
+}
+
+[data-theme='dark'] .table-container tbody tr:nth-child(even),
+[data-theme='dark'] .table-content tbody tr:nth-of-type(even) {
+  background-color: var(--ifm-color-emphasis-200) !important;
+}
+
+[data-theme='dark'] .table-container tbody tr:hover,
+[data-theme='dark'] .table-content tbody tr:hover {
+  background-color: var(--ifm-color-emphasis-300) !important;
+}
+
+/* Column width adjustments */
+.table-container th:nth-child(1), .table-container td:nth-child(1),
+.table-content th:nth-child(1), .table-content td:nth-child(1) { 
+  width: 10% !important; 
+}
+
+.table-container th:nth-child(2), .table-container td:nth-child(2),
+.table-content th:nth-child(2), .table-content td:nth-child(2) { 
+  width: 14% !important; 
+}  
+
+.table-container th:nth-child(3), .table-container td:nth-child(3),
+.table-content th:nth-child(3), .table-content td:nth-child(3) { 
+  width: 18% !important; 
+  white-space: nowrap !important;
+}
+
+.table-container th:nth-child(4), .table-container td:nth-child(4),
+.table-content th:nth-child(4), .table-content td:nth-child(4) { 
+  width: 8% !important; 
+}
+
+.table-container th:nth-child(5), .table-container td:nth-child(5),
+.table-content th:nth-child(5), .table-content td:nth-child(5) { 
+  width: 35% !important; 
+  text-align: left !important; 
+}
+
+.table-container th:nth-child(6), .table-container td:nth-child(6),
+.table-content th:nth-child(6), .table-content td:nth-child(6) { 
+  width: 15% !important; 
+  text-align: right !important; 
+}
+
+/* Mobile responsiveness */
 @media (max-width: 768px) {
-  .md-importer-content table th:nth-child(n+4), 
-  .md-importer-content table td:nth-child(n+4) {
-    display: none;
+  .table-container,
+  .table-content {
+    overflow-x: auto !important;
   }
   
-  /* Make the description column even wider on mobile */
-  .md-importer-content table th:nth-child(3), 
-  .md-importer-content table td:nth-child(3) {
-    width: 70%;
-    max-width: 70%;
+  .table-container th:nth-child(3), .table-container td:nth-child(3),
+  .table-content th:nth-child(3), .table-content td:nth-child(3) {
+    max-width: 200px !important;
+    white-space: normal !important;
   }
 }
 
-.md-importer-content table tbody tr {
-  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+/* Truncated cell handling */
+.table-container td.truncated-cell,
+.table-content td.truncated-cell {
+  max-width: 300px !important;
 }
 
-.md-importer-content table tbody tr:nth-child(even) {
-  background-color: var(--ifm-color-emphasis-100);
-}
-
-.md-importer-content table tbody tr:hover {
-  background-color: var(--ifm-color-emphasis-200);
-}
-
-.md-importer-content table tbody tr:last-of-type {
-  border-bottom: none;
-}
-
-/* Style the "Download" buttons to match */
-.md-importer-content table td a.button,
-.md-importer-content table td a[href$=".zip"],
-.md-importer-content table td a[href$=".tar.gz"],
-.md-importer-content table td a:contains("Download") {
-  display: inline-block;
-  padding: 6px 12px;
-  background-color: var(--ifm-color-primary);
-  color: white !important;
-  border-radius: 4px;
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 0.85em;
-  transition: background-color 0.2s ease;
-  text-align: center;
-  white-space: nowrap;
-}
-
-.md-importer-content table td a.button:hover,
-.md-importer-content table td a[href$=".zip"]:hover,
-.md-importer-content table td a[href$=".tar.gz"]:hover,
-.md-importer-content table td a:contains("Download"):hover {
-  background-color: var(--ifm-color-primary-darker);
-  text-decoration: none;
-}
-
-/* Style version links */
-.md-importer-content table td a.version-link {
-  color: var(--ifm-color-primary);
-  text-decoration: none;
-  font-size: 0.85em;
-  display: block;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  transition: color 0.2s ease;
-}
-
-.md-importer-content table td a.version-link:hover {
-  color: var(--ifm-color-primary-darker);
-  text-decoration: underline;
-}
-
-/* Also style block hash links */
-.md-importer-content table td:nth-child(2) a {
-  color: var(--ifm-color-primary);
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-
-.md-importer-content table td:nth-child(2) a:hover {
-  color: var(--ifm-color-primary-darker);
-  text-decoration: underline;
-}
-
-/* Add small gray text for timestamps */
-.md-importer-content table td .time-ago {
-  font-size: 0.85em;
-  color: var(--ifm-color-emphasis-600);
-  display: block;
-  margin-top: 2px;
+.table-container td.truncated-cell .truncated-content,
+.table-content td.truncated-cell .truncated-content {
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  display: block !important;
+  max-width: 100% !important;
 }
 
 /* Checkmark styling */
-.md-importer-content .checkmark-cell {
-  text-align: center; /* Keep checkmarks centered */
-  vertical-align: middle;
+.table-container .checkmark-cell,
+.table-content .checkmark-cell {
+  text-align: center !important;
 }
 
-.md-importer-content .checkmark-symbol {
-  display: inline-block;
-  color: #00a550;
-  font-weight: bold;
-  font-size: 1.2em;
+.table-container .checkmark-symbol,
+.table-content .checkmark-symbol {
+  color: var(--ifm-color-success) !important;
+  font-size: 1.2em !important;
+  font-weight: bold !important;
 }
 
-/* Dark mode adjustments for checkmarks */
-[data-theme='dark'] .md-importer-content .checkmark-symbol {
-  color: #22c55e;
+[data-theme='dark'] .table-container .checkmark-symbol,
+[data-theme='dark'] .table-content .checkmark-symbol {
+  color: var(--ifm-color-success-dark) !important;
 }
 
-/* Dark mode table styling */
-[data-theme='dark'] .md-importer-content table thead tr {
-  background-color: var(--ifm-color-primary-darker);
-}
-
-[data-theme='dark'] .md-importer-content .table-container {
-  border-color: var(--ifm-color-emphasis-300);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-}
-
-[data-theme='dark'] .md-importer-content table tbody tr:nth-child(even) {
-  background-color: var(--ifm-color-emphasis-200);
-}
-
-[data-theme='dark'] .md-importer-content table tbody tr:hover {
-  background-color: var(--ifm-color-emphasis-300);
-}
-
-/* Style code blocks and other elements */
+/* Other specialized imports */
 .md-importer-content code {
   background-color: var(--ifm-color-emphasis-200);
   border-radius: 4px;
@@ -563,69 +606,72 @@ header.blog-hero .blog-hero-title {
   color: var(--ifm-color-emphasis-700);
 }
 
-/* Handle dark mode appropriately */
-[data-theme='dark'] .md-importer-content blockquote {
-  color: var(--ifm-color-emphasis-500);
+/* Data tab styles */
+.data-tabs {
+  --tab-border-color: var(--ifm-color-emphasis-300);
+  width: 100% !important;
+  margin: 0 !important;
+  background: var(--ifm-color-emphasis-100);
 }
 
-/* Markdown content in data posts should not interfere with snapshot table styling */
-.data-post-content.markdown .snapshot-table {
+/* Tab items */
+.data-tabs .tabs__item {
+  padding: 0.75rem 1.5rem;
+  font-weight: 500;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s ease;
+  border-radius: 0;
+  margin-right: 0;
+  margin-bottom: 0 !important;
+}
+
+/* Hover state */
+.data-tabs .tabs__item:hover:not(.tabs__item--active) {
+  background-color: var(--ifm-color-emphasis-200);
+  color: var(--ifm-color-primary);
+}
+
+/* Active tab */
+.data-tabs .tabs__item--active {
+  border-bottom: 2px solid var(--ifm-color-primary);
+  color: var(--ifm-color-primary);
+  background-color: var(--ifm-background-color);
+}
+
+/* Make the tab list take full width */
+.data-tabs .tabs__list {
+  border-bottom: 1px solid var(--tab-border-color);
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  width: 100% !important;
+  padding: 0;
+  max-width: 100% !important;
+  margin-bottom: 0 !important;
+}
+
+/* Fix content container to use full width */
+.data-tabs .tabs__content {
+  width: 100% !important;
+  box-sizing: border-box;
+  padding: 0;
+  max-width: 100% !important;
+  display: block !important;
+  background-color: var(--ifm-background-color);
+}
+
+/* Force tab panel to use full width */
+.data-tabs .tabs__panel {
   width: 100% !important;
   max-width: 100% !important;
-  overflow-x: hidden !important;
-  table-layout: fixed !important;
-  margin-bottom: 0 !important;
-  border-collapse: collapse !important;
-}
-
-.data-post-content.markdown .snapshot-table th,
-.data-post-content.markdown .snapshot-table td {
-  border: none !important;
-  padding: 14px 16px !important;
-  text-align: left !important;
-}
-
-.data-post-content.markdown .snapshot-table thead tr {
-  background-color: var(--ifm-color-primary) !important;
-  color: white !important;
-  border-bottom: none !important;
-}
-
-.data-post-content.markdown .snapshot-table tbody tr:nth-of-type(even) {
-  background-color: var(--ifm-color-emphasis-100) !important;
-}
-
-.data-post-content.markdown .snapshot-table tbody tr {
-  border-bottom: 1px solid var(--ifm-color-emphasis-200) !important;
-}
-
-.data-post-content.markdown .snapshot-table th:last-child,
-.data-post-content.markdown .snapshot-table td:last-child {
-  text-align: right !important;
-}
-
-.data-post-content.markdown .snapshot-module {
-  overflow: hidden !important;
-  max-width: 100% !important;
-  margin-bottom: 1.5rem !important;
-}
-
-/* Prevent horizontal scrollbar in snapshot table container in data posts */
-.data-post-content.markdown .snapshot-table-container {
-  overflow-x: visible !important;
+  margin: 0 !important;
   padding: 0 !important;
 }
 
-/* For mobile screens, allow horizontal scrolling if needed */
+/* Mobile responsiveness for tabs */
 @media (max-width: 768px) {
-  .data-post-content.markdown .snapshot-table-container {
-    overflow-x: auto !important;
+  .data-tabs .tabs__item {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
   }
 }
-
-/* Fix tabs in data posts */
-.data-post-content.markdown .tabs-container {
-  width: 100% !important;
-  max-width: 100% !important;
-  margin-bottom: 0 !important;
-} 

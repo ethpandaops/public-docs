@@ -439,10 +439,6 @@
   border-radius: 0 8px 8px 0;
 }
 
-.markdown blockquote p {
-  margin-bottom: 0;
-}
-
 /* Enhanced table styling for blog posts */
 .markdown table {
   border-collapse: collapse;
@@ -874,15 +870,9 @@
   margin-bottom: 1.5rem;
 }
 
-/* .blog-post-content h2 {
-  margin-top: 2.5rem;
-  margin-bottom: 1rem;
-} */
-
-/* .blog-post-content h3 {
-  margin-top: 2rem;
-  margin-bottom: 0.75rem;
-} */
+.blog-post-content blockquote p {
+    margin-bottom: 0;
+}
 
 .blog-post-content ul, .blog-post-content ol {
   margin-bottom: 1.5rem;

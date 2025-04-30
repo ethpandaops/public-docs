@@ -6,7 +6,7 @@
 
 @import './hero-background.css';
 @import './blog.css';
-@import './snapshot-tabs.css';
+@import './data.css';
 
 /* You can override the default Infima variables here. */
 :root {
