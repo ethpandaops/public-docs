@@ -1,0 +1,82 @@
+[
+  {
+    "id": "ethereum-package",
+    "title": "Ethereum Package",
+    "description": "A Kurtosis package for deploying and testing Ethereum networks locally in a containerized environment.",
+    "image": "https://ethpandaops.io/posts/kurtosis-deep-dive/featured_hu10858589907513282560.png",
+    "learnMoreUrl": "/docs/tooling/kurtosis",
+    "actionUrl": "https://github.com/ethpandaops/ethereum-package",
+    "actionText": "GitHub",
+    "actionIcon": "external"
+  },
+  {
+    "id": "lab",
+    "title": "The Lab",
+    "description": "A research and development environment for Ethereum network testing and analysis.",
+    "image": "/img/blog/lab.png",
+    "learnMoreUrl": "/docs/tooling/lab",
+    "actionUrl": "https://lab.ethpandaops.io/",
+    "actionText": "Visit",
+    "actionIcon": "external"
+  },
+  {
+    "id": "contributoor",
+    "title": "Contributoor",
+    "description": "A monitoring and data-gathering tool that helps improve Ethereum's network visibility.",
+    "image": "/img/blog/contributoor-beacon-node-companion.png",
+    "learnMoreUrl": "/docs/tooling/contributoor",
+    "actionUrl": "https://github.com/ethpandaops/contributoor-installer",
+    "actionText": "GitHub",
+    "actionIcon": "external"
+  },
+  {
+    "id": "assertoor",
+    "title": "Assertoor",
+    "description": "A comprehensive testing tool for Ethereum networks with orchestrated test sequences and real-time monitoring.",
+    "image": "/img/blog/assertor-introduction.png",
+    "learnMoreUrl": "/docs/tooling/assertoor",
+    "actionUrl": "https://github.com/ethpandaops/assertoor",
+    "actionText": "GitHub",
+    "actionIcon": "external"
+  },
+  {
+    "id": "xatu",
+    "title": "Xatu",
+    "description": "An open-source data pipeline for Ethereum, collecting and transforming data from execution and consensus clients.",
+    "image": "/img/blog/xatu-consensus-layer-p2p.png",
+    "learnMoreUrl": "/docs/tooling/xatu",
+    "actionUrl": "https://github.com/ethpandaops/xatu",
+    "actionText": "GitHub",
+    "actionIcon": "external"
+  },
+  {
+    "id": "dora",
+    "title": "Dora",
+    "description": "A block explorer for Ethereum testnet and research networks with enhanced debugging features.",
+    "image": "/img/blog/dora.png",
+    "learnMoreUrl": "/docs/tooling/dora",
+    "actionUrl": "https://github.com/ethpandaops/dora",
+    "actionText": "GitHub",
+    "actionIcon": "external"
+  },
+  {
+    "id": "snapshotter",
+    "title": "Snapshotter",
+    "description": "A specialized tool for capturing and managing Ethereum node data snapshots, enabling fast node bootstrapping and data recovery.",
+    "image": "/img/blog/snapshotter.png",
+    "learnMoreUrl": "/docs/tooling/snapshotter",
+    "actionUrl": "https://github.com/ethpandaops/snapshotter",
+    "actionText": "GitHub",
+    "actionIcon": "external"
+  },
+  {
+    "id": "forky",
+    "title": "Forky",
+    "description": "An Ethereum beacon chain fork choice visualizer that helps operators and developers understand the state of the beacon chain in real-time.",
+    "image": "/img/blog/forky.png",
+    "learnMoreUrl": "/docs/tooling/forky",
+    "actionUrl": "https://github.com/ethpandaops/forky",
+    "actionText": "GitHub",
+    "actionIcon": "external"
+  }
+] 

@@ -1,0 +1,221 @@
+/* Data Section Styling */
+/* Note: Many styles are inherited from blog.css for consistent styling between blog and data sections */
+
+/* Data Layout */
+.data-layout-root {
+  width: 100%;
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+  overflow-x: hidden !important; /* Prevent horizontal scroll from hero */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Data Hero Section */
+header.blog-hero .blog-hero-title {
+  margin-bottom: 1rem;
+}
+
+/* Blog/Data content width constraints */
+.blog-content-wrapper .container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Data Post Cards */
+.data-post {
+  margin-bottom: 2rem;
+}
+
+.data-post-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.data-post-meta {
+  margin-bottom: 1rem;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.data-post-date {
+  font-weight: 500;
+}
+
+.data-post-tags {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 1rem 0;
+}
+
+.data-post-tag {
+  display: inline-block;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+  padding: 0.2rem 0.5rem;
+  background-color: var(--ifm-color-emphasis-200);
+  border-radius: 4px;
+  color: var(--ifm-color-emphasis-800);
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.data-post-tag:hover {
+  background-color: var(--ifm-color-emphasis-300);
+  color: var(--ifm-color-emphasis-900);
+  text-decoration: none;
+}
+
+/* Data Post Page */
+.data-post-page-header {
+  padding: 1rem 0;
+  border-bottom: none; /* Remove border since using hero now */
+  z-index: 10;
+  position: relative;
+}
+
+.data-post-page-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--ifm-color-primary);
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.data-post-page-back-link:hover {
+  text-decoration: none;
+  color: var(--ifm-color-primary-dark);
+  background: white;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+[data-theme='dark'] .data-post-page-back-link {
+  background: rgba(30, 30, 30, 0.8);
+  color: var(--ifm-color-primary-lighter);
+}
+
+[data-theme='dark'] .data-post-page-back-link:hover {
+  background: rgba(40, 40, 40, 0.95);
+  color: var(--ifm-color-primary-lightest);
+}
+
+.data-post-container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.data-post-page-container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Ensure data post content has the same styling as blog post content */
+.data-post-content.markdown {
+  line-height: 1.7;
+  font-size: 1.1rem;
+}
+
+.data-post-content h2, 
+.data-post-content h3, 
+.data-post-content h4, 
+.data-post-content h5, 
+.data-post-content h6 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+/* Table of Contents styling for Data posts */
+.data-post-page .row--has-toc {
+  position: relative;
+}
+
+.data-post-page .blog-sidebar {
+  position: sticky;
+  top: var(--ifm-navbar-height);
+  max-height: calc(100vh - var(--ifm-navbar-height));
+  overflow-y: auto;
+  padding-top: 2rem;
+  padding-left: 1.5rem;
+}
+
+.data-post-page .theme-doc-toc-desktop {
+  max-height: calc(100vh - 200px);
+  overflow-y: auto;
+  position: sticky;
+  top: 150px;
+}
+
+/* Support dark mode for TOC */
+[data-theme='dark'] .data-post-page .theme-doc-toc-desktop .table-of-contents {
+  border-left-color: var(--ifm-color-emphasis-300);
+}
+
+/* Data Tag Pages */
+.tag-link {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--ifm-color-primary);
+}
+
+.tag-link:hover {
+  text-decoration: none;
+  color: var(--ifm-color-primary-dark);
+}
+
+.data-tag-return-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-right: 1rem;
+  color: var(--ifm-color-primary);
+  font-weight: 500;
+}
+
+.data-tag-return-link:hover {
+  text-decoration: none;
+  color: var(--ifm-color-primary-dark);
+}
+
+.data-tag-post-card {
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.data-tag-post-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.data-tag-post-image {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.tag-badge {
+  display: inline-block;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+  padding: 0.2rem 0.5rem;
+  background-color: var(--ifm-color-emphasis-200);
+  border-radius: 4px;
+  color: var(--ifm-color-emphasis-800);
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.tag-badge:hover {
+  background-color: var(--ifm-color-emphasis-300);
+  color: var(--ifm-color-emphasis-900);
+  text-decoration: none;
+} 

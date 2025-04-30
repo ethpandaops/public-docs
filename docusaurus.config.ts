@@ -109,11 +109,37 @@ const config: Config = {
     locales: ['en'],
   },
 
+  // MDX configuration for client components
   markdown: {
     mermaid: true,
+    mdx1Compat: {
+      comments: false,
+      admonitions: false,
+      headingIds: false,
+    },
   },
 
-  plugins: [],
+  plugins: [
+    [
+      '@docusaurus/plugin-content-blog',
+      {
+        id: 'data',
+        routeBasePath: 'data',
+        path: './data',
+        blogTitle: 'Data',
+        blogDescription: 'ethPandaOps Data',
+        blogSidebarTitle: 'All Data Items',
+        blogSidebarCount: 'ALL',
+        postsPerPage: 10,
+        showReadingTime: false,
+        onUntruncatedBlogPosts: 'ignore',
+        blogListComponent: '@theme/DataListPage',
+        blogPostComponent: '@theme/DataPostPage',
+        blogTagsListComponent: '@theme/DataTagsListPage',
+        blogTagsPostsComponent: '@theme/DataTagsPostsPage',
+      },
+    ],
+  ],
 
   themes: ['@docusaurus/theme-mermaid'],
 
@@ -135,10 +161,6 @@ const config: Config = {
             type: ['rss', 'atom'],
             xslt: true,
           },
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/ethpandaops/public-docs/tree/main/',
           // Useful options to enforce blogging best practices
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
@@ -153,6 +175,7 @@ const config: Config = {
           customCss: [
             './src/css/custom.css',
             './src/css/blog.css',
+            './src/css/data.css',
           ],
         },
       } satisfies Preset.Options,
@@ -178,6 +201,11 @@ const config: Config = {
         {
           label: 'Blog',
           to: '/posts',
+          position: 'left',
+        },
+        {
+          label: 'Data',
+          to: '/data',
           position: 'left',
         },
         {
@@ -240,6 +268,10 @@ const config: Config = {
             {
               label: 'Blog',
               to: '/posts',
+            },
+            {
+              label: 'Data',
+              to: '/data',
             },
             {
               label: 'Links',

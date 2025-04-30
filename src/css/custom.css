@@ -6,6 +6,7 @@
 
 @import './hero-background.css';
 @import './blog.css';
+@import './snapshot-tabs.css';
 
 /* You can override the default Infima variables here. */
 :root {
@@ -1019,22 +1020,7 @@ nav.menu .menu__list-item .menu__list-item-collapsible .menu__link--active {
 
 /* Improved code block styling - remove mentions of codeBlockContainer/Content/Lines */
 /* Code blocks should correctly handle overflow and have good styling */
-pre {
-  overflow: auto !important;
-  white-space: pre !important;
-  word-break: normal !important;
-  overflow-wrap: normal !important;
-  padding-bottom: 20px !important;
-  margin: 1.5rem 0 !important;
-  border-radius: 8px !important;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
-  background-color: #f6f8fa !important;
-  border: 1px solid rgba(0, 0, 0, 0.1) !important;
-  font-size: 13px !important;
-  line-height: 1.5 !important;
-  position: relative !important;
-  z-index: 5 !important;
-}
+
 
 [data-theme='dark'] pre {
   background-color: #282a36 !important;

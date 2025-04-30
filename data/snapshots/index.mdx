@@ -1,0 +1,112 @@
+---
+slug: snapshots
+title: Ethereum Client Snapshots
+description: 'Node data directory snapshots for clients across different Ethereum networks. Regularly updated snapshots help you quickly sync nodes for testing environments.'
+image: img/blog/snapshots.png
+tags: [execution client, ethereum node, snapshots]
+---
+
+import SnapshotDataTable from '@site/src/components/SnapshotDataTable';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import Alert from '@site/src/components/Alert';
+
+# Ethereum Client Snapshots {#snapshots-overview}
+
+<Alert>
+**Disclaimer:**
+The snapshots provided are intended solely for testing and development purposes. They are not guaranteed
+to reflect the current state, data, or functionality of the canonical Ethereum Network. Use of these
+snapshots is at your own risk, and no representations or warranties, either express or implied, are made
+regarding their accuracy, completeness, or reliability in comparison to the Ethereum Network. These
+snapshots should not be used in production or as a substitute for interacting with the canonical Ethereum Network.
+Always manually verify the state against the Ethereum Network to ensure consistency and accuracy.
+</Alert>
+
+<p style={{textAlign: 'center'}}>These snapshots are regularly updated (2-3days) and at the same block height. They can help you quickly sync your node.</p>
+
+<div className="snapshot-module">
+  <Tabs className="snapshot-tabs">
+    <TabItem value="mainnet" label="Mainnet">
+      <SnapshotDataTable network="mainnet" />
+    </TabItem>
+    <TabItem value="sepolia" label="Sepolia">
+      <SnapshotDataTable network="sepolia" />
+    </TabItem>
+    <TabItem value="hoodi" label="Hoodi">
+      <SnapshotDataTable network="hoodi" />
+    </TabItem>
+    <TabItem value="holesky" label="Holesky">
+      <SnapshotDataTable network="holesky" />
+    </TabItem>
+    <TabItem value="quickstart" label="Quickstart Guide">
+      <div className="snapshot-tab-content">
+        <div style={{ padding: '0 1.5rem' }}>
+          <h2 id="quickstart">Quickstart</h2>
+          
+          <h3 id="docker-download">Just use Docker to download and untar the snapshot</h3>
+          
+          <p>If you have docker installed, this is the easiest way to download and untar a snapshot, without having to install any other dependencies:</p>
+          
+          ```sh
+          docker run --rm -it \
+            -v $PATH_TO_YOUR_GETH_DATA_DIR:/data \
+            --entrypoint "/bin/sh" \
+            alpine -c \
+            "apk add --no-cache curl tar zstd && \
+             curl -s -L https://snapshots.ethpandaops.io/sepolia/geth/latest/snapshot.tar.zst | \
+             tar -I zstd -xvf - -C /data"
+          ```
+          
+          <h3 id="detailed-sepolia-example">Detailed example: Getting a Sepolia Geth data dir snapshot</h3>
+          
+          <p>Verify when the latest snapshot was taken:</p>
+          
+          ```sh
+          # Check the latest block:
+          curl -s https://snapshots.ethpandaops.io/sepolia/geth/latest/_snapshot_eth_getBlockByNumber.json
+          
+          # Or just get the block number:
+          printf '%d\n' $(
+              curl -s https://snapshots.ethpandaops.io/sepolia/geth/latest/_snapshot_eth_getBlockByNumber.json |
+              jq -r '.result.number'
+          )
+          
+          # Or just the time when it was taken
+          printf '%d\n' $(
+              curl -s https://snapshots.ethpandaops.io/sepolia/geth/latest/_snapshot_eth_getBlockByNumber.json |
+              jq -r '.result.timestamp'
+          )
+          ```
+          
+          <p>Then, also check which client version was used during the snapshot:</p>
+          
+          ```sh
+          # Get client version. Can be important, depending on the version that you want to run.
+          curl -s https://snapshots.ethpandaops.io/sepolia/geth/latest/_snapshot_web3_clientVersion.json | jq -r '.result'
+          ```
+          
+          <p>If you're happy with the version and the timestamp of the most recent snapshot, you can download it like:</p>
+          
+          ```sh
+          # Download the whole snapshot
+          curl -O https://snapshots.ethpandaops.io/sepolia/geth/latest/snapshot.tar.zst
+          
+          # Or... download and untar at the same time. Safes you disk space, so you don't have to store the full compressed file.
+          curl -s -L https://snapshots.ethpandaops.io/sepolia/geth/latest/snapshot.tar.zst \
+          | tar -I zstd -xvf - -C $PATH_TO_YOUR_GETH_DATA_DIR
+          
+          # Or.. use a docker container with all the tools you need (curl, zstd, tar) and untar it on the fly
+          docker run --rm -it \
+            -v $PATH_TO_YOUR_GETH_DATA_DIR:/data \
+            --entrypoint "/bin/sh" \
+            alpine -c \
+            "apk add --no-cache curl tar zstd && \
+             curl -s -L https://snapshots.ethpandaops.io/sepolia/geth/latest/snapshot.tar.zst | \
+             tar -I zstd -xvf - -C /data"
+          ```
+        </div>
+      </div>
+    </TabItem>
+  </Tabs>
+</div>

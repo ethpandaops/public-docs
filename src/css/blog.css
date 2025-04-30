@@ -443,64 +443,6 @@
   margin-bottom: 0;
 }
 
-.markdown pre {
-  margin: 1.5rem 0;
-  border-radius: 8px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  max-width: 100%;
-}
-
-.markdown pre code {
-  background-color: transparent;
-  padding: 0;
-  border: none;
-  white-space: pre;
-  font-weight: normal;
-  display: block;
-  overflow-x: auto;
-  max-width: 100%;
-  font-family: var(--ifm-font-family-monospace);
-}
-
-/* Make sure all code blocks can scroll horizontally */
-.markdown div[class*="codeBlockContent"] {
-  overflow-x: auto;
-  max-width: 100%;
-}
-
-/* Override pre-wrap styling which breaks code block formatting */
-.markdown pre, 
-.markdown code,
-.markdown [class*="codeBlockContent"] pre,
-.markdown [class*="codeBlockContent"] code {
-  white-space: pre;
-  word-break: normal;
-  word-wrap: normal;
-}
-
-/* Fix for pre elements to ensure horizontal scrolling */
-.markdown pre {
-  white-space: pre;
-  overflow-x: auto;
-}
-
-/* Special styling for all language-specific code blocks */
-.markdown code[class*="language-"] {
-  display: block;
-  overflow-x: auto;
-  max-width: 100%;
-}
-
-/* Special styling for canonical_execution_block and similar keyword elements */
-.markdown code.language-canonical_execution_block,
-.markdown code[class*="language-canonical_execution_"] {
-  background-color: rgba(26, 115, 232, 0.1);
-  color: var(--ifm-color-primary);
-  border-color: rgba(26, 115, 232, 0.3);
-  font-weight: 600;
-}
-
 /* Enhanced table styling for blog posts */
 .markdown table {
   border-collapse: collapse;
