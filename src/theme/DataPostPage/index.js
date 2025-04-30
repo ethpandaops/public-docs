@@ -3,6 +3,7 @@ import clsx from 'clsx';
 import {HtmlClassNameProvider, ThemeClassNames} from '@docusaurus/theme-common';
 import {PageMetadata} from '@docusaurus/theme-common';
 import Layout from '@theme/Layout';
+import DataLayout from '@theme/DataLayout';
 import Link from '@docusaurus/Link';
 import {FaArrowLeft} from 'react-icons/fa';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
@@ -110,7 +111,7 @@ export default function DataPostPage(props) {
     <HtmlClassNameProvider
       className={clsx('data-post-page-wrapper', 'blog-post-page-wrapper', 'single-post-page')}>
       <DataPostPageMetadata content={DataPostContent} />
-      <Layout
+      <DataLayout
         title={title}
         wrapperClassName={ThemeClassNames.wrapper.blogPages}
         pageClassName={ThemeClassNames.page.blogPostPage}>
@@ -140,7 +141,7 @@ export default function DataPostPage(props) {
             </div>
           </section>
         </div>
-      </Layout>
+      </DataLayout>
     </HtmlClassNameProvider>
   );
 } 

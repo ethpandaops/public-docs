@@ -305,9 +305,12 @@ export default function SnapshotDataTable({ network }) {
                       display: 'block',
                       overflow: 'hidden',
                       textOverflow: 'ellipsis',
-                      whiteSpace: 'nowrap'
+                      whiteSpace: 'nowrap',
+                      maxWidth: '100%'
                     }}>
-                      {client.clientVersion}
+                      {client.clientVersion.length > 40 
+                        ? client.clientVersion.substring(0, 40) + '...' 
+                        : client.clientVersion}
                     </a>
                   </td>
                   <td>
@@ -318,7 +321,8 @@ export default function SnapshotDataTable({ network }) {
                         fontSize: '0.85em',
                         padding: '6px 12px',
                         whiteSpace: 'nowrap',
-                        fontWeight: '500'
+                        fontWeight: '500',
+                        float: 'right'
                       }}
                     >
                       Download

@@ -11,6 +11,14 @@
   flex-direction: column;
 }
 
+/* Data layout container width - same as blog layout */
+.data-layout-root .container {
+  max-width: 1140px !important;
+  margin: 0 auto;
+  padding: 0 1rem;
+  width: 100%;
+}
+
 /* Data Hero Section */
 header.blog-hero .blog-hero-title {
   margin-bottom: 1rem;
@@ -117,10 +125,48 @@ header.blog-hero .blog-hero-title {
   padding: 0 20px;
 }
 
+/* Styling for the blog-post-container in data pages */
+.data-post-page .blog-post-container {
+  background-color: var(--ifm-card-background-color);
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  margin-top: 0;
+  margin-bottom: 2rem;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  position: relative;
+  z-index: 10;
+}
+
 /* Ensure data post content has the same styling as blog post content */
 .data-post-content.markdown {
   line-height: 1.7;
   font-size: 1.1rem;
+  background-color: transparent;
+  padding: 0;
+  color: var(--ifm-font-color-base);
+  z-index: 10;
+  max-width: 100%;
+}
+
+.data-post-content.markdown > *:last-child {
+  margin-bottom: 0;
+}
+
+.data-post-content.markdown p {
+  margin-bottom: 1.5rem;
+}
+
+.data-post-content.markdown ul, 
+.data-post-content.markdown ol {
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+.data-post-content.markdown li {
+  margin-bottom: 0.5rem;
 }
 
 .data-post-content h2, 
@@ -218,8 +264,7 @@ header.blog-hero .blog-hero-title {
   background-color: var(--ifm-color-emphasis-300);
   color: var(--ifm-color-emphasis-900);
   text-decoration: none;
-} 
-
+}
 
 /* Styles for MDImporter component */
 .md-importer-content {
@@ -521,4 +566,66 @@ header.blog-hero .blog-hero-title {
 /* Handle dark mode appropriately */
 [data-theme='dark'] .md-importer-content blockquote {
   color: var(--ifm-color-emphasis-500);
+}
+
+/* Markdown content in data posts should not interfere with snapshot table styling */
+.data-post-content.markdown .snapshot-table {
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+  table-layout: fixed !important;
+  margin-bottom: 0 !important;
+  border-collapse: collapse !important;
+}
+
+.data-post-content.markdown .snapshot-table th,
+.data-post-content.markdown .snapshot-table td {
+  border: none !important;
+  padding: 14px 16px !important;
+  text-align: left !important;
+}
+
+.data-post-content.markdown .snapshot-table thead tr {
+  background-color: var(--ifm-color-primary) !important;
+  color: white !important;
+  border-bottom: none !important;
+}
+
+.data-post-content.markdown .snapshot-table tbody tr:nth-of-type(even) {
+  background-color: var(--ifm-color-emphasis-100) !important;
+}
+
+.data-post-content.markdown .snapshot-table tbody tr {
+  border-bottom: 1px solid var(--ifm-color-emphasis-200) !important;
+}
+
+.data-post-content.markdown .snapshot-table th:last-child,
+.data-post-content.markdown .snapshot-table td:last-child {
+  text-align: right !important;
+}
+
+.data-post-content.markdown .snapshot-module {
+  overflow: hidden !important;
+  max-width: 100% !important;
+  margin-bottom: 1.5rem !important;
+}
+
+/* Prevent horizontal scrollbar in snapshot table container in data posts */
+.data-post-content.markdown .snapshot-table-container {
+  overflow-x: visible !important;
+  padding: 0 !important;
+}
+
+/* For mobile screens, allow horizontal scrolling if needed */
+@media (max-width: 768px) {
+  .data-post-content.markdown .snapshot-table-container {
+    overflow-x: auto !important;
+  }
+}
+
+/* Fix tabs in data posts */
+.data-post-content.markdown .tabs-container {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin-bottom: 0 !important;
 } 
