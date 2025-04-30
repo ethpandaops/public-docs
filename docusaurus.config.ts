@@ -186,6 +186,11 @@ const config: Config = {
           position: 'left',
         },
         {
+          label: 'Links',
+          to: '/links',
+          position: 'left',
+        },
+        {
           type: 'dropdown',
           label: 'Documentation',
           position: 'left',
@@ -243,6 +248,10 @@ const config: Config = {
             {
               label: 'Team',
               to: '/team',
+            },
+            {
+              label: 'Links',
+              to: '/links',
             },
           ],
         },

@@ -1,0 +1,155 @@
+{
+  "ethereum-mainnet": {
+    "name": "Ethereum Mainnet",
+    "emoji": "🐼",
+    "links": {
+      "public": {
+        "name": "Public",
+        "emoji": "🌍",
+        "items": [
+          {
+            "title": "Blob archive",
+            "url": "https://blob-archive.mainnet.ethpandaops.io",
+            "description": "Archive of Ethereum blobs"
+          },
+          {
+            "title": "Ethstats",
+            "url": "https://ethstats.mainnet.ethpandaops.io",
+            "description": "Ethereum network statistics"
+          },
+          {
+            "title": "Forkmon",
+            "url": "https://forkmon.mainnet.ethpandaops.io",
+            "description": "Ethereum fork monitor"
+          },
+          {
+            "title": "Forky",
+            "url": "https://forky.mainnet.ethpandaops.io",
+            "description": "Ethereum fork analyzer"
+          },
+          {
+            "title": "Tracoor",
+            "url": "https://tracoor.mainnet.ethpandaops.io",
+            "description": "Ethereum transaction tracer"
+          }
+        ]
+      },
+      "private": {
+        "name": "Private",
+        "emoji": "🔐",
+        "items": [
+          {
+            "title": "Checkpoint sync",
+            "url": "https://checkpoint-sync.mainnet.ethpandaops.io",
+            "description": "Ethereum checkpoint synchronization service"
+          }
+        ]
+      }
+    }
+  },
+  "sepolia-testnet": {
+    "name": "Sepolia Testnet",
+    "emoji": "🐬",
+    "links": {
+      "public": {
+        "name": "Public",
+        "emoji": "🌍",
+        "items": [
+          {
+            "title": "Beacon explorer",
+            "url": "https://dora.sepolia.ethpandaops.io",
+            "description": "Ethereum beacon chain explorer"
+          },
+          {
+            "title": "Blob archive",
+            "url": "https://blob-archive.sepolia.ethpandaops.io",
+            "description": "Archive of Ethereum blobs"
+          },
+          {
+            "title": "Checkpoint sync",
+            "url": "https://checkpoint-sync.sepolia.ethpandaops.io",
+            "description": "Ethereum checkpoint synchronization service"
+          },
+          {
+            "title": "Ethstats",
+            "url": "https://ethstats.sepolia.ethpandaops.io",
+            "description": "Ethereum network statistics"
+          },
+          {
+            "title": "Forkmon",
+            "url": "https://forkmon.sepolia.ethpandaops.io",
+            "description": "Ethereum fork monitor"
+          },
+          {
+            "title": "Forky",
+            "url": "https://forky.sepolia.ethpandaops.io",
+            "description": "Ethereum fork analyzer"
+          },
+          {
+            "title": "Tracoor",
+            "url": "https://tracoor.sepolia.ethpandaops.io",
+            "description": "Ethereum transaction tracer"
+          }
+        ]
+      }
+    }
+  },
+  "hoodi-network": {
+    "name": "Hoodi Network",
+    "emoji": "🦉",
+    "links": {
+      "public": {
+        "name": "Public",
+        "emoji": "🌍",
+        "items": [
+          {
+            "title": "Beacon explorer",
+            "url": "https://dora.hoodi.ethpandaops.io",
+            "description": "Ethereum beacon chain explorer"
+          },
+          {
+            "title": "Blob archive",
+            "url": "https://blob-archive.hoodi.ethpandaops.io",
+            "description": "Archive of Ethereum blobs"
+          },
+          {
+            "title": "Checkpoint sync",
+            "url": "https://checkpoint-sync.hoodi.ethpandaops.io",
+            "description": "Ethereum checkpoint synchronization service"
+          },
+          {
+            "title": "Ethstats",
+            "url": "https://ethstats.hoodi.ethpandaops.io",
+            "description": "Ethereum network statistics"
+          },
+          {
+            "title": "Forkmon",
+            "url": "https://forkmon.hoodi.ethpandaops.io",
+            "description": "Ethereum fork monitor"
+          },
+          {
+            "title": "Forky",
+            "url": "https://forky.hoodi.ethpandaops.io",
+            "description": "Ethereum fork analyzer"
+          },
+          {
+            "title": "Tracoor",
+            "url": "https://tracoor.hoodi.ethpandaops.io",
+            "description": "Ethereum transaction tracer"
+          }
+        ]
+      },
+      "private": {
+        "name": "Private",
+        "emoji": "🔐",
+        "items": [
+          {
+            "title": "Assertoor",
+            "url": "https://assertoor.hoodi.ethpandaops.io",
+            "description": "Ethereum assertion testing tool"
+          }
+        ]
+      }
+    }
+  }
+} 
