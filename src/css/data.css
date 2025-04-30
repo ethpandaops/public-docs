@@ -219,3 +219,306 @@ header.blog-hero .blog-hero-title {
   color: var(--ifm-color-emphasis-900);
   text-decoration: none;
 } 
+
+
+/* Styles for MDImporter component */
+.md-importer-content {
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Loading spinner styles */
+.loading-spinner-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background-color: var(--ifm-color-emphasis-100);
+  border-radius: 8px;
+  margin: 1rem 0;
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid var(--ifm-color-emphasis-300);
+  border-radius: 50%;
+  border-top: 4px solid var(--ifm-color-primary);
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+.loading-text {
+  color: var(--ifm-color-emphasis-700);
+  font-weight: 500;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Make tables look like the snapshot tables */
+.md-importer-content .table-container {
+  overflow-x: auto;
+  width: 100%;
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+  border: 1px solid var(--ifm-color-emphasis-300);
+  padding: 0;
+}
+
+.md-importer-content table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  margin: 0;
+  table-layout: fixed;
+  border-bottom: 1px solid var(--ifm-color-emphasis-300);
+  box-shadow: none;
+}
+
+.md-importer-content table thead tr {
+  background-color: var(--ifm-color-primary);
+  color: white;
+  text-align: left;
+  font-weight: bold;
+}
+
+/* Prevent header background color change on hover */
+.md-importer-content table thead tr:hover {
+  background-color: var(--ifm-color-primary);
+}
+
+/* Dark mode table header hover */
+[data-theme='dark'] .md-importer-content table thead tr:hover {
+  background-color: var(--ifm-color-primary-darker);
+}
+
+.md-importer-content table th,
+.md-importer-content table td {
+  text-align: left !important; /* Ensure all cells are left-aligned */
+}
+
+.md-importer-content table th {
+  background-color: transparent;
+  color: white;
+  font-weight: 600;
+  padding: 14px 16px;
+  border: none;
+  white-space: nowrap;
+}
+
+.md-importer-content table td {
+  padding: 14px 16px;
+  border: none;
+  vertical-align: middle;
+  max-width: 300px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Allow description column to wrap text */
+.md-importer-content table td:nth-child(3) {
+  white-space: normal;
+}
+
+/* Styles for truncated cells */
+.md-importer-content table td.truncated-cell {
+  position: relative;
+}
+
+.md-importer-content table td.truncated-cell .truncated-content {
+  white-space: normal;
+  overflow: hidden;
+  display: block;
+  line-height: 1.4;
+}
+
+/* Specific column widths to match snapshot-table */
+.md-importer-content table th:nth-child(1), 
+.md-importer-content table td:nth-child(1) { 
+  width: 15%; 
+  font-weight: 500;
+  text-align: left; /* Explicitly ensure left alignment for Dataset Name column */
+}
+
+.md-importer-content table th:nth-child(2), 
+.md-importer-content table td:nth-child(2) { 
+  width: 15%;
+  text-align: left;
+}
+
+.md-importer-content table th:nth-child(3), 
+.md-importer-content table td:nth-child(3) { 
+  width: 60%; 
+  white-space: normal; 
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-width: 60%;
+  text-align: left;
+}
+
+/* Hide all but the first 3 columns on small screens */
+@media (max-width: 768px) {
+  .md-importer-content table th:nth-child(n+4), 
+  .md-importer-content table td:nth-child(n+4) {
+    display: none;
+  }
+  
+  /* Make the description column even wider on mobile */
+  .md-importer-content table th:nth-child(3), 
+  .md-importer-content table td:nth-child(3) {
+    width: 70%;
+    max-width: 70%;
+  }
+}
+
+.md-importer-content table tbody tr {
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.md-importer-content table tbody tr:nth-child(even) {
+  background-color: var(--ifm-color-emphasis-100);
+}
+
+.md-importer-content table tbody tr:hover {
+  background-color: var(--ifm-color-emphasis-200);
+}
+
+.md-importer-content table tbody tr:last-of-type {
+  border-bottom: none;
+}
+
+/* Style the "Download" buttons to match */
+.md-importer-content table td a.button,
+.md-importer-content table td a[href$=".zip"],
+.md-importer-content table td a[href$=".tar.gz"],
+.md-importer-content table td a:contains("Download") {
+  display: inline-block;
+  padding: 6px 12px;
+  background-color: var(--ifm-color-primary);
+  color: white !important;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.85em;
+  transition: background-color 0.2s ease;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.md-importer-content table td a.button:hover,
+.md-importer-content table td a[href$=".zip"]:hover,
+.md-importer-content table td a[href$=".tar.gz"]:hover,
+.md-importer-content table td a:contains("Download"):hover {
+  background-color: var(--ifm-color-primary-darker);
+  text-decoration: none;
+}
+
+/* Style version links */
+.md-importer-content table td a.version-link {
+  color: var(--ifm-color-primary);
+  text-decoration: none;
+  font-size: 0.85em;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+.md-importer-content table td a.version-link:hover {
+  color: var(--ifm-color-primary-darker);
+  text-decoration: underline;
+}
+
+/* Also style block hash links */
+.md-importer-content table td:nth-child(2) a {
+  color: var(--ifm-color-primary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.md-importer-content table td:nth-child(2) a:hover {
+  color: var(--ifm-color-primary-darker);
+  text-decoration: underline;
+}
+
+/* Add small gray text for timestamps */
+.md-importer-content table td .time-ago {
+  font-size: 0.85em;
+  color: var(--ifm-color-emphasis-600);
+  display: block;
+  margin-top: 2px;
+}
+
+/* Checkmark styling */
+.md-importer-content .checkmark-cell {
+  text-align: center; /* Keep checkmarks centered */
+  vertical-align: middle;
+}
+
+.md-importer-content .checkmark-symbol {
+  display: inline-block;
+  color: #00a550;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+/* Dark mode adjustments for checkmarks */
+[data-theme='dark'] .md-importer-content .checkmark-symbol {
+  color: #22c55e;
+}
+
+/* Dark mode table styling */
+[data-theme='dark'] .md-importer-content table thead tr {
+  background-color: var(--ifm-color-primary-darker);
+}
+
+[data-theme='dark'] .md-importer-content .table-container {
+  border-color: var(--ifm-color-emphasis-300);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme='dark'] .md-importer-content table tbody tr:nth-child(even) {
+  background-color: var(--ifm-color-emphasis-200);
+}
+
+[data-theme='dark'] .md-importer-content table tbody tr:hover {
+  background-color: var(--ifm-color-emphasis-300);
+}
+
+/* Style code blocks and other elements */
+.md-importer-content code {
+  background-color: var(--ifm-color-emphasis-200);
+  border-radius: 4px;
+  padding: 0.2rem 0.4rem;
+  font-family: var(--ifm-font-family-monospace);
+}
+
+.md-importer-content pre {
+  background-color: var(--ifm-color-emphasis-200);
+  border-radius: 8px;
+  padding: 1rem;
+  overflow-x: auto;
+}
+
+.md-importer-content pre code {
+  background-color: transparent;
+  padding: 0;
+}
+
+.md-importer-content blockquote {
+  border-left: 4px solid var(--ifm-color-primary);
+  padding-left: 1rem;
+  margin-left: 0;
+  color: var(--ifm-color-emphasis-700);
+}
+
+/* Handle dark mode appropriately */
+[data-theme='dark'] .md-importer-content blockquote {
+  color: var(--ifm-color-emphasis-500);
+} 

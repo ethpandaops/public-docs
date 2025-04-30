@@ -1162,24 +1162,3 @@ pre .token-line:has(.plain:is(
 )) {
   color: #aaa !important;
 }
-
-/* Ensure canonical_execution class styling */
-.canonical_execution_block,
-code[class*="canonical_execution_"] {
-  display: inline-block !important;
-  background-color: rgba(26, 115, 232, 0.1) !important;
-  color: #1a73e8 !important;
-  font-weight: 600 !important;
-  padding: 0.2em 0.4em !important;
-  border-radius: 3px !important;
-  border: 1px solid rgba(26, 115, 232, 0.3) !important;
-  font-size: 90% !important;
-  font-family: var(--ifm-font-family-monospace) !important;
-}
-
-[data-theme='dark'] .canonical_execution_block,
-[data-theme='dark'] code[class*="canonical_execution_"] {
-  color: #4d8df6 !important;
-  background-color: rgba(77, 141, 246, 0.2) !important;
-  border-color: rgba(77, 141, 246, 0.4) !important;
-}
