@@ -181,13 +181,13 @@ const config: Config = {
           position: 'left',
         },
         {
-          label: 'Team',
-          to: '/team',
+          label: 'Links',
+          to: '/links',
           position: 'left',
         },
         {
-          label: 'Links',
-          to: '/links',
+          label: 'Team',
+          to: '/team',
           position: 'left',
         },
         {
@@ -231,28 +231,24 @@ const config: Config = {
       style: 'dark',
       links: [
         {
-          title: 'Documentation',
+          title: 'Navigation',
           items: [
-            {
-              label: 'Introduction',
-              to: '/docs',
-            },
-            {
-              label: 'Guides',
-              to: '/docs/guides',
-            },
             {
               label: 'Tooling',
               to: '/docs/tooling/overview',
             },
             {
-              label: 'Team',
-              to: '/team',
+              label: 'Blog',
+              to: '/posts',
             },
             {
               label: 'Links',
               to: '/links',
             },
+            {
+              label: 'Team',
+              to: '/team',
+            }
           ],
         },
         {

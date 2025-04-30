@@ -28,7 +28,7 @@ function TeamHeader() {
           Team
         </Heading>
         <p className={clsx(styles.subtitle)}>
-          Nestled within the Ethereum Foundation DevOps team, we're a globally distributed group of pandas with a passion for decentralization, open source and Ethereum.
+          Nestled within the Ethereum Foundation, we're a globally distributed group of pandas with a passion for decentralization, open source and Ethereum.
         </p>
       </div>
     </header>
