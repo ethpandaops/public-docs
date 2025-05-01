@@ -10,7 +10,7 @@ function enhanceHtml(html) {
   // Replace all tables with a wrapped version for better mobile scrolling
   let enhancedHtml = html.replace(
     /<table>/g, 
-    '<div class="table-container"><table>'
+    '<div class="table-container table-container-dataset"><table>'
   ).replace(
     /<\/table>/g, 
     '</table></div>'
@@ -58,6 +58,17 @@ function enhanceHtml(html) {
   enhancedHtml = enhancedHtml.replace(
     /<td>(\s*\|?\s*)✓(\s*\|?\s*)<\/td>/g, 
     '<td class="checkmark-cell"><span class="checkmark-symbol">✓</span></td>'
+  );
+  
+  // Shorten long column headers
+  enhancedHtml = enhancedHtml.replace(
+    /<th.*?>EthPandaOps Clickhouse<\/th>/g,
+    '<th>Clickhouse</th>'
+  );
+  
+  enhancedHtml = enhancedHtml.replace(
+    /<th.*?>Public Parquet Files<\/th>/g,
+    '<th>Parquet</th>'
   );
   
   // Truncate long text in description column (typically 3rd or later column)

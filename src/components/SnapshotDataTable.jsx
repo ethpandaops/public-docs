@@ -259,7 +259,7 @@ export default function SnapshotDataTable({ network }) {
         </div>
       )}
       
-      <div className="table-container">
+      <div className="table-container table-container-snapshot">
         <table className="table-content">
           <thead>
             <tr>
@@ -288,42 +288,38 @@ export default function SnapshotDataTable({ network }) {
                       color: 'var(--ifm-color-primary)',
                       textDecoration: 'none'
                     }}>
-                      {client.blockNumber} 
-                      <span style={{color: 'var(--ifm-color-emphasis-600)', fontSize: '0.85em'}}> ({client.blockHash}...)</span>
+                      {client.blockNumber}
+                      <div style={{
+                        color: 'var(--ifm-color-emphasis-600)',
+                        fontSize: '0.75rem',
+                        marginTop: '2px'
+                      }}>{client.blockHash}</div>
                     </a>
                   </td>
                   <td>
                     {client.timestamp} 
                     <div className="time-ago">{client.timeAgoStr}</div>
                   </td>
-                  <td>{client.fileSize}</td>
+                  <td style={{whiteSpace: 'nowrap'}}>{client.fileSize}</td>
                   <td>
                     <a href={client.clientVersionUrl} target="_blank" rel="noopener noreferrer" style={{
                       color: 'var(--ifm-color-primary)',
                       textDecoration: 'none',
-                      fontSize: '0.85em',
                       display: 'block',
                       overflow: 'hidden',
                       textOverflow: 'ellipsis',
                       whiteSpace: 'nowrap',
                       maxWidth: '100%'
                     }}>
-                      {client.clientVersion.length > 40 
-                        ? client.clientVersion.substring(0, 40) + '...' 
+                      {client.clientVersion.length > 25 
+                        ? client.clientVersion.substring(0, 25) + '...' 
                         : client.clientVersion}
                     </a>
                   </td>
                   <td>
                     <a 
                       href={client.downloadUrl} 
-                      className="button button--primary button--sm" 
-                      style={{
-                        fontSize: '0.85em',
-                        padding: '6px 12px',
-                        whiteSpace: 'nowrap',
-                        fontWeight: '500',
-                        float: 'right'
-                      }}
+                      className="button button--primary" 
                     >
                       Download
                     </a>

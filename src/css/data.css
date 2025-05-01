@@ -297,6 +297,11 @@ header.blog-hero .blog-hero-title {
 
 /* Module container with shadow */
 .snapshot-module {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  margin-bottom: 2rem;
+  position: relative;
   border: 1px solid var(--ifm-color-emphasis-300);
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
@@ -335,18 +340,27 @@ header.blog-hero .blog-hero-title {
   100% { transform: rotate(360deg); }
 }
 
-/* Table container styles */
+/* Base Table container styles */
 .table-container {
   overflow-x: auto;
+  overflow-y: hidden;
   width: 100% !important;
   margin: 0 !important;
   padding: 0 !important;
   box-sizing: border-box !important;
   max-width: 100% !important;
   display: block !important;
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+  position: relative; /* Establishes a positioning context */
 }
 
-/* Table styles */
+.table-container::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* Common table styles */
 .table-container table,
 .table-content {
   width: 100% !important;
@@ -358,75 +372,177 @@ header.blog-hero .blog-hero-title {
   table-layout: fixed !important;
   border-bottom: 1px solid var(--ifm-color-emphasis-300) !important;
   box-shadow: none !important;
+  display: table !important; /* Ensures proper table display */
 }
 
-/* Table header styling */
-.table-container thead tr,
-.table-content thead tr {
+/* Dataset table specific styles */
+.table-container-dataset table {
+  min-width: 800px !important;
+}
+
+.table-container-dataset th,
+.table-container-dataset td {
+  padding: 14px 16px !important;
+  text-align: left !important;
+  border: none !important;
+  vertical-align: middle;
+}
+
+.table-container-dataset th:nth-child(1),
+.table-container-dataset td:nth-child(1) {
+  width: 22% !important;
+}
+
+.table-container-dataset th:nth-child(2),
+.table-container-dataset td:nth-child(2) {
+  width: 12% !important;
+}
+
+.table-container-dataset th:nth-child(3),
+.table-container-dataset td:nth-child(3) {
+  width: 30% !important;
+}
+
+.table-container-dataset th:nth-child(4),
+.table-container-dataset td:nth-child(4) {
+  width: 18% !important;
+}
+
+.table-container-dataset th:nth-child(5),
+.table-container-dataset td:nth-child(5),
+.table-container-dataset th:nth-child(6),
+.table-container-dataset td:nth-child(6) {
+  width: 9% !important;
+  text-align: center !important;
+}
+
+/* Snapshot table specific styles */
+.table-container-snapshot {
+  margin-bottom: 2rem;
+}
+
+.table-container-snapshot table {
+  min-width: 900px !important;
+  table-layout: fixed !important;
+}
+
+.table-container-snapshot th,
+.table-container-snapshot td {
+  padding: 14px 16px !important;
+  text-align: left !important;
+  border: none !important;
+  vertical-align: middle;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.table-container-snapshot th:nth-child(1),
+.table-container-snapshot td:nth-child(1) {
+  width: 10% !important;
+  text-transform: capitalize !important;
+  font-weight: 500 !important;
+}
+
+.table-container-snapshot th:nth-child(2),
+.table-container-snapshot td:nth-child(2) {
+  width: 10% !important;
+}
+
+.table-container-snapshot th:nth-child(3),
+.table-container-snapshot td:nth-child(3) {
+  width: 15% !important;
+}
+
+.table-container-snapshot th:nth-child(4),
+.table-container-snapshot td:nth-child(4) {
+  width: 10% !important;
+  text-align: left !important;
+  white-space: nowrap !important;
+}
+
+.table-container-snapshot th:nth-child(5),
+.table-container-snapshot td:nth-child(5) {
+  width: 20% !important;
+  text-align: left !important;
+  max-width: 250px !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+.table-container-snapshot th:nth-child(6),
+.table-container-snapshot td:nth-child(6) {
+  width: 10% !important;
+  text-align: right !important;
+}
+
+/* Custom styling for snapshot table download buttons */
+.table-container-snapshot .button {
+  padding: 8px 16px !important;
+  min-width: 100px !important;
+  font-weight: 600 !important;
+  font-size: 0.9rem !important;
+  display: inline-block !important;
+  text-align: center !important;
+  border-radius: 6px !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+  transition: all 0.2s ease !important;
+}
+
+.table-container-snapshot .button:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Snapshot table special formatting */
+.table-container-snapshot .time-ago {
+  color: var(--ifm-color-emphasis-600) !important;
+  font-size: 0.8rem !important;
+  margin-top: 4px !important;
+  display: block !important;
+}
+
+/* Common header styling */
+.table-container thead tr {
   background-color: var(--ifm-color-primary) !important;
   color: white !important;
   text-align: left !important;
   font-weight: bold !important;
 }
 
-/* Table header hover effect */
-.table-container thead tr:hover,
-.table-content thead tr:hover {
+.table-container thead tr:hover {
   background-color: var(--ifm-color-primary-dark) !important;
 }
 
-/* Header cells */
-.table-container th,
-.table-content th {
-  width: auto !important;
+/* Common cell styling */
+.table-container th {
   font-weight: 600 !important;
-  padding: 14px 16px !important;
   white-space: nowrap !important;
-  text-align: left !important;
-  border: none !important;
 }
 
-/* Table rows */
-.table-container tbody tr,
-.table-content tbody tr {
+.table-container tbody tr {
   border-bottom: 1px solid var(--ifm-color-emphasis-200) !important;
   width: 100% !important;
 }
 
-/* Zebra striping */
-.table-container tbody tr:nth-child(even),
-.table-content tbody tr:nth-of-type(even) {
+.table-container tbody tr:nth-child(even) {
   background-color: var(--ifm-color-emphasis-100) !important;
 }
 
-/* Table row hover */
-.table-container tbody tr:hover,
-.table-content tbody tr:hover {
+.table-container tbody tr:hover {
   background-color: var(--ifm-color-emphasis-200) !important;
 }
 
-/* Last row in table */
-.table-container tbody tr:last-of-type,
-.table-content tbody tr:last-of-type {
+.table-container tbody tr:last-of-type {
   border-bottom: none !important;
 }
 
-/* Table data cells */
-.table-container td,
-.table-content td {
-  padding: 14px 16px !important;
-  white-space: nowrap !important;
-  text-align: left !important;
-  border: none !important;
-  vertical-align: middle;
-  max-width: 300px;
+.table-container td {
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-/* Button styling in tables */
-.table-container td a.button,
-.table-content td a.button {
+/* Download button specific styles */
+.table-container td a.button {
   display: inline-block !important;
   padding: 6px 14px !important;
   background-color: var(--ifm-color-primary) !important;
@@ -437,12 +553,10 @@ header.blog-hero .blog-hero-title {
   text-decoration: none !important;
   transition: all 0.2s ease !important;
   white-space: nowrap !important;
-  float: right !important;
+  text-align: center !important;
 }
 
-/* Button hover effect */
-.table-container td a.button:hover,
-.table-content td a.button:hover {
+.table-container td a.button:hover {
   background-color: var(--ifm-color-primary-dark) !important;
   color: white !important;
   text-decoration: none !important;
@@ -450,132 +564,88 @@ header.blog-hero .blog-hero-title {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1) !important;
 }
 
-/* Time display */
-.table-container td .time-ago,
-.table-content td .time-ago {
+.table-container td .time-ago {
   font-size: 0.85em !important;
   color: var(--ifm-color-emphasis-600) !important;
 }
 
-/* Links in tables */
-.table-container td a,
-.table-content td a {
+.table-container td a {
   color: var(--ifm-color-primary) !important;
   text-decoration: none !important;
 }
 
-/* Link hover */
-.table-container td a:hover,
-.table-content td a:hover {
+.table-container td a:hover {
   color: var(--ifm-color-primary-dark) !important;
   text-decoration: underline !important;
 }
 
 /* Dark theme adjustments */
-[data-theme='dark'] .table-container thead tr,
-[data-theme='dark'] .table-content thead tr {
+[data-theme='dark'] .table-container thead tr {
   background-color: var(--ifm-color-primary-dark) !important;
 }
 
-[data-theme='dark'] .table-container thead tr:hover,
-[data-theme='dark'] .table-content thead tr:hover {
+[data-theme='dark'] .table-container thead tr:hover {
   background-color: var(--ifm-color-primary-darker) !important;
 }
 
-[data-theme='dark'] .table-container,
-[data-theme='dark'] .table-content {
+[data-theme='dark'] .table-container {
   background-color: transparent !important;
   border-color: var(--ifm-color-emphasis-300) !important;
 }
 
-[data-theme='dark'] .table-container tbody tr:nth-child(even),
-[data-theme='dark'] .table-content tbody tr:nth-of-type(even) {
+[data-theme='dark'] .table-container tbody tr:nth-child(even) {
   background-color: var(--ifm-color-emphasis-200) !important;
 }
 
-[data-theme='dark'] .table-container tbody tr:hover,
-[data-theme='dark'] .table-content tbody tr:hover {
+[data-theme='dark'] .table-container tbody tr:hover {
   background-color: var(--ifm-color-emphasis-300) !important;
 }
 
-/* Column width adjustments */
-.table-container th:nth-child(1), .table-container td:nth-child(1),
-.table-content th:nth-child(1), .table-content td:nth-child(1) { 
-  width: 10% !important; 
-}
-
-.table-container th:nth-child(2), .table-container td:nth-child(2),
-.table-content th:nth-child(2), .table-content td:nth-child(2) { 
-  width: 14% !important; 
-}  
-
-.table-container th:nth-child(3), .table-container td:nth-child(3),
-.table-content th:nth-child(3), .table-content td:nth-child(3) { 
-  width: 18% !important; 
-  white-space: nowrap !important;
-}
-
-.table-container th:nth-child(4), .table-container td:nth-child(4),
-.table-content th:nth-child(4), .table-content td:nth-child(4) { 
-  width: 8% !important; 
-}
-
-.table-container th:nth-child(5), .table-container td:nth-child(5),
-.table-content th:nth-child(5), .table-content td:nth-child(5) { 
-  width: 35% !important; 
-  text-align: left !important; 
-}
-
-.table-container th:nth-child(6), .table-container td:nth-child(6),
-.table-content th:nth-child(6), .table-content td:nth-child(6) { 
-  width: 15% !important; 
-  text-align: right !important; 
-}
-
-/* Mobile responsiveness */
+/* Mobile responsiveness for all tables */
 @media (max-width: 768px) {
-  .table-container,
-  .table-content {
+  .table-container {
+    display: block !important;
+    width: 100% !important;
     overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
   }
   
-  .table-container th:nth-child(3), .table-container td:nth-child(3),
-  .table-content th:nth-child(3), .table-content td:nth-child(3) {
-    max-width: 200px !important;
-    white-space: normal !important;
+  .table-container table {
+    min-width: 600px !important; /* Base minimum width */
+    width: 100% !important;
+    table-layout: fixed !important;
   }
-}
-
-/* Truncated cell handling */
-.table-container td.truncated-cell,
-.table-content td.truncated-cell {
-  max-width: 300px !important;
-}
-
-.table-container td.truncated-cell .truncated-content,
-.table-content td.truncated-cell .truncated-content {
-  white-space: nowrap !important;
-  overflow: hidden !important;
-  text-overflow: ellipsis !important;
-  display: block !important;
-  max-width: 100% !important;
+  
+  .table-container-dataset table {
+    min-width: 800px !important;
+  }
+  
+  .table-container-snapshot table {
+    min-width: 900px !important;
+  }
+  
+  /* Ensure all columns are visible */
+  .table-container th, 
+  .table-container td {
+    display: table-cell !important;
+    visibility: visible !important;
+  }
 }
 
 /* Checkmark styling */
-.table-container .checkmark-cell,
-.table-content .checkmark-cell {
+.table-container .checkmark-cell {
   text-align: center !important;
 }
 
-.table-container .checkmark-symbol,
-.table-content .checkmark-symbol {
+.table-container .checkmark-symbol {
   color: var(--ifm-color-success) !important;
   font-size: 1.2em !important;
   font-weight: bold !important;
+  display: inline-block !important;
+  line-height: 1 !important;
 }
 
-[data-theme='dark'] .table-container .checkmark-symbol,
-[data-theme='dark'] .table-content .checkmark-symbol {
+[data-theme='dark'] .table-container .checkmark-symbol {
   color: var(--ifm-color-success-dark) !important;
 }
 
