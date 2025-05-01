@@ -137,8 +137,25 @@ const config: Config = {
         blogPostComponent: '@theme/DataPostPage',
         blogTagsListComponent: '@theme/DataTagsListPage',
         blogTagsPostsComponent: '@theme/DataTagsPostsPage',
-      },
+      }
     ],
+    [
+      '@docusaurus/plugin-client-redirects',
+      {
+        redirects: [
+          // /onboarding/API -> /docs/guides/client-developers/api-access
+          // /onboarding/VPN -> /docs/guides/client-developers/vpn-access
+          {
+            to: '/docs/guides/client-developers/api-access',
+            from: '/onboarding/API',
+          },
+          {
+            to: '/docs/guides/client-developers/vpn-access',
+            from: '/onboarding/VPN',
+          },
+        ],
+      }
+    ]
   ],
 
   themes: ['@docusaurus/theme-mermaid'],
