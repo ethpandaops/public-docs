@@ -10,50 +10,127 @@ This guide walks you through setting up Contributoor, a tool for contributing Et
 
 Contributoor allows node operators to securely share metrics with the ethPandaOps community, helping build a comprehensive view of network health. By contributing your node metrics, you help improve understanding of the Ethereum network and assist in identifying issues.
 
-## Quick Start Installation
+## How It Works
 
-1. **Prerequisites**
-   - A running Ethereum node (consensus and/or execution client)
-   - Docker and Docker Compose installed (recommended deployment method)
+Contributoor runs as a sidecar process to your beacon node, collecting important metrics and events without impacting your node’s performance. It:
 
-2. **Get the configuration files**
-   ```bash
-   git clone https://github.com/ethpandaops/contributoor.git
-   cd contributoor
-   ```
+- Connects to your beacon node’s API
+- Monitors key events and metrics
+- Securely forwards data to our collection endpoints
 
-3. **Configure your setup**
-   - Edit the `config.yaml` file to match your node setup
-   - Specify which metrics you want to share
+This data helps researchers and developers:
 
-4. **Start Contributoor**
-   ```bash
-   docker-compose up -d
-   ```
+- Optimize network performance
+- Identify potential issues early
+- Improve client implementations
+- Understand network behavior during upgrades
 
-## Advanced Configuration
+## 🔒 Installation
 
-Contributoor can be configured to collect metrics from various types of Ethereum clients and setups:
+Download and inspect the installation script before running:
 
-- Multiple clients on different machines
-- Various client combinations (Geth, Erigon, Lighthouse, Prysm, etc.)
-- Custom metric collection intervals
+```bash
+# Download the script.
+curl -O https://raw.githubusercontent.com/ethpandaops/contributoor-installer/refs/heads/master/install.sh
 
-Check the [Contributoor documentation](/docs/tooling/contributoor) for detailed configuration options.
+# Inspect the script contents.
+less install.sh
 
-## Dashboard Access
+# Make it executable and run if you're satisfied with the contents.
+chmod +x install.sh && ./install.sh
+```
 
-After your metrics are being collected, you can view aggregated data on the community dashboards:
+## ⚡ Quick Installation
 
-- Visit [The Lab](https://lab.ethpandaops.io/) to see network-wide metrics
-- Check for your node's contributions in the contributors section
+If you trust the source, you can run this one-liner:
 
-## Troubleshooting
+```baseh
+curl -O https://raw.githubusercontent.com/ethpandaops/contributoor-installer/refs/heads/master/install.sh && chmod +x install.sh && ./install.sh
+```
 
-Common issues and their solutions:
+## Alternate Installation Methods
 
-- **Missing metrics**: Check your client's metrics endpoint accessibility
-- **Connection issues**: Verify network connectivity and firewall settings
-- **High resource usage**: Adjust collection intervals in configuration
+### eth-docker
 
-For more help, join the [ethPandaOps Discord](https://discord.gg/ethereum) community. 
+  If you're using [eth-docker](https://ethdocker.com), setup is as follows:
+
+  - Run `./ethd update`
+  - Then edit your .env file:
+    - add `:contributoor.yml` to the end of `COMPOSE_FILE` variable
+    - add `CONTRIBUTOOR_USERNAME` variable and set it to your username
+    - add `CONTRIBUTOOR_PASSWORD` variable and set it to your password
+  - Run `./ethd update`
+  - Run `./ethd up`
+  
+  You can read more about configuring eth-docker [here](https://ethdocker.com/Usage/Advanced#specialty-yml-files).
+
+### Rocketpool Smart Node
+  
+  - Install `contributoor` via the [Install Script](#-installation)
+  - During the Contributoor setup:
+    - Set `Beacon Node Address` to `http://eth2:5052`
+    - Set `Optional Docker Network` to `rocketpool_net`
+   
+    Note: These can also be set later `contributoor config`
+  - Run `contributoor start`
+
+### Dappnode
+
+  Contributoor is available as a Dappnode package for `mainnet`, `holesky` and `hoodi` networks.
+  
+   For more information, and to install, see the [contributoor Dappnode package repository](https://github.com/ethpandaops/contributoor-dappnode).
+
+### Kubernetes (Helm)
+
+  Contributoor can be deployed on Kubernetes using the Helm chart from the [ethereum-helm-charts](https://github.com/ethpandaops/ethereum-helm-charts) repository.
+
+  ```bash
+  # Add the Helm repository
+  helm repo add ethereum-helm-charts https://ethpandaops.github.io/ethereum-helm-charts
+
+  # Update your repositories
+  helm repo update
+
+  # Install contributoor
+  helm install contributoor ethereum-helm-charts/contributoor
+  ```
+
+  For more details and configuration options, see the [contributoor chart documentation](https://github.com/ethpandaops/ethereum-helm-charts/tree/master/charts/contributoor).
+
+## Usage
+
+Contributoor can be managed using these commands:
+
+```bash
+contributoor start    # Start the service
+contributoor stop     # Stop the service
+contributoor status   # Check service status
+contributoor restart  # Restart the service
+contributoor config   # View/edit configuration
+contributoor update   # Update to latest version
+contributoor logs     # Show logs
+```
+
+If you chose to install contributoor under a custom directory, you will need to specify the directory when running the commands, for example:
+
+```
+contributoor --config-path /path/to/contributoor start
+```
+
+## Updating
+
+It's a good idea to periodically check contributoor to ensure you’re on the latest version!
+
+Keeping up to date is simple - just run:
+
+```bash
+contributoor update
+```
+
+## Uninstalling
+
+We'll be sad to see you go, but if you wish to uninstall, it can be done by running the installer with the `-u` flag:
+
+```bash
+curl -O https://raw.githubusercontent.com/ethpandaops/contributoor-installer/refs/heads/master/install.sh && chmod +x install.sh && ./install.sh -u
+```

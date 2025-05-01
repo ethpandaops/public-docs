@@ -2,11 +2,14 @@
 sidebar_position: 1
 ---
 
+
+import RelatedLinks from '@site/src/components/RelatedLinks';
+
 # Spamoor
 
-:::tip GitHub Repository
-Visit the [Spamoor repository](https://github.com/ethpandaops/spamoor) for the latest code, documentation, and contribution guidelines.
-:::
+<RelatedLinks 
+  githubRepo="ethpandaops/spamoor"/>
+
 
 Spamoor is a sophisticated transaction generator for Ethereum testnets, designed to simulate network load and test transaction processing under various conditions.
 

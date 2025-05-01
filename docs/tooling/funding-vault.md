@@ -2,11 +2,21 @@
 sidebar_position: 3
 ---
 
-# FundingVault
 
-:::tip GitHub Repository
-Visit the [FundingVault repository](https://github.com/ethpandaops/fundingvault) for the latest code, documentation, and contribution guidelines.
-:::
+import RelatedLinks from '@site/src/components/RelatedLinks';
+
+# Funding-vault
+
+<RelatedLinks 
+  githubRepo="ethpandaops/fundingvault"
+  links={[
+    {
+      name: "Testnet Faucets Documentation",
+      url: "https://ethereum.org/en/developers/docs/networks/#testnet-faucets"
+    },
+  ]}
+/>
+
 
 FundingVault is a smart contract designed to provide testnet funds to users and applications in a controlled and efficient manner.
 

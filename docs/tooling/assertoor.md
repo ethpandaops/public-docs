@@ -2,11 +2,19 @@
 sidebar_position: 5
 ---
 
+import RelatedLinks from '@site/src/components/RelatedLinks';
+
 # Assertoor
 
-:::tip GitHub Repository
-Visit the [Assertoor repository](https://github.com/ethpandaops/assertoor) for the latest code, documentation, and contribution guidelines.
-:::
+<RelatedLinks 
+  githubRepo="ethpandaops/assertoor"
+  links={[
+    {
+      name: "Documentation",
+      url: "https://github.com/ethpandaops/assertoor/tree/master/docs"
+    }
+  ]}
+/>
 
 Assertoor is a robust and versatile tool designed for comprehensive testing of Ethereum networks. It orchestrates a series of tests from YAML-based configurations, with each test comprising a sequence of tasks executed in a defined order to assess various aspects of the Ethereum network.
 

@@ -2,11 +2,14 @@
 sidebar_position: 1
 ---
 
+
+import RelatedLinks from '@site/src/components/RelatedLinks';
+
 # Checkpointz
 
-:::tip GitHub Repository
-Visit the [Checkpointz repository](https://github.com/ethpandaops/checkpointz) for the latest code, documentation, and contribution guidelines.
-:::
+<RelatedLinks 
+  githubRepo="ethpandaops/checkpointz"/>
+
 
 Checkpointz is an Ethereum beacon chain checkpoint sync provider that facilitates fast synchronization of new consensus clients by providing recent finalized state checkpoints.
 

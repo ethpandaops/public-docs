@@ -3,9 +3,17 @@ sidebar_position: 4
 title: Snapshotter
 ---
 
-:::tip GitHub Repository
-Visit the [Snapshotter repository](https://github.com/ethpandaops/snapshotter) for the latest code, documentation, and contribution guidelines.
-:::
+import RelatedLinks from '@site/src/components/RelatedLinks';
+
+<RelatedLinks 
+  githubRepo="ethpandaops/snapshotter"
+  links={[
+    {
+      name: "Public Snapshots",
+      url: "/data/snapshots/"
+    }
+  ]}
+  />
 
 Snapshotter is a specialized tool for capturing and managing Ethereum node data snapshots, enabling fast node bootstrapping and data recovery.
 
@@ -61,8 +69,3 @@ https://snapshots.ethpandaops.io/{network_name}/{client_name}/latest/_snapshot_w
 - **Data Analysis**: Capture point-in-time states for offline analysis
 - **Network Bootstrapping**: Distribute common data to accelerate network growth
 - **Client Migration**: Move data between different client implementations
-
-## Further Resources
-
-- [GitHub Repository](https://github.com/ethpandaops/snapshotter)
-- [EthPandaOps Public Snapshots](https://ethpandaops.io/data/snapshots/) - Browse and access all available snapshots

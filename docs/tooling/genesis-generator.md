@@ -2,11 +2,14 @@
 sidebar_position: 3
 ---
 
-# Ethereum Genesis Generator
 
-:::tip GitHub Repository
-Visit the [Ethereum Genesis Generator repository](https://github.com/ethpandaops/ethereum-genesis-generator) for the latest code, documentation, and contribution guidelines.
-:::
+import RelatedLinks from '@site/src/components/RelatedLinks';
+
+# Genesis-generator
+
+<RelatedLinks 
+  githubRepo="ethpandaops/ethereum-genesis-generator"/>
+
 
 The Ethereum Genesis Generator is a tool for creating customized genesis states for Ethereum networks, enabling developers to easily configure and launch test networks with specific parameters.
 

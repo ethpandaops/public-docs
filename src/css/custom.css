@@ -28,6 +28,10 @@
   --ifm-footer-background-color: #20232a;
   --ifm-card-background-color: #ffffff;
   --wave-color: #ffffff;
+  
+  /* Custom spacing variables for docs */
+  --doc-sidebar-padding: 1.5rem;
+  --doc-content-padding: 2rem;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -1161,4 +1165,154 @@ pre .token-line:has(.plain:is(
   :contains(┴), :contains(┼)
 )) {
   color: #aaa !important;
+}
+
+/* Improve docs content spacing */
+.docMainContainer {
+  padding: 0 var(--doc-content-padding);
+}
+
+.main-wrapper > div > aside {
+  padding: 0 var(--doc-sidebar-padding);
+}
+
+.main-wrapper > div > main {
+  padding: 0 var(--doc-content-padding);
+}
+
+/* Give more breathing room to main content area for docs pages */
+@media (min-width: 997px) {
+  .docItemCol {
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+  }
+  
+  .docItemCol_node_modules-\@docusaurus-theme-classic-lib-theme-DocItem-Layout-styles-module {
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+  }
+
+  .tableOfContents {
+    padding-left: 1rem;
+  }
+}
+
+/* On smaller screens, reduce padding to maximize content area */
+@media (max-width: 996px) {
+  .docMainContainer {
+    padding: 0 1rem;
+  }
+}
+
+/* Make docs content narrower on wide screens for better readability */
+@media (min-width: 1440px) {
+  .container {
+    max-width: 1360px !important;
+  }
+}
+
+/* Improve main content and TOC spacing */
+.docs-wrapper {
+  --ifm-docs-spacing: 2rem;
+}
+
+article {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+/* Improved TOC styling */
+.table-of-contents {
+  padding: 1rem;
+  border-radius: 8px;
+  background-color: var(--ifm-card-background-color);
+  border: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.table-of-contents__link {
+  display: block;
+  padding: 0.3rem 0.5rem;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.table-of-contents__link:hover {
+  background-color: var(--ifm-hover-overlay);
+  text-decoration: none;
+}
+
+.table-of-contents__link--active {
+  font-weight: 600;
+  background-color: var(--ifm-hover-overlay);
+  color: var(--ifm-color-primary);
+}
+
+.theme-doc-markdown {
+  padding: 0 1rem;
+}
+
+/* Add space between sidebar and content on mobile */
+@media (max-width: 996px) {
+  .theme-doc-markdown {
+    padding: 0 0.5rem;
+    margin-top: 1rem;
+  }
+  
+  .table-of-contents {
+    margin-left: 0;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+}
+
+/* Doc sidebar links styling (to match blog sidebar links) */
+.doc-sidebar-section {
+  margin-bottom: 2rem;
+  padding-top: 1rem;
+}
+
+.doc-sidebar-heading {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--ifm-color-primary);
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+  padding-bottom: 0.5rem;
+}
+
+.doc-sidebar-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.doc-sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 4px;
+  color: var(--ifm-color-emphasis-800);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.doc-sidebar-link:hover {
+  background-color: var(--ifm-hover-overlay);
+  color: var(--ifm-color-primary);
+  text-decoration: none;
+}
+
+.doc-sidebar-link svg {
+  color: var(--ifm-color-primary);
+  flex-shrink: 0;
+}
+
+/* Ensure TOC has proper spacing above GitHub repo and related links */
+.table-of-contents {
+  margin-bottom: 1rem;
+}
+
+blockquote p {
+  margin-bottom: 0 !important;
 }

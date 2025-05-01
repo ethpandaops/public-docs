@@ -870,10 +870,6 @@
   margin-bottom: 1.5rem;
 }
 
-.blog-post-content blockquote p {
-    margin-bottom: 0 !important;
-}
-
 .blog-post-content ul, .blog-post-content ol {
   margin-bottom: 1.5rem;
   padding-left: 1.5rem;

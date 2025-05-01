@@ -2,11 +2,14 @@
 sidebar_position: 3
 ---
 
+
+import RelatedLinks from '@site/src/components/RelatedLinks';
+
 # Forky
 
-:::tip GitHub Repository
-Visit the [Forky repository](https://github.com/ethpandaops/forky) for the latest code, documentation, and contribution guidelines.
-:::
+<RelatedLinks 
+  githubRepo="ethpandaops/forky"/>
+
 
 Forky is an Ethereum beacon chain fork choice visualizer that helps operators and developers understand the state of the beacon chain's fork choice algorithm in real-time.
 
@@ -35,7 +38,3 @@ Forky provides a visual representation of the Ethereum beacon chain's fork choic
 - **Debug Consensus Issues**: Identify and diagnose problems in the fork choice
 - **Educational Tool**: Learn how Ethereum's consensus mechanisms work
 - **Research**: Analyze fork choice behavior under different network conditions
-
-## Further Resources
-
-- [GitHub Repository](https://github.com/ethpandaops/forky) 

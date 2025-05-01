@@ -2,11 +2,21 @@
 sidebar_position: 2
 ---
 
-# Mempool Bridge
 
-:::tip GitHub Repository
-Visit the [Mempool Bridge repository](https://github.com/ethpandaops/mempool-bridge) for the latest code, documentation, and contribution guidelines.
-:::
+import RelatedLinks from '@site/src/components/RelatedLinks';
+
+# Mempool-bridge
+
+<RelatedLinks 
+  githubRepo="ethpandaops/mempool-bridge"
+  links={[
+    {
+      name: "Ethereum Transaction Pool",
+      url: "https://ethereum.org/en/developers/docs/gas/#mempool"
+    },
+  ]}
+/>
+
 
 Mempool Bridge is a specialized tool that forwards transactions between Ethereum execution layer nodes, enabling cross-node mempool synchronization and transaction propagation analysis.
 

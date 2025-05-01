@@ -2,11 +2,20 @@
 sidebar_position: 1
 ---
 
+import RelatedLinks from '@site/src/components/RelatedLinks';
+
 # Xatu
 
-:::tip GitHub Repository
-Visit the [Xatu repository](https://github.com/ethpandaops/xatu) for the latest code, documentation, and contribution guidelines.
-:::
+<RelatedLinks 
+  githubRepo="ethpandaops/xatu"
+  links={[
+    {
+      name: "EthPandaOps Published Data",
+      url: "https://ethpandaops.io/data/xatu/"
+    },
+  ]}
+/>
+
 
 Xatu is a distributed monitoring tool designed specifically for Ethereum networks, providing comprehensive visibility into network behavior and performance.
 
@@ -115,7 +124,6 @@ Xatu collects various types of data:
   - New blocks and transactions
   - Gas price statistics
   - Network state updates
-  - Reorgs and uncle blocks
 
 - **Node Metrics**:
   - Peer counts and network connectivity

@@ -121,7 +121,6 @@ const sidebars: SidebarsConfig = {
                   items: [
                     'tooling/xatu/clickhouse/intro',
                     'tooling/xatu/clickhouse/example-queries',
-                    'tooling/xatu/clickhouse/schema',
                   ],
                 },
               ],

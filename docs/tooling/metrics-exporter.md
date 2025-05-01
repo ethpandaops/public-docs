@@ -2,11 +2,14 @@
 sidebar_position: 3
 ---
 
-# Ethereum Metrics Exporter
 
-:::tip GitHub Repository
-Visit the [Ethereum Metrics Exporter repository](https://github.com/ethpandaops/ethereum-metrics-exporter) for the latest code, documentation, and contribution guidelines.
-:::
+import RelatedLinks from '@site/src/components/RelatedLinks';
+
+# Metrics-exporter
+
+<RelatedLinks 
+  githubRepo="ethpandaops/ethereum-metrics-exporter"/>
+
 
 Ethereum Metrics Exporter is a Prometheus exporter for Ethereum execution and consensus clients, providing comprehensive metrics for monitoring node performance and network health.
 

@@ -2,11 +2,26 @@
 sidebar_position: 2
 ---
 
+import RelatedLinks from '@site/src/components/RelatedLinks';
+
 # Contributoor
 
-:::tip GitHub Repository
-Visit the [Contributoor repository](https://github.com/ethpandaops/contributoor-installer) for the latest code, documentation, and contribution guidelines.
-:::
+<RelatedLinks 
+  githubRepos={[
+    "ethpandaops/contributoor-installer",
+    "ethpandaops/contributoor"
+  ]}
+  links={[
+    {
+      name: "Release Blog Post",
+      url: "https://ethpandaops.io/posts/contributoor-beacon-node-companion/"
+    },
+    {
+      name: "Installation Guide",
+      url: "/docs/guides/node-operators/contributoor"
+    }
+  ]}
+/>
 
 Contributoor is a lightweight monitoring and data-gathering tool that helps improve Ethereum's network visibility while running seamlessly alongside your beacon node. It allows node operators to easily share data about their nodes and network conditions, contributing to a more transparent and observable Ethereum ecosystem.
 
@@ -46,11 +61,6 @@ Contributoor captures several important beacon chain events, including:
 
 Contributoor runs as a sidecar process to your beacon node, connecting to your beacon node's API and monitoring key events and metrics. This data is then securely transmitted to ethPandaOps infrastructure, where it's aggregated with data from other nodes to provide network-wide insights.
 
-## Who Can Join
+## Get Started
 
-Currently, Contributoor is primarily focused on individual home stakers running their own beacon nodes. The ethPandaOps team is building a network of home stakers to provide comprehensive and decentralized timing data for Ethereum, with plans to expand access as they scale.
-
-## Further Resources
-
-- [GitHub Repository](https://github.com/ethpandaops/contributoor-installer)
-- [Release Blog Post](https://ethpandaops.io/posts/contributoor-beacon-node-companion/) 
+We've pulled together a guide to help you get up and running with Contributoor as fast as possible. [Check it out here](/docs/guides/node-operators/contributoor).

@@ -2,11 +2,21 @@
 sidebar_position: 3
 ---
 
+
+import RelatedLinks from '@site/src/components/RelatedLinks';
+
 # Dora
 
-:::tip GitHub Repository
-Visit the [Dora repository](https://github.com/ethpandaops/dora) for the latest code, documentation, and contribution guidelines.
-:::
+<RelatedLinks 
+  githubRepo="ethpandaops/dora"
+    links={[
+    {
+      name: "Dora Wiki",
+      url: "https://github.com/ethpandaops/dora/wiki"
+    }
+  ]}
+/>
+
 
 Dora is an explorer and analysis tool for Ethereum beacon chain blocks and validators. It provides a user-friendly interface for examining beacon chain data and understanding validator performance.
 
@@ -43,7 +53,3 @@ Dora consists of several components:
 - **Backend API**: A Go service that processes and serves data
 - **Database**: Stores processed beacon chain data for quick access
 - **Data Collectors**: Components that gather data from Ethereum nodes and other sources
-
-## Further Resources
-
-- [GitHub Repository](https://github.com/ethpandaops/dora) 

@@ -1,20 +1,27 @@
 ---
 sidebar_position: 4
 ---
+import RelatedLinks from '@site/src/components/RelatedLinks';
 
 # The Lab
 
-:::tip GitHub & Website
-Visit [The Lab website](https://lab.ethpandaops.io/) to explore the platform or check out the [ethPandaOps GitHub](https://github.com/ethpandaops) for associated code repositories.
-:::
+<RelatedLinks 
+  githubRepos={[
+    "ethpandaops/lab"
+  ]}
+  links={[
+    {
+      name: "The Lab",
+      url: "https://lab.ethpandaops.io/"
+    }
+  ]}
+/>
 
 The Lab is a research and development environment for Ethereum network testing and analysis. It provides a playground for experimenting with Ethereum infrastructure and testing new ideas.
 
 ## What is The Lab?
 
 The Lab is a platform hosted by ethPandaOps that serves as a testing ground for Ethereum infrastructure, tools, and methodologies. It provides a controlled environment where developers, researchers, and operators can experiment with new ideas, test hypotheses, and analyze network behavior.
-
-Visit [The Lab here](https://lab.ethpandaops.io/).
 
 ## Features
 
@@ -42,16 +49,6 @@ The Lab provides access to various tools and services, including:
 - **Block Explorer**: Detailed exploration of beacon chain blocks and execution layer blocks
 - **Validator Analytics**: Tools for analyzing validator performance and behavior
 - **Client Comparisons**: Comparison of different Ethereum client implementations
-- **Custom Dashboards**: Configurable dashboards for visualizing specific metrics
-
-## Getting Started
-
-To use The Lab:
-
-1. Visit [https://lab.ethpandaops.io/](https://lab.ethpandaops.io/)
-2. Explore the available tools and dashboards
-3. Use the navigation to access different sections and features
-4. Check the documentation for specific tools and features
 
 ## Contributing
 
@@ -65,8 +62,3 @@ The Lab is continuously evolving with new features and capabilities. Future plan
 - **Enhanced Visualization**: More advanced visualization capabilities
 - **Integration with More Data Sources**: Expanding the range of data sources available
 - **Collaborative Features**: Better support for collaborative research and development
-
-## Further Resources
-
-- [The Lab Website](https://lab.ethpandaops.io/)
-- [ethPandaOps GitHub](https://github.com/ethpandaops) 

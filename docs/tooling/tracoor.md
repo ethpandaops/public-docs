@@ -19,21 +19,9 @@ Tracoor serves as a dedicated tool for monitoring and displaying invalid slots a
 - **Filtering and Sorting**: Easily find specific types of invalid blocks or slots
 - **API Access**: Programmatically access invalid block and slot data
 
-## Integration with Other Tools
-
-Tracoor works well with other ethPandaOps tools:
-
-- **Xatu**: Feeds data about network events to Tracoor
-- **Forky**: Can use Tracoor data to enhance fork choice visualization
-- **Lab**: Can display Tracoor data in a broader network context
-
 ## Use Cases
 
 - **Network Debugging**: Identify and resolve consensus issues
 - **Protocol Analysis**: Study patterns of invalid blocks to improve protocol design
 - **Client Testing**: Compare different client implementations' handling of edge cases
 - **Network Monitoring**: Track network health through invalid block metrics
-
-## Further Resources
-
-- [GitHub Repository](https://github.com/ethpandaops/tracoor) 

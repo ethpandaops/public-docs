@@ -2,11 +2,14 @@
 sidebar_position: 2
 ---
 
+
+import RelatedLinks from '@site/src/components/RelatedLinks';
+
 # Dugtrio
 
-:::tip GitHub Repository
-Visit the [Dugtrio repository](https://github.com/ethpandaops/dugtrio) for the latest code, documentation, and contribution guidelines.
-:::
+<RelatedLinks 
+  githubRepo="ethpandaops/dugtrio"/>
+
 
 Dugtrio is a specialized load balancing proxy designed specifically for the Ethereum beacon chain, enabling efficient distribution of requests across multiple beacon nodes.
 

@@ -2,7 +2,22 @@
 sidebar_position: 1
 ---
 
-# Clickhouse Introduction
+import RelatedLinks from '@site/src/components/RelatedLinks';
+
+<RelatedLinks 
+  links={[
+    {
+      name: "Schema Documentation",
+      url: "/data/xatu/schema"
+    },  
+    {
+      name: "Example Queries",
+      url: "/docs/tooling/xatu/clickhouse/example-queries"
+    }
+  ]}
+/>
+
+# Intro
 
 ClickHouse is an open-source column-oriented database that stores data for the Xatu platform and provides fast analytics capabilities.
 
@@ -25,7 +40,7 @@ Currently access is restricted. Please contact us if you need access.
 
 ### Using Curl
 
-_Replace `CLICKHOUSE_USER` and `CLICKHOUSE_PASSWORD` with your credentials._
+> _Replace `CLICKHOUSE_USER` and `CLICKHOUSE_PASSWORD` with your credentials._
 
 ```bash
 echo """
@@ -70,9 +85,4 @@ The Xatu ClickHouse instance provides several tables for different types of Ethe
 - `network_discovery` - Node discovery information
 - `p2p_message` - P2P network messages
 
-For a complete list of tables and their schemas, please see the [Schema Documentation](/docs/tooling/xatu/clickhouse/schema).
-
-## Next Steps
-
-- [Example Queries](/docs/tooling/xatu/clickhouse/example-queries) - Common queries for exploring Ethereum network data
-- [Schema Documentation](/docs/tooling/xatu/clickhouse/schema) - Detailed schema information for all tables 
+For a complete list of tables and their schemas, please see the [Schema Documentation](/data/xatu).
