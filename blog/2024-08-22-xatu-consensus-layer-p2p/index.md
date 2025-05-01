@@ -33,9 +33,9 @@ By providing this data we hope to enable more in-depth analysis and research int
 
 ## Tables
 
-- [libp2p_gossipsub_beacon_attestation](/data/xatu/schema/libp2p_%23libp2p_gossipsub_beacon_attestation)
-- [libp2p_gossipsub_beacon_block](/data/xatu/schema/libp2p_%23libp2p_gossipsub_beacon_block)
-- [libp2p_gossipsub_blob_sidecar](/data/xatu/schema/libp2p_%23libp2p_gossipsub_blob_sidecar)
+- [libp2p_gossipsub_beacon_attestation](/data/xatu/schema/libp2p_/#libp2p_gossipsub_beacon_attestation)
+- [libp2p_gossipsub_beacon_block](/data/xatu/schema/libp2p_/#libp2p_gossipsub_beacon_block)
+- [libp2p_gossipsub_blob_sidecar](/data/xatu/schema/libp2p_/#libp2p_gossipsub_blob_sidecar)
 
 <Alert>
 **Note:** Data in these tables is only captured from a small subset of nodes and does not provide a complete picture of the network.

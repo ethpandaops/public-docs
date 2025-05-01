@@ -16,6 +16,19 @@ function enhanceHtml(html) {
     '</table></div>'
   );
 
+  // Add IDs to headings for anchor links
+  // This finds heading tags (h1-h6) and adds IDs based on their content if they don't already have an ID
+  enhancedHtml = enhancedHtml.replace(
+    /<(h[1-6])(?![^>]*\bid=)[^>]*>([\s\S]*?)<\/\1>/gi,
+    (match, tag, content) => {
+      // Strip HTML tags if present and get text content
+      const textContent = content.replace(/<[^>]*>/g, '');
+      // Generate ID from content: lowercase, replace non-alphanumeric with hyphens
+      const id = textContent.trim().toLowerCase().replace(/[^\w]+/g, '-');
+      return `<${tag} id="${id}" class="anchor">${content}</${tag}>`;
+    }
+  );
+
   // Enhance any checkmarks in table cells with better styling
   // We need special handling for checkmarks because:
   // 1. HTML may render them as text without proper styling

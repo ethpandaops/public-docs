@@ -871,7 +871,7 @@
 }
 
 .blog-post-content blockquote p {
-    margin-bottom: 0;
+    margin-bottom: 0 !important;
 }
 
 .blog-post-content ul, .blog-post-content ol {

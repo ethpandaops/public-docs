@@ -1,6 +1,118 @@
 /* Data Section Styling */
 /* Note: Many styles are inherited from blog.css for consistent styling between blog and data sections */
 
+/* License styling */
+.data-header-description {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 40px;
+  color: var(--ifm-color-emphasis-800);
+}
+
+.license-separator {
+  height: 1px;
+  background: linear-gradient(90deg, rgba(0,0,0,0), var(--ifm-color-emphasis-300) 50%, rgba(0,0,0,0));
+  margin: 40px auto 0;
+  max-width: 80%;
+  opacity: 0.8;
+}
+
+[data-theme='dark'] .license-separator {
+  background: linear-gradient(90deg, rgba(255,255,255,0), var(--ifm-color-emphasis-300) 50%, rgba(255,255,255,0));
+}
+
+.data-footer {
+  margin-top: 15px;
+  padding-top: 20px;
+  text-align: center;
+}
+
+.license-container {
+  display: inline-flex;
+  gap: 24px;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.license-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 18px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.license-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+}
+
+.license-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+}
+
+.license-item.mit {
+  background-color: rgba(97, 175, 254, 0.1);
+}
+
+.license-item.mit::before {
+  background-color: #61affe;
+}
+
+.license-item.cc {
+  background-color: rgba(98, 203, 120, 0.1);
+}
+
+.license-item.cc::before {
+  background-color: #62cb78;
+}
+
+.license-label {
+  font-weight: 600;
+  color: var(--ifm-color-emphasis-800);
+}
+
+.license-link {
+  display: flex;
+  align-items: center;
+  color: var(--ifm-color-primary);
+  text-decoration: none;
+  font-weight: 500;
+  gap: 6px;
+  padding-right: 4px;
+}
+
+.license-link:hover {
+  text-decoration: underline;
+}
+
+.license-link p {
+  margin: 0 !important;
+}
+
+.cc-icon {
+  height: 20px;
+  width: 20px;
+  margin-left: 4px;
+}
+
+@media (max-width: 768px) {
+  .license-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+}
+
 /* Data Layout */
 .data-layout-root {
   width: 100%;

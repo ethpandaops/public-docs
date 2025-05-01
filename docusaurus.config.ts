@@ -148,11 +148,7 @@ const config: Config = {
       'classic',
       {
         docs: {
-          sidebarPath: './sidebars.ts',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/ethpandaops/public-docs/tree/main/',
+          sidebarPath: './sidebars.ts'
         },
         blog: {
           onUntruncatedBlogPosts: 'ignore',
@@ -161,12 +157,9 @@ const config: Config = {
             type: ['rss', 'atom'],
             xslt: true,
           },
-          // Useful options to enforce blogging best practices
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
-          // Use 'posts' as the URL path instead of 'blog'
           routeBasePath: 'posts',
-          // Configure pagination
           postsPerPage: 10,
           blogSidebarCount: 'ALL',
           blogSidebarTitle: 'All Blog Posts',
@@ -331,6 +324,7 @@ const config: Config = {
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
+      additionalLanguages: ['bash'],
     },
   } satisfies Preset.ThemeConfig,
   
