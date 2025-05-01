@@ -43,8 +43,10 @@ export default function RelatedLinks({ links, githubRepo, githubRepos }) {
       {links && links.length > 0 && (
         <div className={styles.section}>
           <div className={styles.sectionHeading}>
-            <svg width="16" height="16" className={styles.icon} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M13.544 10.456a4.368 4.368 0 0 0-6.176 0l-3.089 3.088a4.367 4.367 0 0 0 6.177 6.177l1.907-1.907m-2.176-8.636a4.368 4.368 0 0 0 6.177 0l3.088-3.088a4.368 4.368 0 0 0-6.177-6.177L11.09 1.826" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            <svg width="14" height="14" className={styles.icon} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9 17H7C4.79086 17 3 15.2091 3 13V13C3 10.7909 4.79086 9 7 9H9" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+              <path d="M15 17H17C19.2091 17 21 15.2091 21 13V13C21 10.7909 19.2091 9 17 9H15" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+              <path d="M8 13L16 13" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
             </svg>
             Links
           </div>

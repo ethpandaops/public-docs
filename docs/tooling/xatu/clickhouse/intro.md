@@ -4,8 +4,14 @@ sidebar_position: 1
 
 import RelatedLinks from '@site/src/components/RelatedLinks';
 
+# Intro
+
 <RelatedLinks 
   links={[
+    {
+      name: "Clickhouse",
+      url: "https://clickhouse.com/"
+    }, 
     {
       name: "Schema Documentation",
       url: "/data/xatu/schema"
@@ -17,7 +23,6 @@ import RelatedLinks from '@site/src/components/RelatedLinks';
   ]}
 />
 
-# Intro
 
 ClickHouse is an open-source column-oriented database that stores data for the Xatu platform and provides fast analytics capabilities.
 

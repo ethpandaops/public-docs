@@ -1,8 +1,13 @@
 ---
 sidebar_position: 6
 ---
+import RelatedLinks from '@site/src/components/RelatedLinks';
 
 # Tracoor
+
+<RelatedLinks 
+  githubRepo="ethpandaops/tracoor"
+/>
 
 Tracoor is a specialized tool for displaying and tracking invalid slots and blocks in the Ethereum network, helping developers and operators debug consensus issues.
 
