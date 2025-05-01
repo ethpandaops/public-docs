@@ -863,6 +863,11 @@
   z-index: 10;
 }
 
+.blog-post-content img {
+    width: 100%;
+    height: auto;
+}
+
 .blog-post-content .markdown > *:last-child {
   margin-bottom: 0;
 }
