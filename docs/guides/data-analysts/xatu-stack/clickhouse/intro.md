@@ -18,7 +18,7 @@ import RelatedLinks from '@site/src/components/RelatedLinks';
     },  
     {
       name: "Example Queries",
-      url: "/docs/tooling/xatu/clickhouse/example-queries"
+      url: "/docs/guides/data-analysts/xatu-stack/clickhouse/example-queries"
     }
   ]}
 />

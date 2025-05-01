@@ -65,4 +65,4 @@ Xatu is comprised of several components that work together:
 - Xatu Discovery - Discovers nodes on the network
 - Xatu Mimicry - Collects data from the execution layer
 - Xatu Cannon - Collects canonical finalized data
-- [Clickhouse](/docs/tooling/xatu/clickhouse/intro) - Data storage and analytics platform
+- [Clickhouse](/docs/guides/data-analysts/xatu-stack) - Data storage and analytics platform

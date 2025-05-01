@@ -80,7 +80,16 @@ const sidebars: SidebarsConfig = {
                 slug: '/guides/data-analysts/xatu-stack',
               },
               items: [
-                'guides/data-analysts/xatu-stack/index',
+                'guides/data-analysts/xatu-stack/intro',
+                'guides/data-analysts/xatu-stack/components',
+                {
+                  type: 'category',
+                  label: 'Clickhouse',
+                  items: [
+                    'guides/data-analysts/xatu-stack/clickhouse/intro',
+                    'guides/data-analysts/xatu-stack/clickhouse/example-queries',
+                  ],
+                },
               ],
             },
           ],
@@ -113,16 +122,7 @@ const sidebars: SidebarsConfig = {
                 id: 'tooling/xatu/intro',
               },
               items: [
-                'tooling/xatu/intro',
-                'tooling/xatu/components',
-                {
-                  type: 'category',
-                  label: 'Clickhouse',
-                  items: [
-                    'tooling/xatu/clickhouse/intro',
-                    'tooling/xatu/clickhouse/example-queries',
-                  ],
-                },
+                'tooling/xatu/intro'
               ],
             },
           ],
