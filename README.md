@@ -1,5 +1,5 @@
 > [!IMPORTANT]  
-> Decommissioned. Public docs are now part of our main website/home. [https://github.com/ethpandaops/homepage](See here).
+> Decommissioned. Public docs are now part of our main website/home. https://github.com/ethpandaops/homepage
 
 # ethPandaOps Public Documentation Website
 
