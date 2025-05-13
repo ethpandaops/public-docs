@@ -1,3 +1,6 @@
+> [!IMPORTANT]  
+> Decommissioned. Public docs are now part of our main website/home. [https://github.com/ethpandaops/homepage](See here).
+
 # ethPandaOps Public Documentation Website
 
 This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
